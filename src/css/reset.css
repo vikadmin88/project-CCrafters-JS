@@ -2,13 +2,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  --c-main: #f6f6f6;
-  --c-primary: #1b1b1b;
-  --cb-container: #e8e8e8;
-  --c-secondary: #7e847f;
-}
-
 body {
   margin: 0;
 }
@@ -56,30 +49,4 @@ button {
 
 address {
   font-style: normal;
-}
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  color: var(--c-main);
-  background-color: var(--c-main);
-}
-
-.container {
-  min-width: 320px;
-  max-width: 375px;
-  padding: 0 20px;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 768px;
-    padding: 0 16px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .container {
-    max-width: 1440px;
-  }
 }
