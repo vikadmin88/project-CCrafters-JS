@@ -1,50 +1,26 @@
-:root {
-  --dark-green-color: #5f6560;
-  --light-green-color: #7e847f;
-  --light-gray-color: #f6f6f6;
-  --black-color: #1b1b1b;
-  --orange-stars-color: #eea10c;
-  --white-color: #ffffff;
-  --font-family: "DM Sans", sans-serif;
-}
-
-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-body {
-  font-family: var(--font-family);
+.quote-home {
+  font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
-  background-color: var(--white-color);
-}
-
-.quote-home {
-  background-color: var(--white-color);
 }
 
 .container-quote {
-  min-width: 320px;
-  max-width: 374px;
+  max-width: 280px;
   margin: 0 auto;
   align-items: center;
+  margin: 10px 0;
 }
 
 .quote-of-the-day {
-  background-color: var(--light-green-color);
+  background-color: #7e847f;
   border-radius: 30px;
-  padding: 40px 15px;
-  margin: 0 20px;
+  padding: 40px 10px;
 }
 
 .quote-header {
   display: flex;
   justify-content: center;
-  background-color: var(--light-green-color);
 }
 
 .quote-header-svg-1 {
@@ -57,7 +33,7 @@ body {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.4;
-  color: var(--light-gray-color);
+  color: #f6f6f6;
 }
 
 .quote-header-svg-2 {
@@ -75,19 +51,25 @@ body {
 .quote-author {
   font-weight: 500;
   font-size: 16px;
-  color: var(--light-gray-color);
+  color: #f6f6f6;
   margin-top: 14px;
   margin-left: 20px;
 }
 
 .quote-picture {
   border-radius: 30px;
-  margin: 0 20px;
+}
+
+.quote-picture-img {
+  border-radius: 30px;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 @media screen and (min-width: 375px) {
   .container-quote {
-    max-width: 375px;
+    max-width: 335px;
   }
 
   .quote-of-the-day {
@@ -99,7 +81,7 @@ body {
   }
 
   .quote-text {
-    padding-left: 48px;
+    margin-left: 48px;
   }
 
   .quote-author {
@@ -109,7 +91,8 @@ body {
 
 @media screen and (min-width: 768px) {
   .container-quote {
-    max-width: 768px;
+    max-width: 728px;
+    margin: 8px 0;
   }
 
   .quote-of-the-day {
@@ -119,14 +102,14 @@ body {
 
   .quote-header-svg-1 {
     margin-right: 16px;
-    padding-top: 32px;
+    margin-top: 32px;
   }
 
   .quote-header-title {
     font-size: 24px;
     line-height: 1.33;
-    padding-top: 32px;
-    padding-bottom: 16px;
+    margin-top: 32px;
+    margin-bottom: 16px;
   }
 
   .quote-header-svg-2 {
@@ -137,6 +120,7 @@ body {
   .quote-text {
     font-size: 16px;
     line-height: 1.5;
+    margin-left: 48px;
   }
 
   .quote-author {
@@ -151,28 +135,28 @@ body {
 
 @media screen and (min-width: 1440px) {
   .container-quote {
-    max-width: 1440px;
+    max-width: 1400px;
     display: flex;
     justify-content: center;
+    margin: 8px 0;
   }
 
   .quote-of-the-day {
     flex: 1;
     border-radius: 50px;
-    padding: 32px 80px 64px 80px;
-    margin: 0;
+    padding: 32px 64px 64px 64px;
   }
 
   .quote-header-svg-1 {
     margin-right: 16px;
-    padding-top: 32px;
+    margin-top: 32px;
   }
 
   .quote-header-title {
     font-size: 24px;
     line-height: 1.33;
-    padding-top: 32px;
-    padding-bottom: 16px;
+    margin-top: 32px;
+    margin-bottom: 16px;
   }
 
   .quote-header-svg-2 {
@@ -192,6 +176,5 @@ body {
 
   .quote-picture {
     border-radius: 50px;
-    margin: 0;
   }
 }
