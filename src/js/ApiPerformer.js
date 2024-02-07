@@ -15,30 +15,27 @@ export class ApiPerformer {
     this.#apiBaseUrl = value;
   }
 
-  async get(req) {
-    let params = req.params;
+  async get(reqPoint, params) {
     try {
-      return await axios.get(this.#apiBaseUrl + req.reqPoint, {params})
+      return await axios.get(this.#apiBaseUrl + reqPoint, { params })
         .then(({ data }) => data);
     } catch (error) {
       throw new Error(error);
     }
   }
 
-  async post(req) {
-    let params = req.params;
+  async post(reqPoint, params) {
     try {
-      return await axios.post(this.#apiBaseUrl + req.reqPoint, {params})
+      return await axios.post(this.#apiBaseUrl + reqPoint, { params })
         .then(response => response);
     } catch (error) {
       throw new AxiosError(error);
     }
   }
 
-  async patch(req) {
-    let params = req.params;
+  async patch(reqPoint, params) {
     try {
-      return await axios.patch(this.#apiBaseUrl + req.reqPoint, {params})
+      return await axios.patch(this.#apiBaseUrl + reqPoint, { params })
         .then(response => response);
     } catch (error) {
       throw new AxiosError(error);
