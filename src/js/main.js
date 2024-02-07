@@ -4,8 +4,11 @@ import {notify} from "./notifier.js";
 import {ApiPerformer} from "./ApiPerformer.js";
 
 
-const apiBaseUrl = "https://energyflow.b.goit.study/api/";
-const apiPerformer = new ApiPerformer(apiBaseUrl);
+const API_BASE_URL = "https://energyflow.b.goit.study/api/";
+const API_FILTER_POINT = "filters";
+const API_EXERCISES_POINT = "exercises";
+const API_SUBSCRIPTION_POINT = "subscription";
+const apiPerformer = new ApiPerformer(API_BASE_URL);
 
 let par = {
   filter: "Muscles",
@@ -38,17 +41,17 @@ apiPerformer.get({reqPoint: "exercises", params: par2})
 
 
 // subscriptions
-// apiPerformer.post({reqPoint: "subscription", params: {email: "test@gmail8.com"}})
-//   .then(response => {
-//     notify("success", response.data.message);
-//   })
-//   .catch(error => {
-//     if (error.message.response.status === 409) {
-//       notify("warning", `Warning: ${error.message.response.data.message}`);
-//     } else {
-//       notify("error", `API error: ${error.message.response.data.message}`);
-//     }
-//   });
+apiPerformer.post({reqPoint: "subscription", params: {email: "test@gmail8.com"}})
+  .then(response => {
+    notify("success", response.data.message);
+  })
+  .catch(error => {
+    if (error.message.response.status === 409) {
+      notify("warning", `Warning: ${error.message.response.data.message}`);
+    } else {
+      notify("error", `API error: ${error.message.response.data.message}`);
+    }
+  });
 
 // rating
 // apiPerformer.patch({reqPoint: "exercises/64f389465ae26083f39b17a2/rating", params: {
