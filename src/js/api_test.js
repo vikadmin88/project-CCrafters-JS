@@ -1,5 +1,9 @@
 'use strict';
 
+// Import this for partial js files that use the API.
+// import {API_BASE_URL, API_FILTER_POINT, API_EXERCISES_POINT, API_SUBSCRIPTION_POINT, API_QUOTE_POINT, api} from './api.js';
+// import {notify} from './notifier.js';
+
 import {notify} from "./notifier.js";
 import {ApiPerformer} from "./ApiPerformer.js";
 
