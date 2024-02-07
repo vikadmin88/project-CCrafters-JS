@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+.exercises-inner-container {
+  border-radius: 30px;
+  background: #e8e8e8;
+
+  padding: 40px 20px;
+}
+
+.exercises-title {
+  color: #1b1b1b;
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+
+  margin-bottom: 20px;
+}
+
+.exercises-category-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 6px;
+
+  margin-bottom: 40px;
+}
+
+.exercises-category-item {
+  color: #1b1b1b;
+  font-size: 14px;
+  line-height: 1.29;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 30px;
+  background: #f6f6f6;
+
+  padding: 7px 14px;
+
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+  cursor: pointer;
+}
+
+.exercises-category-item-active,
+.exercises-category-item:hover {
+  background-color: #7e847f;
+  color: #f6f6f6;
+}
