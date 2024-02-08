@@ -1,8 +1,8 @@
 /**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
+|============================
+| include css partials with
+| default @import url()
+|============================
 */
 @import url('./fonts.css');
 @import url('./reset.css');
@@ -11,16 +11,10 @@
 @import url('./header.css');
 @import url('./hero.css');
 @import url('./quote-home.css');
-@import url('./quote-favorites.css');
 @import url('./exercises.css');
 @import url('./motivation.css');
 @import url('./footer.css');
 @import url('./favorites.css');
 @import url('./exercises_modal.css');
-<<<<<<< HEAD:src/css/styles.css
-=======
 @import url('./exercises_waist.css');
 @import url('./rating_modal.css');
-
-
->>>>>>> main:src/css/styles_index.css
