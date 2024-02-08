@@ -80,16 +80,19 @@
   border-radius: 12px;
   border: 1px solid rgba(246, 246, 246, 0.3);
   background: linear-gradient(
-      0deg,
-      rgba(16, 16, 16, 0.7) 0%,
-      rgba(16, 16, 16, 0.7) 100%
-    ),
-    url(<path-to-image>),
-    lightgray -16.825px -9.156px / 128.765% 116.922% no-repeat;
+    0deg,
+    rgba(16, 16, 16, 0.7) 0%,
+    rgba(16, 16, 16, 0.7) 100%
+  );
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: lightgray;
 
   transition: transform 0.2s ease-in-out;
 
   cursor: pointer;
+  position: relative;
 }
 
 .exercises-subcategory-item:hover {
@@ -110,8 +113,17 @@
   line-height: 1.5;
 }
 
+.exercises-subcategory-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: inherit;
+}
+
 .exercises-subcategory-page-container {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
 
@@ -138,7 +150,7 @@
 .exercises-subcategory-page-btn-active {
   color: var(--c-primary);
 
-  padding: 0px 12px;
+  width: 32px;
 
   border: 1px solid var(--c-primary);
 }
@@ -211,4 +223,8 @@
   .exercises-subcategory-item {
     width: calc((100% - 60px) / 4);
   }
+}
+
+.is-visible {
+  display: flex;
 }
