@@ -1,2 +1,0 @@
-import{i as e}from"./vendor-ad859c2f.js";e.settings({position:"topRight",timeout:5e3,resetOnHover:!0,transitionIn:"flipInX",transitionOut:"flipOutX"});const o=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),r=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),i=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"}));export{o as e,r as f,i as q};
-//# sourceMappingURL=quote-6aa5a2c2.js.map
