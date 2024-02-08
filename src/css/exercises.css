@@ -150,7 +150,7 @@
 .exercises-subcategory-page-btn-active {
   color: var(--c-primary);
 
-  padding: 0px 12px;
+  width: 32px;
 
   border: 1px solid var(--c-primary);
 }
