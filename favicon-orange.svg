@@ -5,16 +5,18 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 640 512"
 	 style="enable-background:new 0 0 640 512;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#707070;}
-	.st1{fill:#FF8800;}
+	.st0{fill:#FF7836;}
+	.st1{fill:#7F847F;}
 </style>
 <sodipodi:namedview  bordercolor="#666666" borderopacity="1.0" id="namedview1" inkscape:current-layer="svg1" inkscape:cx="320" inkscape:cy="255.65775" inkscape:deskcolor="#d1d1d1" inkscape:pagecheckerboard="0" inkscape:pageopacity="0.0" inkscape:showpageshadow="2" inkscape:window-height="1051" inkscape:window-maximized="1" inkscape:window-width="1884" inkscape:window-x="36" inkscape:window-y="0" inkscape:zoom="1.4609375" pagecolor="#ffffff">
 	</sodipodi:namedview>
 <g>
-	<path class="st0" d="M160,32h-32c-17.7,0-32,14.3-32,32v64H64c-17.7,0-32,14.3-32,32v64c-17.7,0-32,14.3-32,32s14.3,32,32,32v64
-		c0,17.7,14.3,32,32,32h32v64c0,17.7,14.3,32,32,32h32c17.7,0,32-14.3,32-32V288v-64V64C192,46.3,177.7,32,160,32z"/>
-	<path class="st0" d="M608,224v-64c0-17.7-14.3-32-32-32h-32V64c0-17.7-14.3-32-32-32h-32c-17.7,0-32,14.3-32,32v160v64v160
-		c0,17.7,14.3,32,32,32h32c17.7,0,32-14.3,32-32v-64h32c17.7,0,32-14.3,32-32v-64c17.7,0,32-14.3,32-32S625.7,224,608,224z"/>
-	<rect x="224" y="224" class="st1" width="192" height="64"/>
+	<g>
+		<path class="st0" d="M160,32h-32c-17.7,0-32,14.3-32,32v64H64c-17.7,0-32,14.3-32,32v64c-17.7,0-32,14.3-32,32s14.3,32,32,32v64
+			c0,17.7,14.3,32,32,32h32v64c0,17.7,14.3,32,32,32h32c17.7,0,32-14.3,32-32V288v-64V64C192,46.3,177.7,32,160,32z"/>
+		<path class="st0" d="M608,224v-64c0-17.7-14.3-32-32-32h-32V64c0-17.7-14.3-32-32-32h-32c-17.7,0-32,14.3-32,32v160v64v160
+			c0,17.7,14.3,32,32,32h32c17.7,0,32-14.3,32-32v-64h32c17.7,0,32-14.3,32-32v-64c17.7,0,32-14.3,32-32S625.7,224,608,224z"/>
+	</g>
+	<rect x="223" y="224.5" class="st1" width="192" height="64"/>
 </g>
 </svg>
