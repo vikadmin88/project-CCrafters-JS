@@ -7,8 +7,7 @@
 
 .container-quote {
   max-width: 280px;
-  margin: 0 auto;
-  margin: 10px 0;
+  margin: 10px auto;
 }
 
 .quote-of-the-day {
@@ -92,7 +91,7 @@
 @media screen and (min-width: 768px) {
   .container-quote {
     max-width: 728px;
-    margin: 8px 0;
+    margin: 8px auto;
   }
 
   .quote-of-the-day {
@@ -142,7 +141,7 @@
     max-width: 1400px;
     display: flex;
     justify-content: center;
-    margin: 8px 0;
+    margin: 8px auto;
   }
 
   .quote-of-the-day {
