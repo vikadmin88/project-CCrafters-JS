@@ -1,0 +1,188 @@
+.quote-home {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.container-quote {
+  max-width: 280px;
+  margin: 0 auto;
+  margin: 10px 0;
+}
+
+.quote-of-the-day {
+  background-color: #7e847f;
+  border-radius: 30px;
+  padding: 40px 10px;
+}
+
+.quote-header {
+  display: flex;
+  justify-content: center;
+}
+
+.quote-header-svg-1 {
+  margin-right: 10px;
+  width: 34px;
+  height: 32px;
+}
+
+.quote-header-title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #f6f6f6;
+}
+
+.quote-header-svg-2 {
+  width: 28px;
+  height: 28px;
+  margin-left: auto;
+}
+
+.quote-text {
+  font-size: 14px;
+  line-height: 1.29;
+  color: rgba(246, 246, 246, 0.6);
+}
+
+.quote-author {
+  font-weight: 500;
+  font-size: 16px;
+  color: #f6f6f6;
+  margin-top: 14px;
+  margin-left: 20px;
+}
+
+.quote-picture {
+  border-radius: 30px;
+  background-color: #f6f6f6;
+}
+
+.quote-picture-img {
+  border-radius: 30px;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 375px) {
+  .container-quote {
+    max-width: 335px;
+  }
+
+  .quote-of-the-day {
+    padding: 40px 20px;
+  }
+
+  .quote-header-svg-1 {
+    margin-right: 12px;
+  }
+
+  .quote-text {
+    margin-left: 48px;
+  }
+
+  .quote-author {
+    margin-left: 48px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container-quote {
+    max-width: 728px;
+    margin: 8px 0;
+  }
+
+  .quote-of-the-day {
+    border-radius: 50px;
+    padding: 32px 80px 64px 80px;
+  }
+
+  .quote-header-svg-1 {
+    margin-right: 16px;
+    margin-top: 32px;
+  }
+
+  .quote-header-title {
+    font-size: 24px;
+    line-height: 1.33;
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+
+  .quote-header-svg-2 {
+    width: 48px;
+    height: 48px;
+  }
+
+  .quote-text {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-left: 48px;
+  }
+
+  .quote-author {
+    margin-top: 25px;
+    margin-left: 48px;
+  }
+
+  .quote-picture {
+    border-radius: 50px;
+  }
+
+  .quote-picture-img {
+    border-radius: 50px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container-quote {
+    max-width: 1400px;
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+  }
+
+  .quote-of-the-day {
+    flex: 1;
+    border-radius: 50px;
+    padding: 32px 64px 64px 64px;
+  }
+
+  .quote-header-svg-1 {
+    margin-right: 16px;
+    margin-top: 32px;
+  }
+
+  .quote-header-title {
+    font-size: 24px;
+    line-height: 1.33;
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+
+  .quote-header-svg-2 {
+    width: 48px;
+    height: 48px;
+  }
+
+  .quote-text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .quote-author {
+    margin-top: 25px;
+    margin-left: 48px;
+  }
+
+  .quote-picture {
+    border-radius: 50px;
+  }
+
+  .quote-picture-img {
+    border-radius: 50px;
+  }
+}
