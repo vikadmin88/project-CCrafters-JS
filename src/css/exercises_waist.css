@@ -1,0 +1,54 @@
+.exercices-form {
+  display: block;
+  margin-bottom: 40px;
+  max-width: 295px;
+  max-height: 42px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.exercices-form-input {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 129%;
+  color: var(--c-primary);
+  border: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  padding: 12px 14px;
+  background: var(--c-main);
+}
+
+.exercices-form-input::placeholder {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--c-primary);
+}
+
+.exercices-form-btn-container {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  margin: 0;
+}
+
+.exercices-form-search-btn {
+  width: 18px;
+  height: 18px;
+  border: none;
+  background: var(--c-main);
+}
+
+.exercices-form-close-btn {
+  width: 18px;
+  height: 18px;
+  border: none;
+  background: var(--c-main);
+}
