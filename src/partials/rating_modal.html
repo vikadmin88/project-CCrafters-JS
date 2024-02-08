@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/css/rating_modal.css" />
+  </head>
+  <body>
+    <div id="myModal" class="rating-modal">
+      <div class="modal-content">
+        <div class="close">×</div>
+        <h3>Rating</h3>
+        <div class="rating-stars">
+          <span class="rating-value">0.0</span>
+          <span class="star" data-value="1">&#9733;</span>
+          <span class="star" data-value="2">&#9733;</span>
+          <span class="star" data-value="3">&#9733;</span>
+          <span class="star" data-value="4">&#9733;</span>
+          <span class="star" data-value="5">&#9733;</span>
+        </div>
+        <div>
+          <input type="email" id="email" placeholder="Email" />
+        </div>
+        <div>
+          <textarea
+            id="comment"
+            placeholder="Your comment"
+            cols="30"
+            rows="5"
+          ></textarea>
+        </div>
+        <div><button id="sendBtn">Send</button></div>
+      </div>
+    </div>
+    <script src="/src/js/rating_modal.js"></script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    justify-content: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 400px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+margin: 0 auto;
+padding-bottom: 50px;
+}
+h3 {
+    margin-top: 5px;
+    align-self: flex-start;
+    color:#ccc;
+}
+.close {
+    align-self: flex-end;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.rating-value {
+    margin-right: 10px;
+}
+.rating-stars {
+    color:#ccc;
+    align-self: flex-start;
+    margin-bottom: 30px;
+}
+#email {
+    width: 295px;
+    height: 42px;
+    padding: 12px 246px 12px 14px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 5px;
+    
+}
+
+#comment {
+    width: 295px;
+    height: 42px;
+    padding: 12px 246px 12px 14px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+.stars .star {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.stars .star.selected {
+    color: gold;
+
+}
+#sendBtn {
+ width: 295px;
+ height: 42px;
+ padding: 12px 14px;
+ border: none;
+ border-radius: 30px;
+ background-color:darkgrey;
+ color: white;
+ cursor: pointer;
+ transition: background-color 0.3s ease;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ 
+}
+
+#sendBtn:hover {
+    background-color: #0056b3;
+}
