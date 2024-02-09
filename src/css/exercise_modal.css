@@ -1,0 +1,156 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.backdrop {
+  overflow: auto;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1b1b1b99;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 335px;
+  padding: 40px 20px;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+}
+
+.close-modal-btn .close-modal-icon {
+  stroke: #1b1b1b;
+  fill: #1b1b1b;
+}
+
+.modal-description-container .modal-gif {
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.modal-description-container .modal-title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.rating-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.rating-container .rating {
+  font-size: 12px;
+  line-height: 18px;
+  color: #1b1b1b99;
+}
+
+.rating-container .star {
+  stroke: #eea10c;
+  fill: #eea10c;
+}
+
+.description-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid #1b1b1b33;
+  border-top: 1px solid #1b1b1b33;
+}
+
+.description-list .description-item p {
+  font-size: 12px;
+  line-height: 0.66;
+  margin-bottom: 4px;
+  color: #1b1b1b66;
+}
+
+.description-list .description-item span {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.modal-description-text {
+  font-size: 14px;
+  line-height: 18px;
+  color: #1b1b1b99;
+}
+
+.modal-buttons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 9px;
+}
+
+.modal-buttons-container button {
+  border: none;
+  border-radius: 30px;
+  padding: 12px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal-buttons-container .add-favorite-btn {
+  color: #f6f6f6;
+  background-color: #7e847f;
+  border: 1px solid #7e847f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-buttons-container .add-favorite-btn:hover,
+.modal-buttons-container .add-favorite-btn:focus {
+  background-color: #5f6560;
+  border-color: #5f6560;
+}
+
+.modal-buttons-container .give-rating-btn {
+  color: #1b1b1b;
+  background-color: transparent;
+  border: 1px solid #1b1b1b;
+}
+
+.modal-buttons-container .give-rating-btn:hover,
+.modal-buttons-container .give-rating-btn:focus {
+  border-color: #7e847f;
+  color: #7e847f;
+}
+
+.modal-buttons-container .add-favorite-btn .icon-heart {
+  fill: transparent;
+  stroke: #f6f6f6;
+}
