@@ -1,3 +1,8 @@
+.exercises-category-form-container {
+}
+
+/* стилі форми для запиту */
+
 .exercices-form {
   display: block;
   margin-bottom: 40px;
@@ -64,6 +69,8 @@
   stroke: var(--c-primary);
 }
 
+/* стилі для карти товару */
+
 .exercices-card {
   background: #fff;
   padding: 16px;
@@ -129,26 +136,24 @@
 }
 
 .card-button {
-  text-wrap: nowrap;
-  display: inline-block;
+  position: relative;
+  text-align: left;
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.29em;
   color: var(--c-primary);
   background: #fff;
-  width: 32px;
+  width: 54px;
   height: 18px;
   border: none;
   outline: none;
 }
 
-.card-button-svg {
-  background: #fff;
-  width: 14px;
-  height: 14px;
-  border: none;
-  outline: none;
+.card-search-svg {
+  position: absolute;
+  top: 2px;
+  right: 0px;
 }
 
 .card-bodi {
@@ -194,3 +199,5 @@
   line-height: 150%;
   color: var(--c-primary);
 }
+
+/* стилі для планшета */
