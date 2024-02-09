@@ -1,19 +1,14 @@
 .quote-favorites {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
+  padding-top: 96px;
+  padding-bottom: 10px;
 }
 
 .container-quote-favorites {
   max-width: 280px;
-  margin: 0 auto;
-  padding-top: 96px;
 }
 
 .quote-of-the-day-favorites {
   background-color: #7e847f;
-  height: 272px;
   border-radius: 30px;
   padding: 20px;
 }
@@ -21,6 +16,7 @@
 .quote-favorites-header {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .quote-favorites-svg-1 {
@@ -42,20 +38,24 @@
   margin-left: auto;
 }
 
+.quote-text-favorites-container {
+  margin-left: 46px;
+  margin-top: 14px;
+}
+
 .quote-favorites-text {
+  font-weight: 400;
   font-size: 14px;
   line-height: 1.29;
   color: rgba(246, 246, 246, 0.6);
-  margin-left: 44px;
-  margin-right: 10px;
 }
 
 .quote-favorites-author {
   font-weight: 500;
   font-size: 16px;
+  line-height: 1.5;
   color: #f6f6f6;
-  margin-top: 20px;
-  margin-left: 44px;
+  margin-top: 18px;
 }
 
 .quote-favorites-picture {
@@ -101,6 +101,7 @@
 }
 
 .quote-110min-live {
+  font-weight: 400;
   font-size: 14px;
   line-height: 1.29;
   color: rgba(27, 27, 27, 0.6);
@@ -119,12 +120,8 @@
     margin-right: 12px;
   }
 
-  .quote-favorites-text {
-    margin-left: 48px;
-  }
-
   .quote-favorites-author {
-    margin-left: 48px;
+    margin-top: 14px;
   }
 
   .quote-110min-container {
@@ -134,47 +131,49 @@
 }
 
 @media screen and (min-width: 768px) {
+  .quote-favorites {
+    padding-top: 180px;
+    padding-bottom: 8px;
+  }
+
   .container-quote-favorites {
     max-width: 736px;
-    margin-bottom: 8px;
     display: flex;
     flex-wrap: wrap;
-    padding-top: 180px;
   }
 
   .quote-of-the-day-favorites {
-    height: 302px;
     border-radius: 50px;
-    padding: 32px 80px 64px 80px;
-    margin-bottom: 16px;
+    padding: 32px 80px 64px;
   }
 
   .quote-favorites-svg-1 {
     margin-right: 16px;
-    margin-top: 32px;
   }
 
   .quote-favorites-header-title {
     font-size: 24px;
     line-height: 1.33;
-    margin-top: 32px;
-    margin-bottom: 16px;
   }
 
   .quote-favorites-header-svg-2 {
     width: 48px;
     height: 48px;
+    margin-bottom: 16px;
+  }
+
+  .quote-text-favorites-container {
+    margin-left: 50px;
+    margin-top: 21px;
   }
 
   .quote-favorites-text {
     font-size: 16px;
     line-height: 1.5;
-    margin-left: 48px;
   }
 
   .quote-favorites-author {
     margin-top: 25px;
-    margin-left: 48px;
   }
 
   .quote-favorites-picture {
@@ -210,8 +209,8 @@
 
   .quote-110min-text {
     font-weight: 500;
-    font-size: 20px;
-    line-height: 1;
+    font-size: 24px;
+    line-height: 1.33;
     color: #1b1b1b;
   }
 
@@ -223,37 +222,42 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .quote-favorites {
+    padding-top: 156px;
+    padding-bottom: 8px;
+  }
+
   .container-quote-favorites {
     max-width: 1408px;
     display: flex;
     flex-direction: row;
     align-self: stretch;
-    padding-top: 156px;
-    margin-bottom: 8px;
   }
 
   .quote-of-the-day-favorites {
     border-radius: 50px;
-    padding: 32px 64px 64px 64px;
+    padding: 32px 64px 64px;
     width: 704px;
-    height: 302px;
   }
 
   .quote-favorites-svg-1 {
     margin-right: 16px;
-    margin-top: 32px;
   }
 
   .quote-favorites-header-title {
     font-size: 24px;
     line-height: 1.33;
-    margin-top: 32px;
-    margin-bottom: 16px;
   }
 
   .quote-favorites-header-svg-2 {
     width: 48px;
     height: 48px;
+    margin-bottom: 16px;
+  }
+
+  .quote-text-favorites-container {
+    margin-left: 50px;
+    margin-top: 21px;
   }
 
   .quote-favorites-text {
@@ -263,7 +267,6 @@
 
   .quote-favorites-author {
     margin-top: 25px;
-    margin-left: 48px;
   }
 
   .quote-favorites-picture {
@@ -295,8 +298,8 @@
 
   .quote-110min-text {
     font-weight: 500;
-    font-size: 20px;
-    line-height: 1;
+    font-size: 24px;
+    line-height: 1.33;
     color: #1b1b1b;
   }
 
