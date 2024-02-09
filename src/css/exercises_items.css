@@ -154,6 +154,8 @@
   position: absolute;
   top: 2px;
   right: 0px;
+  fill: var(--c-primary);
+  stroke: var(--c-primary);
 }
 
 .card-bodi {
