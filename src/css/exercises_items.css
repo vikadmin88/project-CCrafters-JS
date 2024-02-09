@@ -1,0 +1,196 @@
+.exercices-form {
+  display: block;
+  margin-bottom: 40px;
+  max-width: 295px;
+  max-height: 42px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.exercices-form-input {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 129%;
+  color: var(--c-primary);
+  border: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  padding: 12px 14px;
+  outline: none;
+  background: var(--c-main);
+}
+
+.exercices-form-input::placeholder {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--c-primary);
+}
+
+.exercices-form-btn-container {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  margin: 0;
+}
+
+.exercices-form-search-btn {
+  width: 18px;
+  height: 18px;
+  border: none;
+  background: var(--c-main);
+}
+
+.form-search-svg {
+  fill: var(--c-main);
+  stroke: var(--c-primary);
+}
+
+.exercices-form-clear-btn {
+  width: 18px;
+  height: 18px;
+  border: none;
+  background: var(--c-main);
+  display: none;
+}
+
+.form-clear-svg {
+  stroke: var(--c-primary);
+}
+
+.exercices-card {
+  background: #fff;
+  padding: 16px;
+  max-width: 295px;
+  max-height: 165px;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.card-header-container {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-rating-container {
+  display: flex;
+  gap: 2px;
+}
+
+.card-rating-svg {
+  fill: #eea10c;
+}
+
+.card-rating {
+  color: var(--c-primary);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'DM Sans';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5em;
+}
+
+.card-category {
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--c-main);
+  border-radius: 15px;
+  padding: 6px 8px;
+  width: 76px;
+  height: 26px;
+  background: #7e847f;
+}
+
+.card-button-list {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  height: 18px;
+  text-align: center;
+}
+
+.card-button {
+  text-wrap: nowrap;
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29em;
+  color: var(--c-primary);
+  background: #fff;
+  width: 32px;
+  height: 18px;
+  border: none;
+  outline: none;
+}
+
+.card-button-svg {
+  background: #fff;
+  width: 14px;
+  height: 14px;
+  border: none;
+  outline: none;
+}
+
+.card-bodi {
+  max-width: 109px;
+  max-height: 24px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card-bodi-svg {
+  stroke: #7e847f;
+  fill: #7e847f;
+}
+
+.card-name {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  color: var(--c-primary);
+}
+
+.card-inform-list {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: rgba(27, 27, 27, 0.4);
+  display: flex;
+  column-gap: 16px;
+  row-gap: 6px;
+  flex-wrap: wrap;
+}
+
+.card-inform-item-span {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: var(--c-primary);
+}
