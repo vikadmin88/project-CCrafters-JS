@@ -1,9 +1,15 @@
 .open-card {
-  max-width: 335px;
+  /* width: 335px; */
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container-exercises-item {
   max-height: 1778px;
   min-height: 760px;
   height: 100%;
-  width: 100%;
 }
 
 .exercises-category-form-container {
@@ -173,6 +179,8 @@
   right: 0px;
   fill: none;
   stroke: var(--c-primary);
+  width: 14px;
+  height: 14px;
 }
 
 /* стилі для середньої частини картки */
@@ -189,8 +197,8 @@
 }
 
 .card-bodi-svg {
-  stroke: none;
-  fill: #7e847f;
+  fill: #fff;
+  stroke: #7e847f;
 }
 
 .card-name {
@@ -226,4 +234,84 @@
 /* стилі для планшета */
 
 @media screen and (min-width: 768px) {
+  .container-exercises-item {
+    height: 1091px;
+  }
+
+  .exercises-category-form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .exercices-form {
+    width: 246px;
+    max-height: 44px;
+    height: 100%;
+  }
+
+  .open-card {
+    height: 720px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 14px;
+    row-gap: 20px;
+    align-content: flex-start;
+  }
+
+  .exercices-card {
+    max-width: calc((100% - 14px) / 2);
+  }
+
+  .card-category {
+    width: 76px;
+    height: 26px;
+    padding: 7px 8px;
+  }
+
+  .card-button {
+    font-size: 16px;
+    width: 61px;
+    height: 24px;
+  }
+
+  .card-search-svg {
+    width: 16px;
+    height: 16px;
+    top: 4px;
+  }
+
+  .card-name {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container-exercises-item {
+    height: 827px;
+  }
+
+  .open-card {
+    height: 479px;
+  }
+
+  .exercices-form {
+    width: 273px;
+    height: 48px;
+  }
+
+  .exercices-card {
+    max-width: calc((100% - 40px) / 3);
+    height: 141px;
+  }
+
+  .card-category {
+    width: 76px;
+    height: 26px;
+  }
+
+  .card-button {
+    width: 61px;
+    height: 24px;
+  }
 }
