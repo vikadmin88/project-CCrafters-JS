@@ -15,4 +15,4 @@ var l=(e,t,r)=>{if(!t.has(e))throw TypeError("Cannot "+r)};var o=(e,t,r)=>(l(e,t
         `;for(let t=1;t<s.maxPage;t++)e+=`
         <button type="button" class="exercises-subcategory-page-btn">${t+1}</button>
       `;i.pagescategory.innerHTML=e,i.pagescategory.classList.add("is-visible"),i.pagescategory.addEventListener("click",T)}}function T(e){e.target.nodeName==="BUTTON"&&([...e.currentTarget.children].find(t=>t.classList.contains("exercises-subcategory-page-btn-active")).classList.remove("exercises-subcategory-page-btn-active"),e.target.classList.add("exercises-subcategory-page-btn-active"),s.page=e.target.textContent,u())}
-//# sourceMappingURL=exercises-b226c681.js.map
+//# sourceMappingURL=exercises_category_filter-b226c681.js.map
