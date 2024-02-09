@@ -1,4 +1,13 @@
+.open-card {
+  max-width: 335px;
+  max-height: 1778px;
+  min-height: 760px;
+  height: 100%;
+  width: 100%;
+}
+
 .exercises-category-form-container {
+  margin-bottom: 40px;
 }
 
 /* стилі форми для запиту */
@@ -49,12 +58,13 @@
   width: 18px;
   height: 18px;
   border: none;
+  outline: none;
   background: var(--c-main);
 }
 
 .form-search-svg {
-  fill: var(--c-main);
-  stroke: var(--c-primary);
+  fill: var(--c-primary);
+  stroke: none;
 }
 
 .exercices-form-clear-btn {
@@ -62,7 +72,8 @@
   height: 18px;
   border: none;
   background: var(--c-main);
-  display: none;
+  outline: none;
+  /* display: none; */
 }
 
 .form-clear-svg {
@@ -148,15 +159,23 @@
   height: 18px;
   border: none;
   outline: none;
+  transition: scale 250ms ease-in-out;
+}
+
+.card-button:hover,
+.card-button:focus {
+  scale: 1.1;
 }
 
 .card-search-svg {
   position: absolute;
   top: 2px;
   right: 0px;
-  fill: var(--c-primary);
+  fill: none;
   stroke: var(--c-primary);
 }
+
+/* стилі для середньої частини картки */
 
 .card-bodi {
   max-width: 109px;
@@ -170,7 +189,7 @@
 }
 
 .card-bodi-svg {
-  stroke: #7e847f;
+  stroke: none;
   fill: #7e847f;
 }
 
@@ -181,6 +200,8 @@
   line-height: 100%;
   color: var(--c-primary);
 }
+
+/* стилі для описової частини картки */
 
 .card-inform-list {
   font-family: 'DM Sans', sans-serif;
@@ -203,3 +224,6 @@
 }
 
 /* стилі для планшета */
+
+@media screen and (min-width: 768px) {
+}
