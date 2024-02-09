@@ -13,7 +13,7 @@
 .quote-of-the-day {
   background-color: #7e847f;
   border-radius: 30px;
-  padding: 40px 10px;
+  padding: 20px;
 }
 
 .quote-header {
@@ -40,6 +40,11 @@
   margin-left: auto;
 }
 
+.quote-text-container {
+  margin-left: 46px;
+  margin-top: 14px;
+}
+
 .quote-text {
   font-size: 14px;
   line-height: 1.29;
@@ -50,20 +55,25 @@
   font-weight: 500;
   font-size: 16px;
   color: #f6f6f6;
-  margin-top: 14px;
-  margin-left: 20px;
+  margin-top: 18px;
 }
 
 .quote-picture {
   border-radius: 30px;
-  background-color: #f6f6f6;
+  background-image: url('../img/quote-img/mobile-fonts.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 272px;
 }
 
-.quote-picture-img {
-  border-radius: 30px;
-  display: block;
-  width: 100%;
-  height: auto;
+@media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .quote-picture {
+    background-image: url('../img/quote-img/mobile-fonts-2x.jpg');
+  }
 }
 
 @media screen and (min-width: 375px) {
@@ -78,23 +88,16 @@
   .quote-header-svg-1 {
     margin-right: 12px;
   }
-
-  .quote-text {
-    margin-left: 48px;
-  }
-
-  .quote-author {
-    margin-left: 48px;
-  }
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .container-quote {
-    max-width: 728px;
+    max-width: 736px;
     margin: 8px auto;
   }
 
   .quote-of-the-day {
+    height: 302px;
     border-radius: 50px;
     padding: 32px 80px 64px 80px;
   }
@@ -129,16 +132,23 @@
 
   .quote-picture {
     border-radius: 50px;
+    background-image: url('../img/quote-img/tablet-fonts.jpg');
+    height: 302px;
   }
 
-  .quote-picture-img {
-    border-radius: 50px;
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .quote-picture {
+      background-image: url('../img/quote-img/tablet-fonts-2x.jpg');
+    }
   }
 }
 
 @media screen and (min-width: 1440px) {
   .container-quote {
-    max-width: 1400px;
+    max-width: 1408px;
     display: flex;
     justify-content: center;
     margin: 8px auto;
@@ -148,6 +158,7 @@
     flex: 1;
     border-radius: 50px;
     padding: 32px 64px 64px 64px;
+    height: 302px;
   }
 
   .quote-header-svg-1 {
@@ -179,9 +190,17 @@
 
   .quote-picture {
     border-radius: 50px;
+    background-image: url('../img/quote-img/desktop-fonts.jpg');
+    width: 704px;
+    height: 302px;
   }
 
-  .quote-picture-img {
-    border-radius: 50px;
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .quote-favorites-picture {
+      background-image: url('../img/quote-img/desktop-fonts-2x.jpg');
+    }
   }
-}
+} */
