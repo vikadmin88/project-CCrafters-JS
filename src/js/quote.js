@@ -59,4 +59,5 @@ function updateQuote() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', updateQuote);
+// document.addEventListener('DOMContentLoaded', updateQuote);
+updateQuote();
