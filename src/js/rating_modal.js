@@ -82,3 +82,18 @@ function showModal() {
 function closeModal() {
   modal.style.display = 'none';
 }
+document.querySelectorAll('.star').forEach(item => {
+  item.addEventListener('click', event => {
+    const stars = Array.from(item.parentNode.children);
+    const index = stars.indexOf(item);
+    
+    // Встановлюємо активний клас для всіх зірок, які менше або дорівнюють поточній
+    stars.forEach((star, i) => {
+      star.classList.toggle('active', i <= index);
+    });
+
+    // Оновлюємо значення рейтингу
+    const ratingValue = document.querySelector('.rating-value');
+    ratingValue.textContent = (index + 1); 
+  });
+});

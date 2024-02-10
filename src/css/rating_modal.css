@@ -6,27 +6,33 @@
     justify-content: center;
     border: 1px solid #ccc;
     padding: 20px;
-    max-width: 400px;
-    border-radius: 10px;
+    max-width: 335px;
+    max-height: 357px;
+    border-radius: 20px;
     transition: all 0.3s ease;
 margin: 0 auto;
 padding-bottom: 50px;
 }
-h3 {
+h4 {
     margin-top: 5px;
+    margin-bottom: 15px;
     align-self: flex-start;
     color:#ccc;
 }
 .close {
+    color:darkgray;
+    margin-top: 10px;
     align-self: flex-end;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
 }
+
 .rating-value {
     margin-right: 10px;
 }
 .rating-stars {
+    display: flex;
     color:#ccc;
     align-self: flex-start;
     margin-bottom: 30px;
@@ -37,20 +43,30 @@ h3 {
     padding: 12px 246px 12px 14px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 5px;
     
 }
 
 #comment {
     width: 295px;
-    height: 42px;
-    padding: 12px 246px 12px 14px;
+    height: 80px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px;
 }
+.stars {
+    display: flex;}
+
+.star {
+    margin-right: 5px;
+    font-size: 35px;
+    color:#ccc;
+    cursor: pointer;
+}
+.star.active {
+    color: gold;}
 .stars .star {
     font-size: 30px;
     cursor: pointer;
