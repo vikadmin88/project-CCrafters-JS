@@ -244,6 +244,10 @@
     height: 44px;
   }
 
+  .exercices-form-btn-container {
+    bottom: 13px;
+  }
+
   .open-card {
     height: 720px;
     flex-direction: row;
@@ -294,6 +298,10 @@
   .exercices-form {
     width: 273px;
     height: 48px;
+  }
+
+  .exercices-form-btn-container {
+    bottom: 15px;
   }
 
   .exercices-card {
