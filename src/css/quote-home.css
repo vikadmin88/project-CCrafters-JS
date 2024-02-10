@@ -4,7 +4,7 @@
 }
 
 .container-quote {
-  max-width: 280px;
+  min-width: 280px;
 }
 
 .quote-of-the-day {
