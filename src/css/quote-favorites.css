@@ -10,17 +10,19 @@
 .quote-of-the-day-favorites {
   background-color: #7e847f;
   border-radius: 30px;
-  padding: 20px;
+  padding: 40px 20px;
+
+  position: relative;
 }
 
 .quote-favorites-header {
   display: flex;
-  justify-content: center;
   align-items: center;
+
+  gap: 12px;
 }
 
 .quote-favorites-svg-1 {
-  margin-right: 10px;
   width: 34px;
   height: 32px;
 }
@@ -35,7 +37,10 @@
 .quote-favorites-header-svg-2 {
   width: 28px;
   height: 28px;
-  margin-left: auto;
+
+  position: absolute;
+  top: 40px;
+  right: 20px;
 }
 
 .quote-text-favorites-container {
@@ -55,7 +60,7 @@
   font-size: 16px;
   line-height: 1.5;
   color: #f6f6f6;
-  margin-top: 18px;
+  margin-top: 14px;
 }
 
 .quote-favorites-picture {
@@ -64,7 +69,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 272px;
+  min-height: 272px;
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -78,11 +83,13 @@
 
 .quote-110min-container {
   background-color: #ffffff;
-  width: 280px;
-  height: 272px;
+  width: 100%;
+  min-height: 272px;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   border-radius: 30px;
 }
 
@@ -107,25 +114,6 @@
   color: rgba(27, 27, 27, 0.6);
 }
 
-@media screen and (min-width: 375px) {
-  .quote-of-the-day-favorites {
-    padding: 40px 20px;
-  }
-
-  .quote-favorites-svg-1 {
-    margin-right: 12px;
-  }
-
-  .quote-favorites-author {
-    margin-top: 14px;
-  }
-
-  .quote-110min-container {
-    width: 335px;
-    height: 272px;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .quote-favorites {
     padding-top: 180px;
@@ -139,11 +127,7 @@
 
   .quote-of-the-day-favorites {
     border-radius: 50px;
-    padding: 32px 80px 64px;
-  }
-
-  .quote-favorites-svg-1 {
-    margin-right: 16px;
+    padding: 64px 80px;
   }
 
   .quote-favorites-header-title {
@@ -154,12 +138,14 @@
   .quote-favorites-header-svg-2 {
     width: 48px;
     height: 48px;
-    margin-bottom: 16px;
+
+    top: 32px;
+    right: 80px;
   }
 
   .quote-text-favorites-container {
     margin-left: 50px;
-    margin-top: 21px;
+    margin-top: 16px;
   }
 
   .quote-favorites-text {
@@ -174,8 +160,8 @@
   .quote-favorites-picture {
     border-radius: 50px;
     background-image: url('../img/quote-img/tablet-favorites-fonts.jpg');
-    width: 368px;
-    height: 302px;
+    width: 50%;
+    min-height: 302px;
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -188,38 +174,20 @@
   }
 
   .quote-110min-container {
-    background-color: #ffffff;
-    width: 368px;
-    height: 302px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 50%;
+    min-height: 302px;
     border-radius: 50px;
   }
 
-  .quote-110min-svg {
-    width: 20px;
-    height: 20px;
-  }
-
   .quote-110min-text {
-    font-weight: 500;
     font-size: 24px;
     line-height: 1.33;
-    color: #1b1b1b;
-  }
-
-  .quote-110min-live {
-    font-size: 14px;
-    line-height: 1.29;
-    color: rgba(27, 27, 27, 0.6);
   }
 }
 
 @media screen and (min-width: 1440px) {
   .quote-favorites {
     padding-top: 156px;
-    padding-bottom: 8px;
   }
 
   .container-quote-favorites {
@@ -229,13 +197,8 @@
   }
 
   .quote-of-the-day-favorites {
-    border-radius: 50px;
-    padding: 32px 64px 64px;
-    width: 704px;
-  }
-
-  .quote-favorites-svg-1 {
-    margin-right: 16px;
+    padding: 64px;
+    width: 50%;
   }
 
   .quote-favorites-header-title {
@@ -246,28 +209,13 @@
   .quote-favorites-header-svg-2 {
     width: 48px;
     height: 48px;
-    margin-bottom: 16px;
-  }
 
-  .quote-text-favorites-container {
-    margin-left: 50px;
-    margin-top: 21px;
-  }
-
-  .quote-favorites-text {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  .quote-favorites-author {
-    margin-top: 25px;
+    right: 64px;
   }
 
   .quote-favorites-picture {
-    border-radius: 50px;
     background-image: url('../img/quote-img/desktop-favorites-fonts.jpg');
-    width: 352px;
-    height: 302px;
+    width: 25%;
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -280,26 +228,6 @@
   }
 
   .quote-110min-container {
-    width: 352px;
-    height: 302px;
-    border-radius: 50px;
-  }
-
-  .quote-110min-svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .quote-110min-text {
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 1.33;
-    color: #1b1b1b;
-  }
-
-  .quote-110min-live {
-    font-size: 14px;
-    line-height: 1.29;
-    color: rgba(27, 27, 27, 0.6);
+    width: 25%;
   }
 }

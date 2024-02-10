@@ -11,16 +11,18 @@
   background-color: #7e847f;
   border-radius: 30px;
   padding: 20px;
+
+  position: relative;
 }
 
 .quote-header {
   display: flex;
-  justify-content: center;
   align-items: center;
+
+  gap: 12px;
 }
 
 .quote-header-svg-1 {
-  margin-right: 10px;
   width: 34px;
   height: 32px;
 }
@@ -35,7 +37,10 @@
 .quote-header-svg-2 {
   width: 28px;
   height: 28px;
-  margin-left: auto;
+
+  position: absolute;
+  top: 40px;
+  right: 20px;
 }
 
 .quote-text-container {
@@ -64,7 +69,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 272px;
+  min-height: 272px;
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -81,9 +86,6 @@
     padding: 40px 20px;
   }
 
-  .quote-header-svg-1 {
-    margin-right: 12px;
-  }
   .quote-author {
     margin-top: 14px;
   }
@@ -97,11 +99,11 @@
 
   .quote-of-the-day {
     border-radius: 50px;
-    padding: 32px 80px 64px;
+    padding: 64px 80px;
   }
 
-  .quote-header-svg-1 {
-    margin-right: 16px;
+  .quote-header {
+    gap: 16px;
   }
 
   .quote-header-title {
@@ -112,12 +114,14 @@
   .quote-header-svg-2 {
     width: 48px;
     height: 48px;
-    margin-bottom: 16px;
+
+    top: 32px;
+    right: 80px;
   }
 
   .quote-text-container {
     margin-left: 50px;
-    margin-top: 21px;
+    margin-top: 16px;
   }
 
   .quote-text {
@@ -132,7 +136,7 @@
   .quote-picture {
     border-radius: 50px;
     background-image: url('../img/quote-img/tablet-fonts.jpg');
-    height: 302px;
+    min-height: 302px;
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -157,13 +161,9 @@
   }
 
   .quote-of-the-day {
-    flex: 1;
+    width: 50%;
     border-radius: 50px;
-    padding: 32px 64px 64px;
-  }
-
-  .quote-header-svg-1 {
-    margin-right: 16px;
+    padding: 64px;
   }
 
   .quote-header-title {
@@ -174,7 +174,8 @@
   .quote-header-svg-2 {
     width: 48px;
     height: 48px;
-    margin-bottom: 16px;
+
+    right: 64px;
   }
 
   .quote-text-container {
@@ -194,15 +195,14 @@
   .quote-picture {
     border-radius: 50px;
     background-image: url('../img/quote-img/desktop-fonts.jpg');
-    width: 704px;
-    height: 302px;
+    width: 50%;
   }
 
   @media (min-device-pixel-ratio: 2),
     (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    .quote-favorites-picture {
+    .quote-picture {
       background-image: url('../img/quote-img/desktop-fonts-2x.jpg');
     }
   }
