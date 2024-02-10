@@ -209,7 +209,7 @@
     (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    .quote-favorites-picture {
+    .quote-picture {
       background-image: url('../img/quote-img/desktop-fonts-2x.jpg');
     }
   }
