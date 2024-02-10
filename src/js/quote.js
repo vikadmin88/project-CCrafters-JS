@@ -8,8 +8,6 @@
 //   .then(data => console.log(data))
 //   .catch(error => notify('error', `API error: ${error}`));
 
-
-
 import { API_QUOTE_POINT, api } from './api.js';
 import { notify } from './notifier.js';
 
@@ -19,22 +17,37 @@ function getCurrentDate() {
 }
 
 function updateQuote() {
-  const storedQuote = localStorage.getItem('quoteOfTheDay');
+  const storedData = JSON.parse(localStorage.getItem('quoteOfTheDay'));
   const storedDate = localStorage.getItem('quoteDate');
   const currentDate = getCurrentDate();
 
-  if (storedQuote && storedDate === currentDate) {
-    document.querySelector('.quote-text').textContent = storedQuote;
-    document.querySelector('quote-favorites-text').textContent = storedQuote;
+  if (
+    storedData &&
+    storedData.quote &&
+    storedData.author &&
+    storedDate === currentDate
+  ) {
+    document.querySelector('.quote-text').textContent = storedData.quote;
+    document.querySelector('.quote-author').textContent = storedData.author;
+    document.querySelector('.quote-favorites-text').textContent =
+      storedData.quote;
+    document.querySelector('.quote-favorites-author').textContent =
+      storedData.author;
   } else {
     api
       .get(API_QUOTE_POINT, {})
-      .then(quote => {
-        if (quote) {
-          localStorage.setItem('quoteOfTheDay', quote);
+      .then(({ quote, author }) => {
+        if (quote && author) {
+          localStorage.setItem(
+            'quoteOfTheDay',
+            JSON.stringify({ quote, author })
+          );
           localStorage.setItem('quoteDate', currentDate);
           document.querySelector('.quote-text').textContent = quote;
-          document.querySelector('quote-favorites-text').textContent = quote;
+          document.querySelector('.quote-author').textContent = author;
+          document.querySelector('.quote-favorites-text').textContent = quote;
+          document.querySelector('.quote-favorites-author').textContent =
+            author;
         } else {
           console.log('Не вдалося оновити через помилку.');
         }
