@@ -8,16 +8,6 @@ import {
 } from './api.js';
 import { notify } from './notifier.js';
 
-import {
-  API_BASE_URL,
-  API_FILTER_POINT,
-  API_EXERCISES_POINT,
-  API_SUBSCRIPTION_POINT,
-  API_QUOTE_POINT,
-  api,
-} from './api.js';
-import { notify } from './notifier.js';
-
 function getCurrentDate() {
   const date = new Date();
   return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
@@ -48,3 +38,5 @@ function updateQuote() {
       });
   }
 }
+
+document.addEventListener('DOMContentLoaded', updateQuote);
