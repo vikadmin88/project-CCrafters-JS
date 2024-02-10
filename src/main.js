@@ -3,7 +3,6 @@
 import('./js/exercises_category_filter.js');
 import('./js/exercises_items.js');
 import('./js/exercise_modal.js');
-import('./js/favorites.js');
 import('./js/footer.js');
 import('./js/quote.js');
 import('./js/mobile_menu.js');
