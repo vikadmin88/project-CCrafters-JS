@@ -4,7 +4,7 @@
 }
 
 .container-quote-favorites {
-  max-width: 280px;
+  min-width: 280px;
 }
 
 .quote-of-the-day-favorites {
@@ -108,10 +108,6 @@
 }
 
 @media screen and (min-width: 375px) {
-  .container-quote-favorites {
-    max-width: 335px;
-  }
-
   .quote-of-the-day-favorites {
     padding: 40px 20px;
   }
@@ -137,7 +133,6 @@
   }
 
   .container-quote-favorites {
-    max-width: 736px;
     display: flex;
     flex-wrap: wrap;
   }
@@ -228,7 +223,6 @@
   }
 
   .container-quote-favorites {
-    max-width: 1408px;
     display: flex;
     flex-direction: row;
     align-self: stretch;

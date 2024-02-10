@@ -77,10 +77,6 @@
 }
 
 @media screen and (min-width: 375px) {
-  .container-quote {
-    max-width: 335px;
-  }
-
   .quote-of-the-day {
     padding: 40px 20px;
   }
@@ -97,10 +93,6 @@
   .quote-home {
     padding-top: 8px;
     padding-bottom: 8px;
-  }
-
-  .container-quote {
-    max-width: 736px;
   }
 
   .quote-of-the-day {
@@ -160,7 +152,6 @@
   }
 
   .container-quote {
-    max-width: 1408px;
     display: flex;
     justify-content: center;
   }
