@@ -44,6 +44,10 @@
 }
 
 .quote-favorites-text {
+  max-height: 110px; /**/
+  overflow-y: auto; /**/
+  scrollbar-color:  #f6f6f6  #f6f6f6; /**/
+  word-wrap: break-word; /**/
   font-weight: 400;
   font-size: 14px;
   line-height: 1.29;
@@ -163,6 +167,7 @@
   }
 
   .quote-favorites-text {
+    max-height: 106px; /**/
     font-size: 16px;
     line-height: 1.5;
   }
@@ -255,6 +260,7 @@
   }
 
   .quote-favorites-text {
+    max-height: 77px;
     font-size: 16px;
     line-height: 1.5;
   }
