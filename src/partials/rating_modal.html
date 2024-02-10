@@ -1,17 +1,33 @@
 <div id="myModal" class="rating-modal">
-  <div class="modal-content">
+  <form class="modal-content">
     <div class="close">×</div>
-    <h4>Rating</h4>
-    <div class="rating-stars">
-      <span class="rating-value">0.0</span>
-      <div class="rating">
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-      </div>
-      <!-- <svg class="star" width="20" height="20">
+    <div class="rating-stars"></div>
+    <p>Rating</p>
+    <span class="rating-value">0.0</span>
+    <div class="rating">
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+    </div>
+
+    <div>
+      <input type="email" id="email" placeholder="Email" />
+    </div>
+    <div>
+      <textarea
+        id="comment"
+        placeholder="Your comment"
+        cols="30"
+        rows="5"
+      ></textarea>
+    </div>
+    <div><button id="sendBtn">Send</button></div>
+  </form>
+</div>
+
+<!-- <svg class="star" width="20" height="20">
         <use href="../src/img/icons.svg#start"></use>
       </svg>
       <svg class="star" width="20" height="20">
@@ -26,18 +42,3 @@
       <svg class="star" width="20" height="20">
         <use href="/src/img/icons.svg#start"></use>
       </svg> -->
-    </div>
-    <div>
-      <input type="email" id="email" placeholder="Email" />
-    </div>
-    <div>
-      <textarea
-        id="comment"
-        placeholder="Your comment"
-        cols="30"
-        rows="5"
-      ></textarea>
-    </div>
-    <div><button id="sendBtn">Send</button></div>
-  </div>
-</div>
