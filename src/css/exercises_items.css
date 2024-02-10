@@ -12,19 +12,13 @@
   height: 100%;
 }
 
-.exercises-category-form-container {
-  margin-bottom: 40px;
-}
-
 /* стилі форми для запиту */
 
 .exercices-form {
   display: block;
   margin-bottom: 40px;
-  max-width: 295px;
-  max-height: 42px;
-  width: 100%;
-  height: 100%;
+  width: 295px;
+  height: 42px;
   position: relative;
 }
 
@@ -69,8 +63,8 @@
 }
 
 .form-search-svg {
-  fill: var(--c-primary);
-  stroke: none;
+  fill: none;
+  stroke: var(--c-primary);
 }
 
 .exercices-form-clear-btn {
@@ -79,7 +73,7 @@
   border: none;
   background: var(--c-main);
   outline: none;
-  /* display: none; */
+  display: none;
 }
 
 .form-clear-svg {
@@ -197,8 +191,8 @@
 }
 
 .card-bodi-svg {
-  fill: #fff;
-  stroke: #7e847f;
+  background-color: #7e847f;
+  border-radius: 50%;
 }
 
 .card-name {
@@ -242,12 +236,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    align-self: center;
   }
 
   .exercices-form {
     width: 246px;
-    max-height: 44px;
-    height: 100%;
+    height: 44px;
   }
 
   .open-card {
@@ -293,6 +287,8 @@
 
   .open-card {
     height: 479px;
+    column-gap: 20px;
+    row-gap: 28px;
   }
 
   .exercices-form {
