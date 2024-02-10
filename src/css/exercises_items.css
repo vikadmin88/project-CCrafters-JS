@@ -180,7 +180,7 @@
 /* стилі для середньої частини картки */
 
 .card-bodi {
-  max-width: 109px;
+  max-width: 256px;
   max-height: 24px;
   height: 100%;
   width: 100%;
@@ -188,6 +188,10 @@
   gap: 16px;
   align-items: center;
   margin-bottom: 16px;
+  /* text-overflow: ellipsis; */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-bodi-svg {
@@ -196,6 +200,7 @@
 }
 
 .card-name {
+  width: 100%;
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 20px;
@@ -307,6 +312,11 @@
   .exercices-card {
     max-width: calc((100% - 40px) / 3);
     height: 141px;
+  }
+
+  .card-name {
+    text-wrap: nowrap;
+    width: 225px;
   }
 
   .card-category {

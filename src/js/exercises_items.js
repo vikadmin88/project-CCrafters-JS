@@ -3,7 +3,7 @@ import { refs } from './exercises_category_filter.js';
 
 const paramsCard = {
   bodypart: '',
-  muscles: '',
+  muscles: 'abductors',
   equipment: '',
   keyword: '',
   page: 1,
@@ -17,15 +17,13 @@ function searchCard(e) {
   //     return;
   //   }
   e.preventDefault();
-  paramsCard.muscles = e.target.textContent;
+  paramsCard.muscles = e.target.textContent.toLowerCase();
 
   getSubcategoryExercises();
 }
 
 function createMarkupCard(results) {
-  
-const 
-  results
+  const arr = results
     .map(
       ({
         bodyPart,
@@ -74,16 +72,16 @@ const
           
         </li>`
     )
-        .join('');
-    
-    
+    .join('');
+
+  refs.subcategory.innerHTML = arr;
 }
 
 async function getSubcategoryExercises() {
   const http = await api
     .get(API_EXERCISES_POINT, paramsCard)
     .then(({ page, results }) => {
-      console.log(results);
+      createMarkupCard(results);
     })
     .catch(error => console.log(error));
 }
