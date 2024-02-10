@@ -46,7 +46,7 @@
 .quote-text {
   max-height: 110px; 
   overflow-y: auto; 
-  scrollbar-color:  #f6f6f6  #f6f6f6; 
+  scrollbar-color:  #f6f6f6  #e3dede; 
   word-wrap: break-word; 
   font-weight: 400;
   font-size: 14px;
