@@ -1,7 +1,5 @@
 .footer {
-    /* padding-left: 20px;
-    padding-right: 20px; */
-    margin-bottom: 20px;
+    padding-bottom: 20px;
     padding-top: 10px;
     color: rgb(246, 246, 246);
     letter-spacing: -0.02em;
@@ -38,6 +36,11 @@
     align-items: center;
     gap: 12px;
     margin-bottom: 40px;
+    /* padding: 8px;
+    width: 36px;
+    height: 36px; 
+    border-radius: 10px;
+    border: 1px solid rgba(246, 246, 246, 0.2);*/
 }
 
 .footer-social-item {
@@ -45,8 +48,12 @@
     align-items: center;
     justify-content: center;
 
+    padding: 8px;
+    width: 36px;
+    height: 36px;
     border-radius: 10px;
     border: 1px solid rgba(246, 246, 246, 0.2);
+
     transition-property: border;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -185,6 +192,7 @@
     .footer-top {
         display: flex;
         flex-wrap: wrap;
+        margin-bottom: 120px;
     }
 
     .footer-form {
@@ -197,6 +205,16 @@
         line-height: 1;
         margin-bottom: 30px;
 
+    }
+
+    .footer-social-links {
+        margin-bottom: 0px;
+    }
+
+    .footer-social-item {
+        padding: 8px;
+        width: 44px;
+        height: 44px;
     }
 
     .footer-social-icon {
@@ -213,7 +231,7 @@
         font-size: 54px;
         max-width: 345px;
         margin-bottom: 32px;
-
+        margin-left: 132px;
         font-weight: 400;
         font-size: 54px;
         line-height: 93%;
@@ -222,8 +240,9 @@
     }
 
     .footer-subscribe {
-        margin-left: auto;
-        margin-bottom: 120px;
+        min-width: 352px;
+        /* margin-left: auto; */
+        /* margin-bottom: 120px; */
     }
 
     .subscribe-title {
@@ -286,7 +305,7 @@
     .footer-top {
         display: flex;
         justify-content: space-between;
-        /* margin-bottom: 160px; */
+        margin-bottom: 160px;
         gap: 160px;
     }
 
@@ -300,6 +319,7 @@
         max-width: 480px;
         font-size: 64px;
         margin-bottom: 0;
+        margin-left: 0;
     }
 
     .footer-subscribe {
