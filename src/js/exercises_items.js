@@ -127,7 +127,6 @@ function getSubcategoryExercises() {
     .then(({ page, totalPages, results }) => {
       createMarkupCard(results);
       if (results.length <= paramsCard.limit) {
-        container.innerHTML;
       }
       instance.reset(totalPages * 8);
       console.log(totalPages);
@@ -144,7 +143,5 @@ function getSubcategoryExercises() {
           })
           .catch(error => console.log(error));
       })
-
-      // refs.subcategory.removeEventListener('click', e)
     );
 }
