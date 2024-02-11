@@ -1,6 +1,5 @@
 import { notify } from './notifier.js';
 import { API_SUBSCRIPTION_POINT, api } from './api.js';
-import axios from 'axios';
 
 const feedbackForm = document.querySelector('.footer-form');
 

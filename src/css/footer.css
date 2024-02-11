@@ -1,6 +1,7 @@
 .footer {
-    padding-left: 20px;
-    padding-right: 20px;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+    margin-bottom: 20px;
     padding-top: 10px;
     color: rgb(246, 246, 246);
     letter-spacing: -0.02em;
@@ -14,7 +15,7 @@
     padding: 40px 20px 20px 20px;
     border-radius: 30px;
     overflow: hidden;
-
+    background-size: contain;
 }
 
 @media (min-resolution: 192dpi) {
@@ -106,6 +107,7 @@
     line-height: 1.28;
     outline: none;
     margin-bottom: 12px;
+    height: 42px;
 }
 
 .footer-input::placeholder {
@@ -154,12 +156,24 @@
 /*  tablet style*/
 
 @media screen and (min-width: 768px) {
+    .footer {
+        margin-bottom: 16px;
+    }
+
     .footer-container {
         background-image: url(../img/footer/footer-tablet-1x.jpg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        padding-bottom: 32px;
+        padding: 66px 48px 32px;
+    }
+
+    .footer-input {
+        height: 48px;
+    }
+
+    .subscribe-btn {
+        height: 48px;
     }
 
     @media (min-resolution: 192dpi) {
@@ -249,12 +263,18 @@
 /* desktop  styles*/
 
 @media screen and (min-width: 1440px) {
+    .footer {
+        padding-top: 8px;
+    }
+
     .footer-container {
         background-image: url(../img/footer/footer-desktop-1x.jpg);
         background-repeat: no-repeat;
         background-position: center;
-        background-size: cover;
-        padding-bottom: 25px;
+        /* background-size: cover; */
+
+        border-radius: 50px;
+        padding: 66px 48px 26px;
     }
 
     @media (min-resolution: 192dpi) {
@@ -266,7 +286,8 @@
     .footer-top {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 160px;
+        /* margin-bottom: 160px; */
+        gap: 160px;
     }
 
     .footer-right {
@@ -283,5 +304,13 @@
 
     .footer-subscribe {
         margin-bottom: 0;
+    }
+
+    .footer-input {
+        height: 48px;
+    }
+
+    .subscribe-btn {
+        height: 48px;
     }
 }
