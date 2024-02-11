@@ -84,20 +84,21 @@
   
   .favorites-oval {
     display: flex;
-    width: 76px;
-    height: 26px;
-    background-color: #7e847f;
-    border-radius: 15px;
     align-items: center;
-  }
+    
+    }
   
   .favorites-oval span {
     color: #f6f6f6;
     font-size: 12px;
     font-weight: 500;
-    line-height: 0.2em;
+    /* line-height: 0.2em; */
     padding: 5px 8px;
     margin: 0 auto;
+    background-color: #7e847f;
+    border-radius: 15px;
+    width: 76px;
+    height: 26px;
   }
   
   .favorites-svg {
@@ -161,7 +162,7 @@
   
   .favorites-list-svg {
     margin-right: 16px;
-    background-color: var(--grey);
+    background-color: var(--c-secondary);
     border-radius: 50%;
     width: 24px;
     height: 24px;
