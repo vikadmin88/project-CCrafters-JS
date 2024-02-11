@@ -12,6 +12,8 @@ const paramsCard = {
 };
 
 const container = document.getElementById('tui-pagination-container');
+const form = document.querySelector('exercices-form');
+
 console.log(container);
 const options = {
   itemsPerPage: 8,
@@ -22,6 +24,15 @@ const instance = new Pagination(container, options);
 let category = '';
 
 refs.subcategory.addEventListener('click', searchCard);
+form.addEventListener('submit', searchCardForm);
+
+function searchCardForm(e) {
+  e.preventDefault();
+  if (e.target === e.currentTarget) {
+    return;
+  }
+  paramsCard.keyword = e.currentTarget.elements.value.toLowerCase.trim();
+}
 
 function searchCard(e) {
   e.preventDefault();
