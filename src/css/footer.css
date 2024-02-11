@@ -271,7 +271,7 @@
         background-image: url(../img/footer/footer-desktop-1x.jpg);
         background-repeat: no-repeat;
         background-position: center;
-        /* background-size: cover; */
+        background-size: cover;
 
         border-radius: 50px;
         padding: 66px 48px 26px;
