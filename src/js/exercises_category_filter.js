@@ -9,6 +9,7 @@ const refs = {
   pagescategory: document.querySelector(
     '.exercises-subcategory-page-container'
   ),
+  exercises: document.querySelector('exercises-title'),
 };
 
 const queryParams = {

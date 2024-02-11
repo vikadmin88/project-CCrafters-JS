@@ -3,23 +3,49 @@ import { refs } from './exercises_category_filter.js';
 
 const paramsCard = {
   bodypart: '',
-  muscles: 'abductors',
+  muscles: '',
   equipment: '',
   keyword: '',
   page: 1,
   limit: 9,
 };
 
+let category = '';
+
 refs.subcategory.addEventListener('click', searchCard);
 
 function searchCard(e) {
-  //   if (e.target.nodeName !== 'li') {
-  //     return;
-  //   }
   e.preventDefault();
-  paramsCard.muscles = e.target.textContent.toLowerCase();
+  if (e.target === e.currentTarget) {
+    return;
+  }
+  const liEl = e.target.closest('.exercises-subcategory-item');
 
-  getSubcategoryExercises();
+  console.log(liEl);
+  category = liEl.children[1].textContent.toLowerCase();
+
+  console.log(category);
+
+  checkCategory(category, liEl);
+
+  // getSubcategoryExercises();
+}
+
+function checkCategory(check, liEl) {
+  paramsCard.muscles = '';
+  paramsCard.bodypart = '';
+  paramsCard.equipment = '';
+
+  if (check === 'muscles') {
+    paramsCard.muscles = liEl.children[0].textContent.toLowerCase();
+    getSubcategoryExercises();
+  } else if (check === 'body parts') {
+    paramsCard.bodypart = liEl.children[0].textContent.toLowerCase();
+    getSubcategoryExercises();
+  } else if (check === 'equipment') {
+    paramsCard.equipment = liEl.children[0].textContent.toLowerCase();
+    getSubcategoryExercises();
+  }
 }
 
 function createMarkupCard(results) {
@@ -41,7 +67,7 @@ function createMarkupCard(results) {
                   <p class="card-rating">
                      ${rating}
                   </p>
-                 <svg class="card-rating-svg" width="18" height="18">
+                 <svg class="card-rating-svg" width="15" height="15">
                    <use href="./img/icons.svg#icon-star"></use>
                  </svg>
                </div>
@@ -77,8 +103,8 @@ function createMarkupCard(results) {
   refs.subcategory.innerHTML = arr;
 }
 
-async function getSubcategoryExercises() {
-  const http = await api
+function getSubcategoryExercises() {
+  const http = api
     .get(API_EXERCISES_POINT, paramsCard)
     .then(({ page, results }) => {
       createMarkupCard(results);

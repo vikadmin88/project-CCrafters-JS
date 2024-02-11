@@ -112,6 +112,7 @@
 
 .card-rating-svg {
   fill: #eea10c;
+  stroke: none;
 }
 
 .card-rating {
@@ -180,7 +181,7 @@
 /* стилі для середньої частини картки */
 
 .card-bodi {
-  max-width: 256px;
+  max-width: 263px;
   max-height: 24px;
   height: 100%;
   width: 100%;
@@ -200,6 +201,7 @@
 }
 
 .card-name {
+  max-width: 216px;
   width: 100%;
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
@@ -214,7 +216,7 @@
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 12px;
-  line-height: 150%;
+  line-height: 1.5em;
   color: rgba(27, 27, 27, 0.4);
   display: flex;
   column-gap: 16px;
@@ -226,7 +228,7 @@
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 12px;
-  line-height: 150%;
+  line-height: 1.5em;
   color: var(--c-primary);
 }
 
@@ -284,8 +286,15 @@
     top: 4px;
   }
 
+  .card-bodi {
+    max-width: 256px;
+    max-height: 32px;
+    margin-bottom: 8px;
+  }
+
   .card-name {
     font-size: 20px;
+    max-width: 216px;
   }
 }
 
@@ -314,9 +323,14 @@
     height: 141px;
   }
 
+  .card-bodi {
+    max-width: 358px;
+    max-height: 32px;
+  }
+
   .card-name {
     text-wrap: nowrap;
-    width: 225px;
+    max-width: 318px;
   }
 
   .card-category {
@@ -327,5 +341,17 @@
   .card-button {
     width: 61px;
     height: 24px;
+  }
+
+  .card-inform-list {
+    flex-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-inform-item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
