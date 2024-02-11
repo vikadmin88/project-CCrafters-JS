@@ -11,15 +11,13 @@ const paramsCard = {
   limit: 8,
 };
 
-// const options = {
-//   itemsPerPage: `${searchCard.limit}`,
-//   visiblePages: `${perPage}`,
-//   page: `${page}`,
-//   centerAlign: false,
-// };
-// const instance = new Pagination(container, options);
-
-// const container = document.getElementById('tui-pagination-container');
+const container = document.getElementById('tui-pagination-container');
+console.log(container);
+const options = {
+  itemsPerPage: 8,
+  visiblePages: 3,
+};
+const instance = new Pagination(container, options);
 
 let category = '';
 
@@ -124,10 +122,29 @@ function getSubcategoryExercises() {
     paramsCard.limit = 9;
   }
 
-  const http = api
+  api
     .get(API_EXERCISES_POINT, paramsCard)
-    .then(({ page, perPage, results }) => {
+    .then(({ page, totalPages, results }) => {
       createMarkupCard(results);
+      if (results.length <= paramsCard.limit) {
+        container.innerHTML;
+      }
+      instance.reset(totalPages * 8);
+      console.log(totalPages);
     })
-    .catch(error => console.log(error));
+    .catch(error => console.log(error))
+    .finally(
+      instance.on('afterMove', event => {
+        const currentPage = event.page;
+        paramsCard.page = currentPage;
+        api
+          .get(API_EXERCISES_POINT, paramsCard)
+          .then(({ results }) => {
+            createMarkupCard(results);
+          })
+          .catch(error => console.log(error));
+      })
+
+      // refs.subcategory.removeEventListener('click', e)
+    );
 }

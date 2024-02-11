@@ -246,6 +246,22 @@
   border-radius: 50px;
 }
 
+/* стилі для делегації */
+
+.tui-page-btn {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 133%;
+  letter-spacing: 0.04em;
+  color: #1b1b1b;
+  border: none;
+  border-radius: 18px;
+  padding: 0px 12px;
+  width: 32px;
+  height: 32px;
+}
+
 /* стилі для планшета */
 
 @media screen and (min-width: 768px) {
