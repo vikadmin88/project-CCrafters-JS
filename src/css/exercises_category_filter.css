@@ -21,8 +21,13 @@
 
 .exercises-category-form-container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 40px;
 }
 
 .exercises-category-container {
@@ -31,8 +36,6 @@
   justify-content: flex-start;
 
   gap: 6px;
-
-  margin-bottom: 40px;
 }
 
 .exercises-category-btn {
@@ -162,50 +165,59 @@
 }
 
 .exercices-form {
-  display: block;
-  margin-bottom: 40px;
+  display: none;
+
   width: 295px;
   height: 42px;
+
   position: relative;
 }
 
 .exercices-form-input {
   font-family: 'DM Sans', sans-serif;
-  font-weight: 400;
   font-size: 14px;
-  line-height: 129%;
+  line-height: 1.29;
   color: var(--c-primary);
+
   border: none;
+
   width: 100%;
   height: 100%;
+
   border-radius: 30px;
+
   padding: 12px 14px;
+
   outline: none;
+
   background: var(--c-main);
 }
 
 .exercices-form-input::placeholder {
   font-family: 'DM Sans', sans-serif;
-  font-weight: 400;
   font-size: 16px;
-  line-height: 150%;
+  line-height: 1.5;
   color: var(--c-primary);
 }
 
 .exercices-form-btn-container {
   display: flex;
   gap: 5px;
+
   position: absolute;
   right: 12px;
   bottom: 12px;
+
   margin: 0;
 }
 
 .exercices-form-search-btn {
   width: 18px;
   height: 18px;
+
   border: none;
   outline: none;
+
   background: var(--c-main);
 }
 
@@ -217,8 +229,10 @@
 .exercices-form-clear-btn {
   width: 18px;
   height: 18px;
-  border: none;
+
   background: var(--c-main);
+
+  border: none;
   outline: none;
   display: none;
 }
@@ -251,8 +265,6 @@
 
   .exercises-category-container {
     gap: 8px;
-
-    margin-bottom: 32px;
   }
 
   .exercises-category-btn {
@@ -285,6 +297,25 @@
     font-size: 24px;
     line-height: 1.33;
   }
+
+  .exercises-category-form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 35px;
+
+    margin-bottom: 32px;
+  }
+
+  .exercices-form {
+    width: 246px;
+    height: 44px;
+  }
+
+  .exercices-form-btn-container {
+    bottom: 13px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -294,6 +325,15 @@
 
   .exercises-subcategory-item {
     width: calc((100% - 60px) / 4);
+  }
+
+  .exercices-form {
+    width: 273px;
+    height: 48px;
+  }
+
+  .exercices-form-btn-container {
+    bottom: 15px;
   }
 }
 
