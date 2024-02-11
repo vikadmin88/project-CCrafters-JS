@@ -42,14 +42,16 @@
     border: none;
 
     .close-modal-icon {
-      stroke: #1b1b1b;
-      fill: #1b1b1b;
+      stroke: #1b1b1b99;
+      fill: #fff;
     }
   }
   .modal-description-container {
     .modal-gif {
       border-radius: 12px;
       margin-bottom: 20px;
+      width: 295px;
+      height: 258px;
     }
 
     .modal-title {
@@ -71,9 +73,9 @@
       margin-bottom: 20px;
 
       .modal-exercises-rating {
-        color: #1b1b1b99;
         font-size: 12px;
         line-height: 18px;
+        color: #1b1b1b;
       }
 
       .star-outer {
@@ -151,7 +153,7 @@
     }
 
     .add-favorite-btn {
-      color: #f6f6f6;
+      color: var(--page-bg-color);
       background-color: #7e847f;
       border: 1px solid #7e847f;
 
@@ -186,7 +188,9 @@
   }
 }
 
+/* **************************** */
 /* Styles for tablet */
+/* **************************** */
 
 @media screen and (min-width: 768px) {
   .modal {
@@ -199,11 +203,10 @@
     justify-content: center;
     gap: 24px;
   }
-
-  .modal-gif {
+  .modal-gif-container {
+    flex-shrink: 0;
     width: 270px;
     height: 259px;
-    flex-shrink: 0;
   }
 
   .modal-title {
@@ -222,7 +225,9 @@
   }
 }
 
+/* **************************** */
 /* Styles for desktop */
+/* **************************** */
 
 @media screen and (min-width: 1440px) {
   .modal {
