@@ -1,3 +1,12 @@
+.exercises-title-span {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 133%;
+  letter-spacing: -0.02em;
+  color: rgba(27, 27, 27, 0.5);
+}
+
 .open-card {
   /* width: 335px; */
 
@@ -86,7 +95,7 @@
   background: #fff;
   padding: 16px;
   max-width: 295px;
-  max-height: 165px;
+  min-height: 165px;
   height: 100%;
   width: 100%;
   border-radius: 15px;
@@ -320,6 +329,7 @@
 
   .exercices-card {
     max-width: calc((100% - 40px) / 3);
+    min-height: 141px;
     height: 141px;
   }
 

@@ -1,4 +1,4 @@
-import { API_FILTER_POINT, API_EXERCISES_POINT, api } from './api.js';
+import { API_EXERCISES_POINT, api } from './api.js';
 import { refs } from './exercises_category_filter.js';
 
 const paramsCard = {
@@ -19,16 +19,20 @@ function searchCard(e) {
   if (e.target === e.currentTarget) {
     return;
   }
+
   const liEl = e.target.closest('.exercises-subcategory-item');
 
-  console.log(liEl);
   category = liEl.children[1].textContent.toLowerCase();
+  const subcategoryName = liEl.children[0].textContent;
 
-  console.log(category);
+  refs.exercisesTitle.textContent = 'Exercises';
+  refs.exercisesTitle.insertAdjacentHTML(
+    'beforeend',
+    ` / <span class="exercises-title-span"> ${subcategoryName}</span>`
+  );
 
+  refs.subcategory.classList.add('open-card');
   checkCategory(category, liEl);
-
-  // getSubcategoryExercises();
 }
 
 function checkCategory(check, liEl) {
