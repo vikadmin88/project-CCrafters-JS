@@ -49,6 +49,9 @@
 }
 
 .quote-text {
+  height: 110px;
+  overflow-y: auto;
+  scrollbar-color: #696969 #d3d3d3;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.29;
