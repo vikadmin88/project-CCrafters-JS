@@ -3,8 +3,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding-top: 10px;
-  padding-bottom: 5px;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 .hero-container {
@@ -131,9 +131,15 @@
 }
 
 @media screen and (min-width: 768px) {
+  .hero {
+    padding-top: 16px;
+    padding-bottom: 8px;
+  }
+
   .hero-container {
     flex-direction: row;
   }
+
   .hero-wrapper {
     width: 248px;
     height: 884px;
@@ -164,7 +170,7 @@
   .hero-second-wrapper {
     justify-content: flex-start;
     align-items: flex-start;
-    margin-top: 16px;
+    margin-top: 0px;
     width: 488px;
     height: 884px;
     flex-shrink: 0;
@@ -199,8 +205,6 @@
   .hero-container {
     justify-content: center;
     align-items: center;
-    padding-top: 16px;
-    padding-bottom: 8px;
   }
 
   .hero-wrapper {
