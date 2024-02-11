@@ -1,5 +1,6 @@
 import { API_EXERCISES_POINT, api } from './api.js';
 import { refs } from './exercises_category_filter.js';
+import Pagination from 'tui-pagination';
 
 const paramsCard = {
   bodypart: '',
@@ -7,8 +8,18 @@ const paramsCard = {
   equipment: '',
   keyword: '',
   page: 1,
-  limit: 9,
+  limit: 8,
 };
+
+// const options = {
+//   itemsPerPage: `${searchCard.limit}`,
+//   visiblePages: `${perPage}`,
+//   page: `${page}`,
+//   centerAlign: false,
+// };
+// const instance = new Pagination(container, options);
+
+// const container = document.getElementById('tui-pagination-container');
 
 let category = '';
 
@@ -108,9 +119,14 @@ function createMarkupCard(results) {
 }
 
 function getSubcategoryExercises() {
+  const pageWidth = window.innerWidth;
+  if (pageWidth >= 1440) {
+    paramsCard.limit = 9;
+  }
+
   const http = api
     .get(API_EXERCISES_POINT, paramsCard)
-    .then(({ page, results }) => {
+    .then(({ page, perPage, results }) => {
       createMarkupCard(results);
     })
     .catch(error => console.log(error));

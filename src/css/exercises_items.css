@@ -1,3 +1,5 @@
+@import url('tui-pagination/dist/tui-pagination.css');
+
 .exercises-title-span {
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
@@ -198,10 +200,6 @@
   gap: 16px;
   align-items: center;
   margin-bottom: 16px;
-  /* text-overflow: ellipsis; */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .card-bodi-svg {
@@ -217,6 +215,9 @@
   font-size: 20px;
   line-height: 100%;
   color: var(--c-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* стилі для описової частини картки */
@@ -239,6 +240,10 @@
   font-size: 12px;
   line-height: 1.5em;
   color: var(--c-primary);
+}
+
+.tui-pagination {
+  border-radius: 50px;
 }
 
 /* стилі для планшета */
@@ -275,6 +280,7 @@
 
   .exercices-card {
     max-width: calc((100% - 14px) / 2);
+    max-height: 165px;
   }
 
   .card-category {
@@ -330,7 +336,7 @@
   .exercices-card {
     max-width: calc((100% - 40px) / 3);
     min-height: 141px;
-    height: 141px;
+    max-height: 141px;
   }
 
   .card-bodi {
