@@ -12,6 +12,8 @@
   border-radius: 30px;
   padding: 40px 20px;
 
+  width: 100%;
+
   position: relative;
 }
 
@@ -70,6 +72,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 272px;
+  width: 100%;
 }
 
 @media (min-device-pixel-ratio: 2),
