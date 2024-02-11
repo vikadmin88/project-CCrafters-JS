@@ -9,7 +9,8 @@ const refs = {
   pagescategory: document.querySelector(
     '.exercises-subcategory-page-container'
   ),
-  exercisesTitle: document.querySelector('.exercises-title'),
+  title: document.querySelector('.exercises-title'),
+  search: document.querySelector('.exercices-form'),
 };
 
 const queryParams = {
@@ -79,6 +80,12 @@ function getCategoryExercises() {
   api
     .get(API_FILTER_POINT, queryParams)
     .then(({ results, totalPages }) => {
+      if (refs.subcategory.classList.contains('open-card')) {
+        refs.subcategory.classList.remove('open-card');
+        refs.title.textContent = 'Exercises';
+        refs.search.classList.remove('is-visible');
+      }
+
       refs.subcategory.innerHTML = results.map(markupCategory).join('');
       queryParams.maxPage = totalPages;
 
