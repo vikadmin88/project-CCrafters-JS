@@ -1,5 +1,4 @@
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
+
 
 import { notify } from './notifier.js';
 import { API_EXERCISES_POINT, api } from './api.js';
