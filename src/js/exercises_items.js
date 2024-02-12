@@ -11,14 +11,14 @@ const paramsCard = {
   limit: 8,
 };
 
-// const container = document.getElementById('tui-pagination-container');
+const container = document.getElementById('tui-pagination-container');
 
 const options = {
   itemsPerPage: 8,
   visiblePages: 3,
   centerAlign: false,
 };
-// const instance = new Pagination(container, options);
+const instance = new Pagination(container, options);
 
 let category = '';
 
@@ -154,19 +154,17 @@ function getSubcategoryExercises() {
       if (results.length === 0) {
         refs.subcategory.innerHTML = `<li class = "exercises-text"><p>Unfortunately, <span class = "exercises-text-span">no results</span> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p></li>`;
       }
-      // instance.reset(totalPages * 8);
+      instance.reset(totalPages * 8);
     })
-    .catch(error => console.log(error))
-    .finally
-    // instance.on('afterMove', event => {
-    //   const currentPage = event.page;
-    //   paramsCard.page = currentPage;
-    //   api
-    //     .get(API_EXERCISES_POINT, paramsCard)
-    //     .then(({ results }) => {
-    //       createMarkupCard(results);
-    //     })
-    //     .catch(error => console.log(error));
-    // })
-    ();
+    .catch(error => console.log(error)).finally;
+  instance.on('afterMove', event => {
+    const currentPage = event.page;
+    paramsCard.page = currentPage;
+    api
+      .get(API_EXERCISES_POINT, paramsCard)
+      .then(({ results }) => {
+        createMarkupCard(results);
+      })
+      .catch(error => console.log(error));
+  })();
 }
