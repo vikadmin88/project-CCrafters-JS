@@ -1,0 +1,336 @@
+.footer {
+    padding-bottom: 20px;
+    padding-top: 10px;
+    color: rgb(246, 246, 246);
+    letter-spacing: -0.02em;
+
+}
+
+.footer-container {
+    background-image: url(../img/footer/footer-mobile-1x.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    background-size: cover;
+
+    padding: 40px 20px 20px 20px;
+    border-radius: 30px;
+    overflow: hidden;
+    /* background-size: contain; */
+}
+
+@media (min-resolution: 192dpi) {
+    .footer-container {
+        background-image: url(../img/footer/footer-mobile-2x.jpg);
+    }
+}
+
+
+.footer-logo {
+    display: inline-block;
+    font-weight: 700;
+    margin-bottom: 9px;
+    color: rgb(246, 246, 246);
+    letter-spacing: -0.02em;
+}
+
+.footer-social-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.footer-social-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: 1px solid rgba(246, 246, 246, 0.2);
+
+    transition-property: border;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social-item:hover {
+    border: 1px solid rgba(246, 246, 246, 0.6);
+}
+
+
+.footer-social-icon {
+    fill: rgba(246, 246, 246, 0.8);
+    width: 20px;
+    height: 20px;
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social-item:hover .footer-social-link .footer-social-icon {
+    fill: #f6f6f6;
+}
+
+.footer-title {
+    font-weight: 400;
+    font-size: 32px;
+    text-align: left;
+    margin-bottom: 20px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.accent-title {
+    color: rgba(246, 246, 246, 0.3);
+    font-style: italic;
+}
+
+.subscribe-title {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28;
+}
+
+.footer-form {
+    margin-bottom: 60px;
+}
+
+.footer-input {
+    width: 100%;
+    display: flex;
+    padding: 12px 14px 12px 14px;
+    border-radius: 30px;
+    border: 1px solid rgb(246, 246, 246);
+    background-color: transparent;
+    font-size: 14px;
+    color: inherit;
+    line-height: 1.28;
+    outline: none;
+    margin-bottom: 12px;
+    height: 42px;
+}
+
+.footer-input::placeholder {
+    color: rgba(246, 246, 246, 0.6);
+}
+
+.subscribe-btn {
+    color: inherit;
+    display: flex;
+    width: 100%;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 30px;
+    line-height: 1.28;
+    font-size: 14px;
+    background-color: #7e847f;
+    border: none;
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe-btn:hover {
+    background-color: #5F6560;
+}
+
+.footer-security {
+    font-size: 12px;
+}
+
+.footer-text {
+    line-height: 0.8;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+}
+
+.links-container a {
+    color: #f6f6f6;
+    line-height: 0.8;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+}
+
+/*  tablet style*/
+
+@media screen and (min-width: 768px) {
+    .footer {
+        margin-bottom: 16px;
+    }
+
+    .footer-container {
+        background-image: url(../img/footer/footer-tablet-1x.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 66px 48px 32px;
+        border-radius: 50px;
+    }
+
+    .footer-input {
+        height: 48px;
+    }
+
+    .subscribe-btn {
+        height: 48px;
+    }
+
+    @media (min-resolution: 192dpi) {
+        .footer-container {
+            background-image: url(../img/footer/footer-tablet-2x.jpg);
+        }
+    }
+
+    .footer-top {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 120px;
+        justify-content: end;
+    }
+
+    .footer-form {
+        margin-bottom: 0px;
+    }
+
+
+    .footer-logo {
+        font-size: 28px;
+        line-height: 1;
+        margin-bottom: 30px;
+
+    }
+
+    .footer-social-links {
+        margin-bottom: 0px;
+    }
+
+    .footer-social-item {
+        padding: 8px;
+        width: 44px;
+        height: 44px;
+    }
+
+    .footer-social-icon {
+        fill: rgba(246, 246, 246, 0.8);
+        width: 28px;
+        height: 28px;
+        transition-property: fill;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .footer-title {
+        margin-left: auto;
+        font-size: 54px;
+        max-width: 345px;
+        margin-bottom: 32px;
+        /* margin-left: 132px; */
+        font-weight: 400;
+        font-size: 54px;
+        line-height: 93%;
+        letter-spacing: -0.02em;
+        color: #f6f6f6;
+    }
+
+    .footer-subscribe {
+        min-width: 352px;
+        /* margin-left: auto; */
+        /* margin-bottom: 120px; */
+    }
+
+    .subscribe-title {
+        font-size: 18px;
+        margin-bottom: 20px;
+        line-height: 24px;
+    }
+
+    .footer-input {
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .subscribe-btn {
+        font-size: 16px;
+    }
+
+    .links-container a {
+        line-height: 18px;
+    }
+
+    .footer-security {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        justify-content: center;
+    }
+
+    .footer-text {
+        line-height: 18px;
+        margin-bottom: 0;
+    }
+}
+
+/* desktop  styles*/
+
+@media screen and (min-width: 1440px) {
+    .footer {
+        padding-top: 8px;
+    }
+
+    .footer-container {
+        background-image: url(../img/footer/footer-desktop-1x.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        /* background-size: cover; */
+
+        border-radius: 50px;
+        padding: 66px 48px 26px;
+    }
+
+    @media (min-resolution: 192dpi) {
+        .footer-container {
+            background-image: url(../img/footer/footer-desktop-2x.jpg);
+        }
+    }
+
+    .footer-top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 160px;
+        gap: 160px;
+    }
+
+    .footer-right {
+        display: flex;
+        justify-content: space-between;
+        gap: 160px;
+    }
+
+    .footer-title {
+        max-width: 480px;
+        font-size: 64px;
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+
+    .footer-subscribe {
+        margin-bottom: 0;
+    }
+
+    .footer-input {
+        height: 48px;
+    }
+
+    .subscribe-btn {
+        height: 48px;
+    }
+}
