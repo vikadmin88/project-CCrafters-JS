@@ -339,5 +339,5 @@
 }
 
 .is-visible {
-  display: flex;
+  display: none;
 }

@@ -19,13 +19,14 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
-
-.container-exercises-item {
   max-height: 1778px;
-  min-height: 760px;
+  min-height: 616px;
   height: 100%;
 }
+/* 
+.container-exercises-item {
+  
+} */
 
 /* стилі форми для запиту */
 
@@ -80,6 +81,12 @@
 .form-search-svg {
   fill: none;
   stroke: var(--c-primary);
+  transition: scale 250ms ease-in-out;
+}
+
+.form-search-svg:hover,
+.form-search-svg:focus {
+  scale: 120%;
 }
 
 .exercices-form-clear-btn {
@@ -93,6 +100,12 @@
 .form-clear-svg {
   stroke: var(--c-primary);
   fill: var(--c-primary);
+  transition: scale 250ms ease-in-out;
+}
+
+.form-clear-svg:hover,
+.form-clear-svg:focus {
+  scale: 120%;
 }
 
 /* стилі для карти товару */
@@ -250,20 +263,93 @@
   border-radius: 50px;
 }
 
-/* стилі для делегації */
-
-.tui-page-btn {
+/* стилі для тексту */
+.exercises-text {
+  padding-top: 164px;
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 133%;
-  letter-spacing: 0.04em;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.01em;
+  text-align: center;
   color: #1b1b1b;
+}
+
+.exercises-text-span {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #7e847f;
+}
+
+/* стилі для делегації */
+
+.tui-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+.tui-pagination .tui-page-btn {
+  color: rgba(27, 27, 27, 0.4);
+  font-family: 'DM Sans';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+
   border: none;
+
+  width: auto;
+  height: auto;
+
+  margin: 0;
+  padding: 0;
+}
+
+.tui-pagination .tui-first,
+/* .tui-pagination .tui-prev, */
+/* .tui-pagination .tui-next, */
+.tui-pagination .tui-last,
+.tui-pagination .tui-prev-is-ellip,
+.tui-pagination .tui-next-is-ellip {
+  display: none;
+}
+
+.tui-pagination .tui-prev,
+.tui-pagination .tui-next {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+}
+
+.tui-pagination .tui-first-child.tui-is-selected,
+.tui-pagination .tui-last-child.tui-is-selected,
+.tui-pagination .tui-is-selected {
   border-radius: 18px;
-  padding: 0px 12px;
+  border: 1px solid #1b1b1b;
+
   width: 32px;
-  height: 32px;
+}
+
+.tui-pagination .tui-is-selected,
+.tui-pagination strong {
+  color: #1b1b1b;
+
+  background: inherit;
+}
+
+.tui-pagination .tui-last-child,
+.tui-pagination .tui-next-is-ellip {
+  border: none;
 }
 
 /* стилі для планшета */
@@ -331,6 +417,15 @@
     font-size: 20px;
     max-width: 216px;
   }
+
+  .exercises-text {
+    padding: 222px 52px 585px 52px;
+    font-size: 18px;
+  }
+
+  .exercises-text-span {
+    font-size: 18px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -389,5 +484,9 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .exercises-text {
+    padding: 217px 314px 350px 314px;
   }
 }

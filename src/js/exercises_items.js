@@ -13,7 +13,6 @@ const paramsCard = {
 
 const container = document.getElementById('tui-pagination-container');
 
-console.log(container);
 const options = {
   itemsPerPage: 8,
   visiblePages: 3,
@@ -23,29 +22,25 @@ const instance = new Pagination(container, options);
 let category = '';
 
 refs.subcategory.addEventListener('click', searchCard);
-refs.search.addEventListener('click', searchCardForm);
-refs.search.addEventListener('input', keyboardValue);
+refs.search.addEventListener('submit', searchCardForm);
+// refs.search.addEventListener('input', keyboardValue);
 
-function keyboardValue(e) {
-  const formValue = e.currentTarget.elements.exercises.value;
-  if (e.currentTarget.elements.exercises.value !== '') {
-    refs.clearBtn.classList.remove('is-hidden');
-    refs.clearBtn.addEventListener('click', cleanForm);
-  }
-  console.log(e.currentTarget.elements.exercises.value);
-}
-
-function cleanForm(e, param) {
-  param = '';
-}
+// function keyboardValue(e) {
+//   const formValue = e.currentTarget.elements.exercises.value;
+//   if (e.currentTarget.elements.exercises.value !== '') {
+//     refs.clearBtn.classList.remove('is-hidden');
+//     refs.clearBtn.addEventListener('click', cleanForm);
+//   }
+//   console.log(e.currentTarget.elements.exercises.value);
+// }
 
 function searchCardForm(e) {
   e.preventDefault();
-  if (e.target.nodeName !== 'BUTTON') {
-    return;
-  }
-  paramsCard.keyword = e.currentTarget.elements.exercises.value;
-  console.log(paramsCard);
+  const form = e.target;
+  paramsCard.keyword = form.elements.exercises.value.trim().toLowerCase();
+
+  getSubcategoryExercises(paramsCard);
+  form.elements.exercises.value = '';
 }
 
 function searchCard(e) {
@@ -54,6 +49,7 @@ function searchCard(e) {
     return;
   }
 
+  refs.search.classList.remove('is-visible');
   const liEl = e.target.closest('.exercises-subcategory-item');
 
   category = liEl.children[1].textContent.toLowerCase();
@@ -150,10 +146,10 @@ function getSubcategoryExercises() {
     .get(API_EXERCISES_POINT, paramsCard)
     .then(({ page, totalPages, results }) => {
       createMarkupCard(results);
-      if (results.length <= paramsCard.limit) {
+      if (results.length === 0) {
+        refs.subcategory.innerHTML = `<li class = "exercises-text"><p>Unfortunately, <span class = "exercises-text-span">no results</span> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p></li>`;
       }
       instance.reset(totalPages * 8);
-      console.log(totalPages);
     })
     .catch(error => console.log(error))
     .finally(
