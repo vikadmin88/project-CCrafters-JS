@@ -163,6 +163,7 @@
 @media screen and (min-width: 768px) {
     .footer {
         margin-bottom: 16px;
+        padding-bottom: 0;
     }
 
     .footer-container {
