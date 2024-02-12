@@ -12,6 +12,7 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  z-index: 200;
 }
 
 .modal-window-mob {
@@ -61,16 +62,12 @@
   flex-direction: column;
 }
 .link-home {
+  line-height: 1.5;
+  color: rgb(255, 255, 255);
+  transition: background-color 0.2s linear;
   padding: 6px 26px;
   margin: 0 auto;
   background-color: #7e847f;
-  border: none;
-  font-family: DM Sans;
-  font-size: 16px;
-  line-height: 1.5;
-  border-radius: 30px;
-  color: rgb(0, 0, 0);
-  transition: background-color 0.2s linear;
 }
 .first-link-home {
   padding: 6px 36px;
