@@ -136,6 +136,7 @@
   .quote-of-the-day-favorites {
     border-radius: 50px;
     padding: 64px 80px;
+    width: 100%;
   }
 
   .quote-favorites-header-title {
@@ -153,7 +154,6 @@
   .quote-text-favorites-container {
     margin-left: 50px;
     margin-top: 16px;
-    width: 100%;
   }
 
   .quote-favorites-text {
