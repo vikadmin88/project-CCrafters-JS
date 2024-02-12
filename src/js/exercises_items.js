@@ -39,6 +39,8 @@ function searchCardForm(e) {
   const form = e.target;
   paramsCard.keyword = form.elements.exercises.value.trim().toLowerCase();
 
+  console.log(paramsCard);
+
   getSubcategoryExercises(paramsCard);
   form.elements.exercises.value = '';
 }
@@ -68,6 +70,7 @@ function checkCategory(check, liEl) {
   paramsCard.muscles = '';
   paramsCard.bodypart = '';
   paramsCard.equipment = '';
+  paramsCard.keyword = '';
 
   if (check === 'muscles') {
     paramsCard.muscles = liEl.children[0].textContent.toLowerCase();
@@ -85,6 +88,7 @@ function createMarkupCard(results) {
   const arr = results
     .map(
       ({
+        _id,
         bodyPart,
         name,
         rating,
@@ -107,7 +111,7 @@ function createMarkupCard(results) {
                
             </div>
 
-                 <button class="card-button" type="submit">
+                 <button class="card-button" type="submit" data-id = "${_id}">
               Start
               <svg class="card-search-svg" >
                 <use href="./img/icons.svg#icon-arrow-right"></use>

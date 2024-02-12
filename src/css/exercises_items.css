@@ -434,6 +434,7 @@
   }
 
   .open-card {
+    min-height: 479px;
     height: 479px;
     column-gap: 20px;
     row-gap: 28px;
