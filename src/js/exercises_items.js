@@ -16,6 +16,7 @@ const container = document.getElementById('tui-pagination-container');
 const options = {
   itemsPerPage: 8,
   visiblePages: 3,
+  centerAlign: false,
 };
 const instance = new Pagination(container, options);
 

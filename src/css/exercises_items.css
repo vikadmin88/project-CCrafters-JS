@@ -30,7 +30,7 @@
 
 /* стилі форми для запиту */
 
-.exercices-form {
+/* .exercices-form {
   display: block;
   margin-bottom: 40px;
   width: 295px;
@@ -106,7 +106,7 @@
 .form-clear-svg:hover,
 .form-clear-svg:focus {
   scale: 120%;
-}
+} */
 
 /* стилі для карти товару */
 
@@ -359,7 +359,7 @@
     height: 1091px;
   }
 
-  .exercises-category-form-container {
+  /* .exercises-category-form-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -373,7 +373,7 @@
 
   .exercices-form-btn-container {
     bottom: 13px;
-  }
+  } */
 
   .open-card {
     height: 720px;
@@ -440,14 +440,14 @@
     row-gap: 28px;
   }
 
-  .exercices-form {
+  /* .exercices-form {
     width: 273px;
     height: 48px;
   }
 
   .exercices-form-btn-container {
     bottom: 15px;
-  }
+  } */
 
   .exercices-card {
     max-width: calc((100% - 40px) / 3);

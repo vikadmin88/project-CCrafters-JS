@@ -1,8 +1,6 @@
 import { notify } from './notifier.js';
 import { API_FILTER_POINT, api } from './api.js';
 
-export { refs };
-
 const refs = {
   category: document.querySelector('.exercises-category-container'),
   subcategory: document.querySelector('.exercises-subcategory-list'),
@@ -11,7 +9,6 @@ const refs = {
   ),
   title: document.querySelector('.exercises-title'),
   search: document.querySelector('.exercices-form'),
-  clearBtn: document.querySelector('.exercices-form-clear-btn'),
 };
 
 const queryParams = {
