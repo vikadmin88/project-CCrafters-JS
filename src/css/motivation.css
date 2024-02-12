@@ -5,9 +5,22 @@
     padding-bottom: 10px;
 }
 
-.motivation-image {
-    min-height: 269px;
-    border-radius: 630px;
+.motivation-img-container {
+    background-image: url('../img/motiv/motiv-mobile-1x.jpg');
+    border-radius: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 272px;
+}
+
+@media (min-device-pixel-ratio: 2),
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+    .motivation-img-container {
+        background-image: url('../img/motiv/motiv-mobile-2x.jpg');
+    }
 }
 
 .motivation-wrap {
@@ -64,6 +77,20 @@
 
 @media screen and (min-width: 768px) {
 
+    .motivation-img-container {
+        border-radius: 50px;
+        background-image: url('../img/motiv/motiv-tablet-1x.jpg');
+        height: 302px;
+    }
+
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        .motivation-img-container {
+            background-image: url('../img/motiv/motiv-tablet-2x.jpg');
+        }
+    }
 
     .motivation-section {
         padding-top: 8px;
@@ -103,18 +130,36 @@
     }
 }
 
-
 /* Desktop style */
 
 @media screen and (min-width: 1440px) {
+
+
+    .motivation-img-container {
+        background-image: url('../img/motiv/motiv-desktop-1x.jpg');
+        width: 50%;
+    }
+
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        .motivation-img-container {
+            background-image: url('../img/motiv/motiv-desktop-2x.jpg');
+        }
+    }
 
     .motivation-container {
         display: flex;
     }
 
+    .motivation-img-container {
+        padding-right: 704px;
+    }
+
     .motivation-wrap {
         padding: 64px 64px 64px 114px;
-        width: 704px;
+        /* width: 704px; */
     }
 
 }
