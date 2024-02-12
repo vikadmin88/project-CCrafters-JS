@@ -38,7 +38,7 @@ refs.search.addEventListener('submit', searchCardForm);
 function searchCardForm(e) {
   e.preventDefault();
   const form = e.target;
-  paramsCard.keyword = form.elements.nameExercices.value.trim().toLowerCase();
+  paramsCard.keyword = form.elements.searchstr.value.trim().toLowerCase();
 
   console.log(paramsCard);
 
