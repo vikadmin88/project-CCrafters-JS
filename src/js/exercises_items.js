@@ -11,14 +11,14 @@ const paramsCard = {
   limit: 8,
 };
 
-const container = document.getElementById('tui-pagination-container');
+// const container = document.getElementById('tui-pagination-container');
 
 const options = {
   itemsPerPage: 8,
   visiblePages: 3,
   centerAlign: false,
 };
-const instance = new Pagination(container, options);
+// const instance = new Pagination(container, options);
 
 let category = '';
 
@@ -38,12 +38,12 @@ refs.search.addEventListener('submit', searchCardForm);
 function searchCardForm(e) {
   e.preventDefault();
   const form = e.target;
-  paramsCard.keyword = form.elements.exercises.value.trim().toLowerCase();
+  paramsCard.keyword = form.elements.nameExercices.value.trim().toLowerCase();
 
   console.log(paramsCard);
 
   getSubcategoryExercises(paramsCard);
-  form.elements.exercises.value = '';
+  form.reset();
 }
 
 function searchCard(e) {
@@ -52,7 +52,7 @@ function searchCard(e) {
     return;
   }
 
-  refs.search.classList.remove('is-visible');
+  refs.search.classList.add('is-visible');
   const liEl = e.target.closest('.exercises-subcategory-item');
 
   category = liEl.children[1].textContent.toLowerCase();
@@ -154,19 +154,19 @@ function getSubcategoryExercises() {
       if (results.length === 0) {
         refs.subcategory.innerHTML = `<li class = "exercises-text"><p>Unfortunately, <span class = "exercises-text-span">no results</span> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p></li>`;
       }
-      instance.reset(totalPages * 8);
+      // instance.reset(totalPages * 8);
     })
     .catch(error => console.log(error))
-    .finally(
-      instance.on('afterMove', event => {
-        const currentPage = event.page;
-        paramsCard.page = currentPage;
-        api
-          .get(API_EXERCISES_POINT, paramsCard)
-          .then(({ results }) => {
-            createMarkupCard(results);
-          })
-          .catch(error => console.log(error));
-      })
-    );
+    .finally
+    // instance.on('afterMove', event => {
+    //   const currentPage = event.page;
+    //   paramsCard.page = currentPage;
+    //   api
+    //     .get(API_EXERCISES_POINT, paramsCard)
+    //     .then(({ results }) => {
+    //       createMarkupCard(results);
+    //     })
+    //     .catch(error => console.log(error));
+    // })
+    ();
 }
