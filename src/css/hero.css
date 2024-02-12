@@ -147,6 +147,9 @@
     padding: 0 0 64px 20px;
     background-image: url(../img/hero/hero-tablet.jpg);
     border-radius: 50px 0px 50px 50px;
+
+    transform: translateX(30%);
+    animation: slideIn 2s forwards;
   }
 
   @media screen and (min-resolution: 192dpi) and (max-width: 1439px),
@@ -177,6 +180,15 @@
     border-radius: 0px 50px 50px 50px;
     padding: 231px 32px 0;
     row-gap: 25px;
+
+    transform: translateX(-30%);
+    animation: slideIn 2s forwards;
+  }
+
+  @keyframes slideIn {
+    to {
+      transform: translateX(0);
+    }
   }
 
   .hero-title {
