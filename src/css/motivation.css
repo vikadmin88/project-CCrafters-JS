@@ -154,12 +154,11 @@
     }
 
     .motivation-img-container {
-        padding-right: 704px;
+        min-width: 704px;
     }
 
     .motivation-wrap {
         padding: 64px 64px 64px 114px;
-        /* width: 704px; */
     }
 
 }
