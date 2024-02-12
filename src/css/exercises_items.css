@@ -1,5 +1,9 @@
 @import url('tui-pagination/dist/tui-pagination.css');
 
+.is-hidden {
+  display: none;
+}
+
 .exercises-title-span {
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
@@ -84,11 +88,11 @@
   border: none;
   background: var(--c-main);
   outline: none;
-  display: none;
 }
 
 .form-clear-svg {
   stroke: var(--c-primary);
+  fill: var(--c-primary);
 }
 
 /* стилі для карти товару */

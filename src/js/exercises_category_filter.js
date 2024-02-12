@@ -11,6 +11,7 @@ const refs = {
   ),
   title: document.querySelector('.exercises-title'),
   search: document.querySelector('.exercices-form'),
+  clearBtn: document.querySelector('.exercices-form-clear-btn'),
 };
 
 const queryParams = {

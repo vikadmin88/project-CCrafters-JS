@@ -12,7 +12,6 @@ const paramsCard = {
 };
 
 const container = document.getElementById('tui-pagination-container');
-const form = document.querySelector('exercices-form');
 
 console.log(container);
 const options = {
@@ -24,14 +23,29 @@ const instance = new Pagination(container, options);
 let category = '';
 
 refs.subcategory.addEventListener('click', searchCard);
-form.addEventListener('submit', searchCardForm);
+refs.search.addEventListener('click', searchCardForm);
+refs.search.addEventListener('input', keyboardValue);
+
+function keyboardValue(e) {
+  const formValue = e.currentTarget.elements.exercises.value;
+  if (e.currentTarget.elements.exercises.value !== '') {
+    refs.clearBtn.classList.remove('is-hidden');
+    refs.clearBtn.addEventListener('click', cleanForm);
+  }
+  console.log(e.currentTarget.elements.exercises.value);
+}
+
+function cleanForm(e, param) {
+  param = '';
+}
 
 function searchCardForm(e) {
   e.preventDefault();
-  if (e.target === e.currentTarget) {
+  if (e.target.nodeName !== 'BUTTON') {
     return;
   }
-  paramsCard.keyword = e.currentTarget.elements.value.toLowerCase.trim();
+  paramsCard.keyword = e.currentTarget.elements.exercises.value;
+  console.log(paramsCard);
 }
 
 function searchCard(e) {
@@ -45,8 +59,7 @@ function searchCard(e) {
   category = liEl.children[1].textContent.toLowerCase();
   const subcategoryName = liEl.children[0].textContent;
 
-  refs.exercisesTitle.textContent = 'Exercises';
-  refs.exercisesTitle.insertAdjacentHTML(
+  refs.title.insertAdjacentHTML(
     'beforeend',
     ` / <span class="exercises-title-span"> ${subcategoryName}</span>`
   );
