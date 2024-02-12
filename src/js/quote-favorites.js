@@ -35,11 +35,11 @@ function updateFavoritesQuote() {
           document.querySelector('.quote-favorites-author').textContent =
             author;
         } else {
-          console.log('Не вдалося оновити через помилку.');
+          console.log('Update failed due to an error.');
         }
       })
       .catch(error => {
-        console.error('Під час отримання цитати сталася помилка:', error);
+        console.error('An error occurred while retrieving the quote:', error);
         notify('error', `API error: ${error}`);
       });
   }
