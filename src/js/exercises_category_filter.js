@@ -1,6 +1,7 @@
 import { notify } from './notifier.js';
 import { API_FILTER_POINT, api } from './api.js';
 
+export { refs };
 const refs = {
   category: document.querySelector('.exercises-category-container'),
   subcategory: document.querySelector('.exercises-subcategory-list'),
