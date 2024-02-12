@@ -1,0 +1,164 @@
+/* Mobile style*/
+
+.motivation-section {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.motivation-img-container {
+    background-image: url('../img/motiv/motiv-mobile-1x.jpg');
+    border-radius: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 272px;
+}
+
+@media (min-device-pixel-ratio: 2),
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+    .motivation-img-container {
+        background-image: url('../img/motiv/motiv-mobile-2x.jpg');
+    }
+}
+
+.motivation-wrap {
+    padding: 40px 20px 40px 70px;
+    position: relative;
+    border-radius: 30px;
+    background-color: #1b1b1b;
+}
+
+.motivation-icon-wrap {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    width: 32px;
+    height: 32px;
+    background-color: rgba(246, 246, 246, 0.10);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.motivation-icon {
+    fill: #f6f6f6;
+}
+
+.motivation-sport-title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 2px;
+    margin-top: 0px;
+    color: #f6f6f6;
+}
+
+.motivation-sport-text {
+    color: rgba(246, 246, 246, 0.6);
+    font-size: 14px;
+    line-height: 1.29;
+    font-weight: 400;
+    margin-top: 0px;
+    margin-bottom: 14px;
+}
+
+.motivation-sport-description {
+    font-size: 14px;
+    line-height: 1.29;
+    font-weight: 400;
+    margin-top: 0px;
+    color: rgba(246, 246, 246, 0.6);
+}
+
+/* Tablet style*/
+
+@media screen and (min-width: 768px) {
+
+    .motivation-img-container {
+        border-radius: 50px;
+        background-image: url('../img/motiv/motiv-tablet-1x.jpg');
+        height: 302px;
+    }
+
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        .motivation-img-container {
+            background-image: url('../img/motiv/motiv-tablet-2x.jpg');
+        }
+    }
+
+    .motivation-section {
+        padding-top: 8px;
+        padding-bottom: 8px;
+
+    }
+
+    .motivation-image {
+        min-height: 302px;
+        border-radius: 50px;
+
+    }
+
+    .motivation-wrap {
+        padding: 64px 96px 64px 114px;
+        border-radius: 50px;
+    }
+
+    .motivation-icon-wrap {
+        position: absolute;
+        top: 65px;
+        left: 64px;
+    }
+
+    .motivation-sport-title {
+        font-size: 24px;
+    }
+
+    .motivation-sport-text {
+        margin-top: 0px;
+        margin-bottom: 25px;
+    }
+
+    .motivation-sport-description {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+
+/* Desktop style */
+
+@media screen and (min-width: 1440px) {
+
+
+    .motivation-img-container {
+        background-image: url('../img/motiv/motiv-desktop-1x.jpg');
+        width: 50%;
+    }
+
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        .motivation-img-container {
+            background-image: url('../img/motiv/motiv-desktop-2x.jpg');
+        }
+    }
+
+    .motivation-container {
+        display: flex;
+    }
+
+    .motivation-img-container {
+        min-width: 704px;
+    }
+
+    .motivation-wrap {
+        padding: 64px 64px 64px 114px;
+    }
+
+}
