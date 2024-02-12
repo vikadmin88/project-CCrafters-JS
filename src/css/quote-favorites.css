@@ -153,6 +153,7 @@
   .quote-text-favorites-container {
     margin-left: 50px;
     margin-top: 16px;
+    width: 100%;
   }
 
   .quote-favorites-text {
