@@ -56,6 +56,12 @@
   }
 }
 
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+  }
+}
+
 @media screen and (min-width: 768px) and (max-width: 1157.98px) {
   .logo-link {
     font-size: 28px;
