@@ -61,7 +61,6 @@
   flex-direction: column;
 }
 .link-home {
-  color: #fff;
   padding: 6px 26px;
   margin: 0 auto;
   background-color: #7e847f;
@@ -69,17 +68,12 @@
   font-family: DM Sans;
   font-size: 16px;
   line-height: 1.5;
-}
-.first-link-home {
-  padding: 6px 36px;
-}
-.link-home:hover,
-.link-home:focus,
-.link-home:active {
-  background-color: #fff;
   border-radius: 30px;
   color: rgb(0, 0, 0);
   transition: background-color 0.2s linear;
+}
+.first-link-home {
+  padding: 6px 36px;
 }
 .icon-mob-menu-social {
   fill: rgb(246, 246, 246);
@@ -100,7 +94,8 @@
   border: 1px solid rgba(95, 101, 96, 0.2);
 }
 .active {
-  background-color: #fff;
+  opacity: 1;
+  background-color: #fffdfd;
   border-radius: 30px;
   color: rgb(0, 0, 0);
   transition: background-color 0.2s linear;

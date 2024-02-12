@@ -9,8 +9,6 @@ if (pathname.endsWith('/') || pathname.endsWith('/index.html')) {
   homeButton.classList.add('active');
 } else if (pathname.endsWith('/favorites.html')) {
   favoritesButton.classList.add('active');
-} else {
-  console.log('Невідома сторінка:', pathname);
 }
 
 closeModal.addEventListener('click', () => {
