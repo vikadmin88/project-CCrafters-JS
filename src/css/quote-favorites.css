@@ -10,17 +10,13 @@
 .quote-of-the-day-favorites {
   background-color: #7e847f;
   border-radius: 30px;
-  padding: 40px 20px;
-
-  width: 100%;
-
+  padding: 40px 20px 34px;
   position: relative;
 }
 
 .quote-favorites-header {
   display: flex;
   align-items: center;
-
   gap: 12px;
 }
 
@@ -39,7 +35,6 @@
 .quote-favorites-header-svg-2 {
   width: 28px;
   height: 28px;
-
   position: absolute;
   top: 40px;
   right: 20px;
@@ -51,6 +46,9 @@
 }
 
 .quote-favorites-text {
+  height: 110px;
+  overflow-y: auto;
+  scrollbar-color: #696969 #d3d3d3;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.29;
@@ -62,7 +60,7 @@
   font-size: 16px;
   line-height: 1.5;
   color: #f6f6f6;
-  margin-top: 14px;
+  margin-top: 18px;
 }
 
 .quote-favorites-picture {
@@ -71,8 +69,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 272px;
-  width: 100%;
+  height: 272px;
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -88,11 +85,9 @@
   background-color: #ffffff;
   width: 100%;
   min-height: 272px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   border-radius: 30px;
 }
 
@@ -115,6 +110,16 @@
   font-size: 14px;
   line-height: 1.29;
   color: rgba(27, 27, 27, 0.6);
+}
+
+@media screen and (min-width: 375px) {
+  .quote-of-the-day {
+    padding: 40px 20px;
+  }
+
+  .quote-author {
+    margin-top: 12px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -141,7 +146,6 @@
   .quote-favorites-header-svg-2 {
     width: 48px;
     height: 48px;
-
     top: 32px;
     right: 80px;
   }
@@ -152,6 +156,7 @@
   }
 
   .quote-favorites-text {
+    height: 77px;
     font-size: 16px;
     line-height: 1.5;
   }
@@ -164,7 +169,7 @@
     border-radius: 50px;
     background-image: url('../img/quote-img/tablet-favorites-fonts.jpg');
     width: 50%;
-    min-height: 302px;
+    height: 302px;
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -212,8 +217,22 @@
   .quote-favorites-header-svg-2 {
     width: 48px;
     height: 48px;
-
     right: 64px;
+  }
+
+  .quote-text-container {
+    margin-left: 50px;
+    margin-top: 16px;
+  }
+
+  .quote-text {
+    height: 77px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .quote-author {
+    margin-top: 25px;
   }
 
   .quote-favorites-picture {
