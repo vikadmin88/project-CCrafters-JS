@@ -47,10 +47,20 @@
     display: block;
   }
   .header-icon {
-    display: block;
+    display: flex;
+  }
+
+  .logo-link {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.56px;
   }
 
   .page-nav {
+    margin: 48px 32px;
+
     transform: translateY(-5%);
     animation: slideIn 2s forwards;
   }
@@ -62,27 +72,7 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1157.98px) {
-  .logo-link {
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 28px;
-    letter-spacing: -0.56px;
-  }
-  .page-nav {
-    margin: 48px 60px;
-  }
-}
-
-@media screen and (min-width: 1158px) {
-  .logo-link {
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 28px;
-    letter-spacing: -0.56px;
-  }
+@media screen and (min-width: 1440px) {
   .page-nav {
     margin: 38px 48px;
 
