@@ -6,7 +6,7 @@ function getCurrentDate() {
   return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 }
 
-function updateQuote() {
+function updateFavoritesQuote() {
   const storedData = JSON.parse(localStorage.getItem('quoteOfTheDay'));
   const storedDate = localStorage.getItem('quoteDate');
   const currentDate = getCurrentDate();
@@ -17,8 +17,10 @@ function updateQuote() {
     storedData.author &&
     storedDate === currentDate
   ) {
-    document.querySelector('.quote-text').textContent = storedData.quote;
-    document.querySelector('.quote-author').textContent = storedData.author;
+    document.querySelector('.quote-favorites-text').textContent =
+      storedData.quote;
+    document.querySelector('.quote-favorites-author').textContent =
+      storedData.author;
   } else {
     api
       .get(API_QUOTE_POINT, {})
@@ -29,8 +31,9 @@ function updateQuote() {
             JSON.stringify({ quote, author })
           );
           localStorage.setItem('quoteDate', currentDate);
-          document.querySelector('.quote-text').textContent = quote;
-          document.querySelector('.quote-author').textContent = author;
+          document.querySelector('.quote-favorites-text').textContent = quote;
+          document.querySelector('.quote-favorites-author').textContent =
+            author;
         } else {
           console.log('Update failed due to an error.');
         }
@@ -42,4 +45,4 @@ function updateQuote() {
   }
 }
 
-updateQuote();
+updateFavoritesQuote();

@@ -1,0 +1,256 @@
+.quote-favorites {
+  padding-top: 96px;
+  padding-bottom: 10px;
+}
+
+.container-quote-favorites {
+  min-width: 280px;
+}
+
+.quote-of-the-day-favorites {
+  background-color: #7e847f;
+  border-radius: 30px;
+  padding: 40px 20px 34px;
+  position: relative;
+}
+
+.quote-favorites-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.quote-favorites-svg-1 {
+  width: 34px;
+  height: 32px;
+}
+
+.quote-favorites-header-title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #f6f6f6;
+}
+
+.quote-favorites-header-svg-2 {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+}
+
+.quote-text-favorites-container {
+  margin-left: 46px;
+  margin-top: 14px;
+}
+
+.quote-favorites-text {
+  height: 110px;
+  overflow-y: auto;
+  scrollbar-color: #696969 #d3d3d3;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  color: rgba(246, 246, 246, 0.6);
+}
+
+.quote-favorites-author {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #f6f6f6;
+  margin-top: 18px;
+}
+
+.quote-favorites-picture {
+  border-radius: 30px;
+  background-image: url('../img/quote-img/mobile-favorites-fonts.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 272px;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .quote-favorites-picture {
+    background-image: url('../img/quote-img/mobile-favorites-fonts-2x.jpg');
+  }
+}
+
+.quote-110min-container {
+  background-color: #ffffff;
+  width: 100%;
+  min-height: 272px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
+
+.quote-110min-svg {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 15px;
+}
+
+.quote-110min-text {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
+  color: #1b1b1b;
+  margin-bottom: 6px;
+}
+
+.quote-110min-live {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  color: rgba(27, 27, 27, 0.6);
+}
+
+@media screen and (min-width: 375px) {
+  .quote-of-the-day {
+    padding: 40px 20px;
+  }
+
+  .quote-author {
+    margin-top: 12px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .quote-favorites {
+    padding-top: 180px;
+    padding-bottom: 8px;
+  }
+
+  .container-quote-favorites {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .quote-of-the-day-favorites {
+    border-radius: 50px;
+    padding: 64px 80px;
+    width: 100%;
+  }
+
+  .quote-favorites-header-title {
+    font-size: 24px;
+    line-height: 1.33;
+  }
+
+  .quote-favorites-header-svg-2 {
+    width: 48px;
+    height: 48px;
+    top: 32px;
+    right: 80px;
+  }
+
+  .quote-text-favorites-container {
+    margin-left: 50px;
+    margin-top: 16px;
+  }
+
+  .quote-favorites-text {
+    height: 77px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .quote-favorites-author {
+    margin-top: 25px;
+  }
+
+  .quote-favorites-picture {
+    border-radius: 50px;
+    background-image: url('../img/quote-img/tablet-favorites-fonts.jpg');
+    width: 50%;
+    height: 302px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .quote-favorites-picture {
+      background-image: url('../img/quote-img/tablet-favorites-fonts-2x.jpg');
+    }
+  }
+
+  .quote-110min-container {
+    width: 50%;
+    min-height: 302px;
+    border-radius: 50px;
+  }
+
+  .quote-110min-text {
+    font-size: 24px;
+    line-height: 1.33;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .quote-favorites {
+    padding-top: 156px;
+  }
+
+  .container-quote-favorites {
+    display: flex;
+    flex-direction: row;
+    align-self: stretch;
+  }
+
+  .quote-of-the-day-favorites {
+    padding: 64px;
+    width: 50%;
+  }
+
+  .quote-favorites-header-title {
+    font-size: 24px;
+    line-height: 1.33;
+  }
+
+  .quote-favorites-header-svg-2 {
+    width: 48px;
+    height: 48px;
+    right: 64px;
+  }
+
+  .quote-text-container {
+    margin-left: 50px;
+    margin-top: 16px;
+  }
+
+  .quote-text {
+    height: 77px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .quote-author {
+    margin-top: 25px;
+  }
+
+  .quote-favorites-picture {
+    background-image: url('../img/quote-img/desktop-favorites-fonts.jpg');
+    width: 25%;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .quote-favorites-picture {
+      background-image: url('../img/quote-img/desktop-favorites-fonts-2x.jpg');
+    }
+  }
+
+  .quote-110min-container {
+    width: 25%;
+  }
+}
