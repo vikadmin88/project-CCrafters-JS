@@ -16,7 +16,7 @@ const container = document.getElementById('tui-pagination-container');
 const options = {
   itemsPerPage: 8,
   visiblePages: 3,
-  centerAlign: false,
+  centerAlign: true,
 };
 const instance = new Pagination(container, options);
 
@@ -24,16 +24,6 @@ let category = '';
 
 refs.subcategory.addEventListener('click', searchCard);
 refs.search.addEventListener('submit', searchCardForm);
-// refs.search.addEventListener('input', keyboardValue);
-
-// function keyboardValue(e) {
-//   const formValue = e.currentTarget.elements.exercises.value;
-//   if (e.currentTarget.elements.exercises.value !== '') {
-//     refs.clearBtn.classList.remove('is-hidden');
-//     refs.clearBtn.addEventListener('click', cleanForm);
-//   }
-//   console.log(e.currentTarget.elements.exercises.value);
-// }
 
 function searchCardForm(e) {
   e.preventDefault();
@@ -41,14 +31,19 @@ function searchCardForm(e) {
   paramsCard.keyword = form.elements.searchstr.value.trim().toLowerCase();
 
   console.log(paramsCard);
-
-  getSubcategoryExercises(paramsCard);
   form.reset();
+  getSubcategoryExercises(paramsCard);
 }
 
 function searchCard(e) {
   e.preventDefault();
-  if (e.target === e.currentTarget) {
+  // if (e.target === e.currentTarget) {
+  //   return;
+  // }
+  if (
+    !e.target.classList.contains('exercises-subcategory-item') ||
+    !e.target.closest('.exercises-subcategory-item')
+  ) {
     return;
   }
 
@@ -154,6 +149,7 @@ function getSubcategoryExercises() {
       if (results.length === 0) {
         refs.subcategory.innerHTML = `<li class = "exercises-text"><p>Unfortunately, <span class = "exercises-text-span">no results</span> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p></li>`;
       }
+
       instance.reset(totalPages * 8);
     })
     .catch(error => console.log(error)).finally;
@@ -166,5 +162,5 @@ function getSubcategoryExercises() {
         createMarkupCard(results);
       })
       .catch(error => console.log(error));
-  })();
+  });
 }
