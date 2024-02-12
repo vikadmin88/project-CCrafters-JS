@@ -1,9 +1,5 @@
 @import url('tui-pagination/dist/tui-pagination.css');
 
-.is-hidden {
-  display: none;
-}
-
 .exercises-title-span {
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
@@ -322,6 +318,10 @@
   display: none;
 }
 
+.tui-pagination .tui-page-btn:hover {
+  background-color: inherit;
+}
+
 .tui-pagination .tui-prev,
 .tui-pagination .tui-next {
   font-size: 24px;
@@ -329,6 +329,8 @@
   font-weight: 400;
   line-height: 1.33;
   letter-spacing: 0.04em;
+
+  padding: 0 8px;
 }
 
 .tui-pagination .tui-first-child.tui-is-selected,
@@ -490,4 +492,8 @@
   .exercises-text {
     padding: 217px 314px 350px 314px;
   }
+}
+
+.is-hidden {
+  display: none;
 }
