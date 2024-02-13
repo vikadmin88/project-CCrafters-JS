@@ -1,36 +1,38 @@
 <section class="exercises">
-    <div class="container">
-        <div class="exercises-inner-container">
-            <h2 class="exercises-title">Exercises</h2>
+  <div class="container">
+    <div class="exercises-inner-container">
+      <h2 class="exercises-title">Exercises</h2>
 
-            <div class="exercises-category-form-container">
-                <div class="exercises-category-container">
-                    <button type="button" class="exercises-category-btn exercises-category-btn-active">Muscles</button>
-                    <button type="button" class="exercises-category-btn">Body parts</button>
-                    <button type="button" class="exercises-category-btn">Equipment</button>
-                </div>
-
-                <form class="exercices-form" name="exercices-form" autocomplete="off">
-                    <input class="exercices-form-input" type="text" name="searchstr" placeholder="Search" />
-
-                    <div class="exercices-form-btn-container">
-                        <button class="exercices-form-clear-btn" type="submit">
-                            <svg class="form-clear-svg" width="18" height="18">
-                                <use href="./img/icons.svg#icon-cross"></use>
-                            </svg>
-                        </button>
-                        <button class="exercices-form-search-btn" type="submit">
-                            <svg class="form-search-svg" width="18" height="18">
-                                <use href="./img/icons.svg#icon-search"></use>
-                            </svg>
-                        </button>
-                    </div>
-                </form>
-            </div>
-
-            <ul class="exercises-subcategory-list"></ul>
-
-            <div class="exercises-subcategory-page-container"></div>
+      <div class="exercises-category-form-container">
+        <div class="exercises-category-container">
+          <button type="button" class="exercises-category-btn exercises-category-btn-active">Muscles</button>
+          <button type="button" class="exercises-category-btn">Body parts</button>
+          <button type="button" class="exercises-category-btn">Equipment</button>
         </div>
+
+        <form class="exercices-form" name="exercices-form" autocomplete="off">
+          <input class="exercices-form-input" type="text" name="searchstr" placeholder="Search" />
+
+          <div class="exercices-form-btn-container">
+            <button class="exercices-form-clear-btn" type="submit">
+              <svg class="form-clear-svg" width="18" height="18">
+                <use href="./img/icons.svg#icon-cross"></use>
+              </svg>
+            </button>
+            <button class="exercices-form-search-btn" type="submit">
+              <svg class="form-search-svg" width="18" height="18">
+                <use href="./img/icons.svg#icon-search"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <ul class="exercises-subcategory-list"></ul>
+
+      <!-- <div class="exercises-subcategory-page-container"></div> -->
+
+      <div id="tui-pagination-container" class="tui-pagination"></div>
     </div>
+  </div>
 </section>
