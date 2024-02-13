@@ -1,0 +1,2 @@
+function c(){const n=document.querySelectorAll(".navigation-link"),t=window.location.pathname;for(let e=0;e<n.length;e++){const o=n[e].pathname;(t.endsWith("/")&&e===0||t!=="/"&&o===t)&&n[e].classList.add("current-page-link")}}c();document.querySelector(".open-btn-mobile").addEventListener("click",()=>{document.querySelector(".backdrop").classList.add("is-open")});
+//# sourceMappingURL=header-3d2e9efd.js.map
