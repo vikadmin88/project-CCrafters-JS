@@ -151,23 +151,29 @@ localStorage.setItem('favorites', JSON.stringify(favDataArr));
 
 
 function renderFavorites() {
-       let favArr = JSON.parse(localStorage.getItem('favorites')) || [];
-       console.log(favArr);
+  let favArr = JSON.parse(localStorage.getItem('favorites')) || [];
+  console.log(favArr);
 
-       if (favArr.length) {
-        containerForTextOfEmptyList.style.display = "none";
-        ulFavList.innerHTML = favArr.map(fillFavoriteCard).join("");
+  containerForTextOfEmptyList.style.display = "none";
+  ulFavList.innerHTML = favArr.map(fillFavoriteCard).join("");
 
-        // reassign listeners for recreated elements
-        btns = document.querySelectorAll('button[data-btn="trash"]');
-        for (let btn of btns) {
-          // event exercise removing
-          btn.addEventListener('click', deleteExercise);
-        }
-       } else {
-        containerForTextOfEmptyList.style.display = "block";
-       }
+  // reassign listeners for recreated elements
+  btns = document.querySelectorAll('button[data-btn="trash"]');
+  for (let btn of btns) {
+    // event exercise removing
+    btn.addEventListener('click', deleteExercise);
+  }
+  if (!favArr.length) {
+    containerForTextOfEmptyList.style.display = 'block';
+  }
+      
 }
+
+
+
+
+
+
 
 
 //--------------------------Card-fill-function-------------------------------//

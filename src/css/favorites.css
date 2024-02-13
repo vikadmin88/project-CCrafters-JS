@@ -70,14 +70,14 @@
     margin-bottom: 20px;
   }
 
-  .favorites-container-block {
+  /* .favorites-container-block {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
     overflow-y: auto;
-  }
+  } */
 
   .favorites-list {
     display: flex;
