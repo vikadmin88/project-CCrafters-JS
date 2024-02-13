@@ -25,8 +25,8 @@ export function openModalHandler(e) {
     return;
   }
   console.log(e);
-  console.log(document.querySelector('.backdrop'));
-  document.querySelector('.backdrop').classList.remove('visually-hidden');
+  console.log(document.querySelector('.backdrop2'));
+  document.querySelector('.backdrop2').classList.remove('visually-hidden');
   openModal(id);
 }
 
