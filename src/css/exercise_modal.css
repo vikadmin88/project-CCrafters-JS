@@ -44,6 +44,9 @@
     .close-modal-icon {
       stroke: #1b1b1b99;
       fill: #fff;
+      margin-top: 6px;
+      margin-right: 10px;
+
     }
   }
   .modal-description-container {
@@ -154,7 +157,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
 
       .icon-heart {
         fill: transparent;

@@ -168,9 +168,8 @@ function createMarkupExercisesCard({
     .concat('<r class="star-0"/>'.repeat(starsGray));
   return `<div class="modal-description-container">
       <button class="close-modal-btn" title="Close window">
-        <svg class="close-modal-icon" width="24" height="24">
-          <use href="./img/icons.svg#icon-cross"></use>
-        </svg>
+        <svg class="close-modal-icon"  width="12" height="12" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.8332 1.16666L1.1665 12.8333M1.1665 1.16666L12.8332 12.8333" stroke="#1B1B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="modal-gif-container">
         <picture>
@@ -228,8 +227,8 @@ function createMarkupExercisesCard({
         <div class="modal-buttons-container">
           <button data-id="${_id}" class="add-favorite-btn">
             ${isFavorite ? 'Remove from' : 'Add to favorites'}
-            <svg class="icon-heart" width="18" height="18">
-              <use href="./img/icons.svg#icon-heart"></use>
+            <svg class="icon-heart" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.3671 3.84166C16.9415 3.41583 16.4361 3.07803 15.8799 2.84757C15.3237 2.6171 14.7275 2.49847 14.1254 2.49847C13.5234 2.49847 12.9272 2.6171 12.371 2.84757C11.8147 3.07803 11.3094 3.41583 10.8838 3.84166L10.0004 4.725L9.11709 3.84166C8.25735 2.98192 7.09128 2.49892 5.87542 2.49892C4.65956 2.49892 3.4935 2.98192 2.63376 3.84166C1.77401 4.70141 1.29102 5.86747 1.29102 7.08333C1.29102 8.29919 1.77401 9.46525 2.63376 10.325L3.51709 11.2083L10.0004 17.6917L16.4838 11.2083L17.3671 10.325C17.7929 9.89937 18.1307 9.39401 18.3612 8.83779C18.5917 8.28158 18.7103 7.6854 18.7103 7.08333C18.7103 6.48126 18.5917 5.88508 18.3612 5.32887C18.1307 4.77265 17.7929 4.26729 17.3671 3.84166Z" stroke="#F6F6F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
           <button data-id="${_id}" class="give-rating-btn">
