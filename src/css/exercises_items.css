@@ -1,0 +1,508 @@
+@import url('tui-pagination/dist/tui-pagination.css');
+
+.exercises-title-span {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 133%;
+  letter-spacing: -0.02em;
+  color: rgba(27, 27, 27, 0.5);
+}
+
+.open-card {
+  /* width: 335px; */
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 1778px;
+  min-height: 616px;
+  height: 100%;
+}
+/* 
+.container-exercises-item {
+  
+} */
+
+/* стилі форми для запиту */
+
+/* .exercices-form {
+  display: block;
+  margin-bottom: 40px;
+  width: 295px;
+  height: 42px;
+  position: relative;
+}
+
+.exercices-form-input {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 129%;
+  color: var(--c-primary);
+  border: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  padding: 12px 14px;
+  outline: none;
+  background: var(--c-main);
+}
+
+.exercices-form-input::placeholder {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--c-primary);
+}
+
+.exercices-form-btn-container {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  margin: 0;
+}
+
+.exercices-form-search-btn {
+  width: 18px;
+  height: 18px;
+  border: none;
+  outline: none;
+  background: var(--c-main);
+}
+
+.form-search-svg {
+  fill: none;
+  stroke: var(--c-primary);
+  transition: scale 250ms ease-in-out;
+}
+
+.form-search-svg:hover,
+.form-search-svg:focus {
+  scale: 120%;
+}
+
+.exercices-form-clear-btn {
+  width: 18px;
+  height: 18px;
+  border: none;
+  background: var(--c-main);
+  outline: none;
+}
+
+.form-clear-svg {
+  stroke: var(--c-primary);
+  fill: var(--c-primary);
+  transition: scale 250ms ease-in-out;
+}
+
+.form-clear-svg:hover,
+.form-clear-svg:focus {
+  scale: 120%;
+} */
+
+/* стилі для карти товару */
+
+.exercices-card {
+  background: #fff;
+  padding: 16px;
+  max-width: 295px;
+  min-height: 165px;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.card-header-container {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-rating-container {
+  display: flex;
+  gap: 2px;
+}
+
+.card-rating-svg {
+  fill: #eea10c;
+  stroke: none;
+}
+
+.card-rating {
+  color: var(--c-primary);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'DM Sans';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5em;
+}
+
+.card-category {
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--c-main);
+  border-radius: 15px;
+  padding: 6px 8px;
+  width: 76px;
+  height: 26px;
+  background: #7e847f;
+}
+
+.card-button-list {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  height: 18px;
+  text-align: center;
+}
+
+.card-button {
+  position: relative;
+  text-align: left;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29em;
+  color: var(--c-primary);
+  background: #fff;
+  width: 54px;
+  height: 18px;
+  border: none;
+  outline: none;
+  transition: scale 250ms ease-in-out;
+}
+
+.card-button:hover,
+.card-button:focus {
+  scale: 1.1;
+}
+
+.card-search-svg {
+  position: absolute;
+  top: 2px;
+  right: 0px;
+  fill: none;
+  stroke: var(--c-primary);
+  width: 14px;
+  height: 14px;
+}
+
+/* стилі для середньої частини картки */
+
+.card-bodi {
+  max-width: 263px;
+  max-height: 24px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card-bodi-svg {
+  background-color: #7e847f;
+  border-radius: 50%;
+
+  flex-shrink: 0;
+}
+
+.card-name {
+  max-width: 216px;
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--c-primary);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* стилі для описової частини картки */
+
+.card-inform-list {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: rgba(27, 27, 27, 0.4);
+  display: flex;
+  column-gap: 16px;
+  row-gap: 6px;
+  flex-wrap: wrap;
+}
+
+.card-inform-item-span {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: var(--c-primary);
+}
+
+/* стилі для тексту */
+.exercises-text {
+  padding-top: 164px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #1b1b1b;
+}
+
+.exercises-text-span {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #7e847f;
+}
+
+/* стилі для делегації */
+
+.tui-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border-radius: 50px;
+
+  margin: 20px 0 0;
+}
+
+.tui-pagination .tui-page-btn {
+  color: rgba(27, 27, 27, 0.4);
+  font-family: 'DM Sans';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+
+  border: none;
+
+  width: auto;
+  height: auto;
+
+  margin: 0;
+  padding: 0;
+}
+
+.tui-pagination .tui-first,
+/* .tui-pagination .tui-prev, */
+/* .tui-pagination .tui-next, */
+.tui-pagination .tui-last,
+.tui-pagination .tui-prev-is-ellip,
+.tui-pagination .tui-next-is-ellip {
+  display: none;
+}
+
+.tui-pagination .tui-page-btn:hover {
+  background-color: inherit;
+}
+
+.tui-pagination .tui-prev,
+.tui-pagination .tui-next {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+
+  padding: 0 8px;
+}
+
+.tui-pagination .tui-first-child.tui-is-selected,
+.tui-pagination .tui-last-child.tui-is-selected,
+.tui-pagination .tui-is-selected {
+  border-radius: 18px;
+  border: 1px solid #1b1b1b;
+
+  width: 32px;
+}
+
+.tui-pagination .tui-is-selected,
+.tui-pagination strong {
+  color: #1b1b1b;
+
+  background: inherit;
+}
+
+.tui-pagination .tui-last-child,
+.tui-pagination .tui-next-is-ellip {
+  border: none;
+}
+
+/* стилі для планшета */
+
+@media screen and (min-width: 768px) {
+  .container-exercises-item {
+    height: 1091px;
+  }
+
+  /* .exercises-category-form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+  }
+
+  .exercices-form {
+    width: 246px;
+    height: 44px;
+  }
+
+  .exercices-form-btn-container {
+    bottom: 13px;
+  } */
+
+  .open-card {
+    height: 720px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 14px;
+    row-gap: 20px;
+    align-content: flex-start;
+  }
+
+  .exercices-card {
+    max-width: calc((100% - 14px) / 2);
+    max-height: 165px;
+  }
+
+  .card-category {
+    width: 76px;
+    height: 26px;
+    padding: 7px 8px;
+  }
+
+  .card-button {
+    font-size: 16px;
+    width: 61px;
+    height: 24px;
+  }
+
+  .card-search-svg {
+    width: 16px;
+    height: 16px;
+    top: 4px;
+  }
+
+  .card-bodi {
+    max-width: 256px;
+    max-height: 32px;
+    margin-bottom: 8px;
+  }
+
+  .card-name {
+    max-width: 216px;
+    font-size: 24px;
+    line-height: 1.33;
+  }
+
+  .exercises-text {
+    padding: 222px 52px 585px 52px;
+    line-height: 1.33;
+    font-size: 18px;
+  }
+
+  .exercises-text-span {
+    font-size: 18px;
+  }
+
+  .tui-pagination {
+    margin: 32px 0 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container-exercises-item {
+    height: 827px;
+  }
+
+  .open-card {
+    min-height: 479px;
+    height: 479px;
+    column-gap: 20px;
+    row-gap: 28px;
+  }
+
+  /* .exercices-form {
+    width: 273px;
+    height: 48px;
+  }
+
+  .exercices-form-btn-container {
+    bottom: 15px;
+  } */
+
+  .exercices-card {
+    max-width: calc((100% - 40px) / 3);
+    min-height: 141px;
+    max-height: 141px;
+  }
+
+  .card-bodi {
+    max-width: 358px;
+    max-height: 32px;
+  }
+
+  .card-name {
+    text-wrap: nowrap;
+    max-width: 318px;
+  }
+
+  .card-category {
+    width: 76px;
+    height: 26px;
+  }
+
+  .card-button {
+    width: 61px;
+    height: 24px;
+  }
+
+  .card-inform-list {
+    flex-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-inform-item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .exercises-text {
+    padding: 217px 314px 350px 314px;
+  }
+}
+
+.is-hidden {
+  display: none;
+}

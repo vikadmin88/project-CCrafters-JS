@@ -1,5 +1,6 @@
 import { notify } from './notifier.js';
 import { API_FILTER_POINT, api } from './api.js';
+import Pagination from 'tui-pagination';
 
 export { refs };
 const refs = {
@@ -23,6 +24,15 @@ const pageWidth = window.innerWidth;
 if (pageWidth < 768) {
   queryParams.limit = 8;
 }
+
+const container = document.getElementById('tui-pagination-container');
+const options = {
+  totalItems: queryParams.maxPage,
+  itemsPerPage: queryParams.limit,
+  visiblePages: 3,
+  centerAlign: true,
+};
+const instance = new Pagination(container, options);
 
 getCategoryExercises();
 
@@ -88,56 +98,29 @@ function getCategoryExercises() {
       refs.subcategory.innerHTML = results.map(markupCategory).join('');
       queryParams.maxPage = totalPages;
 
-      if (queryParams.page === 1) {
-        markupPages();
+      if (totalPages === 1) {
+        container.classList.add('is-hidden');
+      } else {
+        container.classList.remove('is-hidden');
       }
+
+      instance.reset(totalPages * queryParams.limit);
     })
     .catch(error => notify('error', `API error: ${error}`))
     .finally(() => {
       [...refs.category.children].forEach(btn => {
         btn.disabled = false;
       });
+
+      instance.on('afterMove', event => {
+        queryParams.page = event.page;
+
+        api
+          .get(API_FILTER_POINT, queryParams)
+          .then(({ results }) => {
+            refs.subcategory.innerHTML = results.map(markupCategory).join('');
+          })
+          .catch(error => notify('error', `API error: ${error}`));
+      });
     });
-}
-
-function markupPages() {
-  if (queryParams.maxPage < 2) {
-    refs.pagescategory.innerHTML = '';
-    refs.pagescategory.classList.remove('is-visible');
-  } else if (queryParams.maxPage >= 2) {
-    let markupPage = `
-          <button type="button" class="exercises-subcategory-page-btn exercises-subcategory-page-btn-active">1</button>
-        `;
-    for (let i = 1; i < queryParams.maxPage; i++) {
-      markupPage += `
-        <button type="button" class="exercises-subcategory-page-btn">${
-          i + 1
-        }</button>
-      `;
-    }
-
-    refs.pagescategory.innerHTML = markupPage;
-
-    refs.pagescategory.classList.add('is-visible');
-
-    refs.pagescategory.addEventListener('click', categoryPages);
-  }
-}
-
-function categoryPages(event) {
-  if (event.target.nodeName !== 'BUTTON') {
-    return;
-  }
-
-  [...event.currentTarget.children]
-    .find(btn =>
-      btn.classList.contains('exercises-subcategory-page-btn-active')
-    )
-    .classList.remove('exercises-subcategory-page-btn-active');
-
-  event.target.classList.add('exercises-subcategory-page-btn-active');
-
-  queryParams.page = event.target.textContent;
-
-  getCategoryExercises();
 }
