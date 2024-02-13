@@ -52,6 +52,8 @@ function searchCard(e) {
   category = liEl.children[1].textContent.toLowerCase();
   const subcategoryName = liEl.children[0].textContent;
 
+  paramsCard.page = 1;
+
   refs.title.insertAdjacentHTML(
     'beforeend',
     ` / <span class="exercises-title-span"> ${subcategoryName}</span>`
@@ -119,7 +121,7 @@ function createMarkupCard(results) {
             <svg class="card-bodi-svg" width="24" height="24">
               <use href="./img/icons.svg#icon-running_man"></use>
             </svg>
-            <h3 class="card-name">${name}</h3>
+            <h3 class="card-name">${capitalizeFirstLetter(name)}</h3>
           </div>
 
             <ul class="card-inform-list">
@@ -153,6 +155,12 @@ function getSubcategoryExercises() {
       }
 
       instance.reset(totalPages * 8);
+
+      if (totalPages <= 1) {
+        container.classList.add('is-hidden');
+      } else {
+        container.classList.remove('is-hidden');
+      }
     })
     .catch(error => console.log(error)).finally;
   instance.on('afterMove', event => {
@@ -165,4 +173,12 @@ function getSubcategoryExercises() {
       })
       .catch(error => console.log(error));
   });
+}
+
+function capitalizeFirstLetter(name) {
+  if (name.charAt(0).toLowerCase() === name.charAt(0)) {
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  } else {
+    return name;
+  }
 }
