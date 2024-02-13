@@ -102,7 +102,7 @@ function createMarkupCard(results) {
                      ${rating}
                   </p>
                  <svg class="card-rating-svg" width="15" height="15">
-                   <use href="./img/icons.svg#icon-star"></use>
+                   <use href="/project-CCrafters-JS/assets/icons-84da4e8c.svg#icon-star"></use>
                  </svg>
                </div>
 
@@ -111,7 +111,7 @@ function createMarkupCard(results) {
                  <button class="card-button" type="submit" data-id = "${_id}" data-modal>
               Start
               <svg class="card-search-svg" >
-                <use href="./img/icons.svg#icon-arrow-right"></use>
+                <use href="/project-CCrafters-JS/assets/icons-84da4e8c.svg#icon-arrow-right"></use>
               </svg>
             </button >
 
@@ -119,7 +119,7 @@ function createMarkupCard(results) {
 
           <div class="card-bodi">
             <svg class="card-bodi-svg" width="24" height="24">
-              <use href="./img/icons.svg#icon-running_man"></use>
+              <use href="/project-CCrafters-JS/assets/icons-84da4e8c.svg#icon-running_man"></use>
             </svg>
             <h3 class="card-name">${capitalizeFirstLetter(name)}</h3>
           </div>
