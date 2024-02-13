@@ -99,7 +99,7 @@ function createMarkupCard(results) {
                      ${rating}
                   </p>
                  <svg class="card-rating-svg" width="15" height="15">
-                   <use href="./img/icons.svg#icon-star"></use>
+                   <use href="/img/icons.svg#icon-star"></use>
                  </svg>
                </div>
 
