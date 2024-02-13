@@ -102,6 +102,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+  cursor: pointer;
 }
 
 .ul-icon-list {
@@ -140,6 +141,11 @@
 
 .svg-icon:hover,
 .svg-icon:focus {
-  fill: #5f6560;
+  fill: #7e847f;
   transform: scale(1.15);
+}
+
+.icon-active:hover .svg-icon,
+.icon-active:focus .svg-icon {
+  fill: #5f6560;
 }
