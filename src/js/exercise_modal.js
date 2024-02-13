@@ -34,6 +34,11 @@ export function openModalHandler(e) {
     return;
   }
   document.querySelector('.backdrop-modal').classList.remove('visually-hidden');
+  // let loader = document.querySelector('.loader');
+  // if (loader) {
+  document.querySelector('.modal').innerHTML = '<div class="loader-modal"></div>';
+  document.querySelector('.loader-modal').style.display = 'block';
+  // }
   openModal(id);
 }
 
@@ -114,10 +119,6 @@ function getExerciseApi(id) {
     return;
   }
 
-  let loader = document.querySelector('.loader');
-  if (loader) {
-    document.querySelector('.loader').style.display = 'block';
-  }
   api
     .get(`${API_EXERCISES_POINT}/${id}`, {})
     .then(data => {
@@ -130,7 +131,12 @@ function getExerciseApi(id) {
       }
       markupAndReload(data);
     })
-    .catch(error => notify('error', `API error: ${error}`));
+    .catch(error => notify('error', `API error: ${error}`))
+    .finally(() => {
+      try {
+        document.querySelector('.loader-modal').style.display = 'none';
+      } catch {}
+    });
 }
 
 // this will call from exercises_items and favorite part

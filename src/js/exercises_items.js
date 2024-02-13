@@ -102,16 +102,16 @@ function createMarkupCard(results) {
                      ${rating}
                   </p>
                  <svg class="card-rating-svg" width="15" height="15">
-                   <use href="/project-CCrafters-JS/assets/icons-84da4e8c.svg#icon-star"></use>
+                   <use href="../img/icons.svg#icon-star"></use>
                  </svg>
                </div>
 
             </div>
 
-                 <button class="card-button" type="submit" data-id = "${_id}" data-modal>
+                 <button class="card-button" type="submit" data-id="${_id}" data-modal>
               Start
               <svg class="card-search-svg" >
-                <use href="/project-CCrafters-JS/assets/icons-84da4e8c.svg#icon-arrow-right"></use>
+                <use href="../img/icons.svg#icon-arrow-right"></use>
               </svg>
             </button >
 
@@ -119,7 +119,7 @@ function createMarkupCard(results) {
 
           <div class="card-bodi">
             <svg class="card-bodi-svg" width="24" height="24">
-              <use href="/project-CCrafters-JS/assets/icons-84da4e8c.svg#icon-running_man"></use>
+              <use href="../img/icons.svg#icon-running_man"></use>
             </svg>
             <h3 class="card-name">${capitalizeFirstLetter(name)}</h3>
           </div>
@@ -144,7 +144,7 @@ function getSubcategoryExercises() {
   if (pageWidth >= 1440) {
     paramsCard.limit = 9;
   }
-
+  document.querySelector('.loader').style.display = 'block';
   api
     .get(API_EXERCISES_POINT, paramsCard)
     .then(({ page, totalPages, results }) => {
@@ -161,16 +161,23 @@ function getSubcategoryExercises() {
         container.classList.remove('is-hidden');
       }
     })
-    .catch(error => console.log(error)).finally;
+    .catch(error => console.log(error))
+    .finally(() => {
+      document.querySelector('.loader').style.display = 'none';
+    });
   instance.on('afterMove', event => {
     const currentPage = event.page;
     paramsCard.page = currentPage;
+    document.querySelector('.loader').style.display = 'block';
     api
       .get(API_EXERCISES_POINT, paramsCard)
       .then(({ results }) => {
         createMarkupCard(results);
       })
-      .catch(error => console.log(error));
+      .catch(error => console.log(error))
+      .finally(() => {
+        document.querySelector('.loader').style.display = 'none';
+      });
   });
 }
 

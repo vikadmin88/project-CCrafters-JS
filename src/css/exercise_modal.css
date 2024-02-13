@@ -67,9 +67,6 @@
     }
 
     .rating-container {
-      /*display: flex;*/
-      /*align-items: center;*/
-      /*gap: 2px;*/
       margin-bottom: 20px;
 
       .modal-exercises-rating {
@@ -100,32 +97,6 @@
         content: ' \2605';
         color: #eea10c;
       }
-
-      /*.star-outer {*/
-      /*  !*position: relative;*!*/
-      /*  font-size: 18px;*/
-      /*  display: inline-block;*/
-      /*}*/
-
-      /*.star-outer::before {*/
-      /*  content: '\2605 \2605 \2605 \2605 \2605';*/
-      /*  color: #1b1b1b33;*/
-      /*}*/
-
-      /*.star-inner {*/
-      /*  position: absolute;*/
-      /*  font-size: 18px;*/
-      /*  top: 0;*/
-      /*  left: 0;*/
-
-      /*  width: 0%;*/
-      /*  overflow: hidden;*/
-      /*}*/
-
-      /*.star-inner::before {*/
-      /*  content: '\2605 \2605 \2605 \2605 \2605';*/
-      /*  color: #eea10c;*/
-      /*}*/
     }
     .description-list {
       display: flex;
