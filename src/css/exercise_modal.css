@@ -67,9 +67,9 @@
     }
 
     .rating-container {
-      display: flex;
-      align-items: center;
-      gap: 2px;
+      /*display: flex;*/
+      /*align-items: center;*/
+      /*gap: 2px;*/
       margin-bottom: 20px;
 
       .modal-exercises-rating {
@@ -77,32 +77,57 @@
         line-height: 18px;
         color: #1b1b1b;
       }
-
-      .star-outer {
-        position: relative;
+      .star-block {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2px;
+        flex-wrap: nowrap;
+      }
+      .star-0 {
         font-size: 18px;
         display: inline-block;
       }
-
-      .star-outer::before {
-        content: '\2605 \2605 \2605 \2605 \2605';
+      .star-0::before {
+        content: ' \2605';
         color: #1b1b1b33;
       }
-
-      .star-inner {
-        position: absolute;
+      .star-1 {
         font-size: 18px;
-        top: 0;
-        left: 0;
-
-        width: 0%;
-        overflow: hidden;
+        display: inline-block;
       }
-
-      .star-inner::before {
-        content: '\2605 \2605 \2605 \2605 \2605';
+      .star-1::before {
+        content: ' \2605';
         color: #eea10c;
       }
+
+
+      /*.star-outer {*/
+      /*  !*position: relative;*!*/
+      /*  font-size: 18px;*/
+      /*  display: inline-block;*/
+      /*}*/
+
+
+      /*.star-outer::before {*/
+      /*  content: '\2605 \2605 \2605 \2605 \2605';*/
+      /*  color: #1b1b1b33;*/
+      /*}*/
+
+      /*.star-inner {*/
+      /*  position: absolute;*/
+      /*  font-size: 18px;*/
+      /*  top: 0;*/
+      /*  left: 0;*/
+
+      /*  width: 0%;*/
+      /*  overflow: hidden;*/
+      /*}*/
+
+      /*.star-inner::before {*/
+      /*  content: '\2605 \2605 \2605 \2605 \2605';*/
+      /*  color: #eea10c;*/
+      /*}*/
     }
     .description-list {
       display: flex;
@@ -153,7 +178,7 @@
     }
 
     .add-favorite-btn {
-      color: var(--page-bg-color);
+      color: rgb(246, 246, 246);
       background-color: #7e847f;
       border: 1px solid #7e847f;
 

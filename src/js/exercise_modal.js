@@ -1,140 +1,119 @@
 import {API_EXERCISES_POINT, api} from './api.js';
 import { notify } from './notifier.js';
 
+const refs = {
+  modalCard: document.querySelector('.modal'),
+  closeBtn: document.querySelector('.close-modal-btn'),
+  favBtn: document.querySelector('.add-favorite-btn'),
+  ratingBtn: document.querySelector('.give-rating-btn'),
+  modal: document.querySelector('.backdrop'),
+  loader: document.querySelector('.loader')
+};
 let id = '64f389465ae26083f39b1ab2';
-let exerciseItem = {};
+let exerciseObject = {isFavorite: false};
 
 // (open modal, get exer)
 export function openModalHandler() {
-  getExerciseItem(id);
+  openModal(id);
 }
 
 // (hide only modal, backdrop is open)
 export function hideModalHandler() {
 
 }
-// (show only modal, get exer fro server)
+// (show only modal, get exer from server)
 export function showModalHandler() {
 
 }
 
 // (closes the modal)
 function closeModalHandler() {
-
+  refs.modal.classList.add('visually-hidden');
 }
 
+function addRemoveFavoriteHandler(e) {
+  if (Object.hasOwn(exerciseObject, 'isFavorite') && exerciseObject.isFavorite) {
+    removeFromFavoriteStorage(e);
+    exerciseObject.isFavorite = false;
+    notify('success', 'The exercise has been removed from favorites list');
+  } else {
+    addToFavoriteStorage(e);
+    exerciseObject.isFavorite = true;
+    notify('success', 'The exercise has been added to favorites list');
+  }
+  markupAndReload(exerciseObject);
+}
 // (adds to favorites)
-function addFavoriteHandler() {
-    const trashBtn = e.target
-
-    if (trashBtn) {
-      let exerciseId = trashBtn.dataset.id;
-      console.log(exerciseId);
-      let curFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
-      let updFavorites = curFavorites.filter(
-        exercise => exercise._id !== exerciseId
-      );
-
-      localStorage.setItem('favorites', JSON.stringify(updFavorites));
-      favArr = updFavorites;
-      generateFavList();
-    }
+function addToFavoriteStorage(e) {
+    console.log(e);
+    let curFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    curFavorites.push(exerciseObject);
+    localStorage.setItem('favorites', JSON.stringify(curFavorites));
 }
 
 // (remove from favorites)
-function removeFavoriteHandler() {
-  const trashBtn = e.target
-
-  if (trashBtn) {
-    let exerciseId = trashBtn.dataset.id;
-    console.log(exerciseId);
+function removeFromFavoriteStorage(e) {
+    const exerciseId = e.target.dataset.id
     let curFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
     let updFavorites = curFavorites.filter(
       exercise => exercise._id !== exerciseId
     );
-
     localStorage.setItem('favorites', JSON.stringify(updFavorites));
-    favArr = updFavorites;
-    generateFavList();
-  }
 }
 
-function getFavoriteFromStorage(id) {
-
-  if (n) {
-    let exerciseId = trashBtn.dataset.id;
-    console.log(exerciseId);
+function getExerciseFromStorage(id) {
+  if (id) {
+    let itemObj;
+    let exerciseId = id;
     let curFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    let updFavorites = curFavorites.filter(
-      exercise => exercise._id !== exerciseId
+    itemObj = curFavorites.filter(
+      exercise => exercise._id === exerciseId
     );
-
-    localStorage.setItem('favorites', JSON.stringify(updFavorites));
-    favArr = updFavorites;
-    generateFavList();
+    exerciseObject.isFavorite = !!itemObj.length;
+    return itemObj;
   }
 }
 
-
-function addToFavoriteOnClick(event) {
-  const element = event.target.closest('.add-favorite-btn');
-  const elementId = element.dataset.id;
-  const favorites = localStorage.getItem('favorites');
-
-  if (favorites) {
-    const favoriteList = JSON.parse(favorites);
-    const condition = favoriteList.some(({ _id }) => _id === elementId);
-    if (condition) {
-      localStorage.setItem(
-        'favorites',
-        JSON.stringify(favoriteList.filter(({ _id }) => _id !== elementId))
-      );
-      element.innerHTML = addInnerHTML();
-      /* Remove card from DOM in favorite page */
-      const favCard = document.getElementById('card-' + elementId);
-      if (favCard) {
-        favCard.remove();
-        onClick();
-        showAlert('Card removed from favorites!');
-      }
-    } else {
-      localStorage.setItem(
-        'favorites',
-        JSON.stringify([...favoriteList, exercisesInfo])
-      );
-      element.innerHTML = addInnerHTML('remove');
-    }
-  } else {
-    localStorage.setItem('favorites', JSON.stringify([exercisesInfo]));
-    element.innerHTML = addInnerHTML('remove');
-  }
+function openModal(id) {
+  getExerciseFromStorage(id);
+  getExerciseApi(id);
 }
 
-function getExerciseItem(id) {
+function markupAndReload(item) {
+  refs.modalCard.innerHTML = createMarkupExercisesCard(item);
+
+  // refresh all elements after recreate them, and add listeners
+  refs.closeBtn = document.querySelector('.close-modal-btn');
+  refs.closeBtn.addEventListener('click', closeModalHandler);
+
+  refs.favBtn = document.querySelector('.add-favorite-btn');
+  refs.favBtn.addEventListener('click', addRemoveFavoriteHandler);
+
+  refs.ratingBtn = document.querySelector('.give-rating-btn');
+  // refs.ratingBtn.addEventListener('click', );
+}
+
+
+function getExerciseApi(id) {
+  if (!id) {
+    return;
+  }
+  refs.loader.style.display = 'block';
   api.get(API_EXERCISES_POINT + `/${id}`, {})
   .then(data => {
-    exerciseItem = data;
-    console.log(exerciseItem)
+    if (exerciseObject.isFavorite) {
+      exerciseObject = data;
+      exerciseObject.isFavorite = true;
+    } else {
+      exerciseObject = data;
+      exerciseObject.isFavorite = false;
+    }
+    markupAndReload(data);
   })
-  .catch(error => notify("error", `API error: ${error}`));
+    .catch(error => notify("error", `API error: ${error}`));
 }
 
 openModalHandler();
-
-function addInnerHTML(value = 'add') {
-  if (value === 'add') {
-    return `Add to favorites
-        <svg class="icon-heart" width="18" height="18">
-          <use href="${icons}#icon-heart"></use>
-        </svg>`;
-  } else {
-    return `Remove from
-        <svg class="icon-heart" width="18" height="18">
-          <use href="${icons}#icon-heart"></use>
-        </svg>`;
-  }
-}
-
 
 
 function spanToCapitalize(text) {
@@ -153,19 +132,17 @@ function createMarkupExercisesCard({
   burnedCalories,
   time,
   popularity,
+  isFavorite
 }) {
-  let isAdded = false;
-  const favorites = localStorage.getItem('favorites');
-
-  if (favorites) {
-    const favoriteList = JSON.parse(favorites);
-    isAdded = favoriteList.some(item => item._id === _id);
-  }
-
+  let starsGray = 5;
+  let starsOrange = Number(rating.toFixed());
+  starsGray -= starsOrange;
+  let stars = '<r class="star-1"/>'.repeat(starsOrange)
+    .concat('<r class="star-0"/>'.repeat(starsGray))
   return `<div class="modal-description-container">
       <button class="close-modal-btn" title="Close window">
         <svg class="close-modal-icon" width="24" height="24">
-          <use href="${icons}#icon-cross"></use>
+          <use href="./img/icons.svg#icon-cross"></use>
         </svg>
       </button>
       <div class="modal-gif-container">
@@ -194,8 +171,9 @@ function createMarkupExercisesCard({
       <div class="text-container">
         <h4 class="modal-title">${name}</h4>
         <div class="rating-container">
+          <div class="star-block">
           <p class="modal-exercises-rating">${rating.toFixed(1)}</p>
-          <div class="star-outer"><div class="star-inner"></div></div>
+          ${stars}
         </div>
         <ul class="description-list">
           <li class="description-item">
@@ -222,9 +200,9 @@ function createMarkupExercisesCard({
         <p class="modal-description-text">${description}</p>
         <div class="modal-buttons-container">
           <button data-id="${_id}" class="add-favorite-btn">
-            ${isAdded ? 'Remove from' : 'Add to favorites'}
+            ${isFavorite ? 'Remove from' : 'Add to favorites'}
             <svg class="icon-heart" width="18" height="18">
-              <use href="${icons}#icon-heart"></use>
+              <use href="./img/icons.svg#icon-heart"></use>
             </svg>
           </button>
           <button data-id="${_id}" class="give-rating-btn">
