@@ -1,6 +1,7 @@
 import { API_EXERCISES_POINT, api } from './api.js';
 import { refs } from './exercises_category_filter.js';
 import Pagination from 'tui-pagination';
+import { openModalHandler } from './exercise_modal.js';
 
 const paramsCard = {
   bodypart: '',
@@ -100,7 +101,6 @@ function createMarkupCard(results) {
                   <p class="card-rating">
                      ${rating}
                   </p>
-
                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="13" viewBox="0 0 14 13" fill="none" class="card-rating-svg">
                     <path d="M6.04894 0.927052C6.3483 0.0057416 7.6517 0.00574088 7.95106 0.927052L8.79611 3.52786C8.92999 3.93989 9.31394 4.21885 9.74717 4.21885H12.4818C13.4505 4.21885 13.8533 5.45846 13.0696 6.02786L10.8572 7.63525C10.5067 7.8899 10.3601 8.34127 10.494 8.75329L11.339 11.3541C11.6384 12.2754 10.5839 13.0415 9.80017 12.4721L7.58779 10.8647C7.2373 10.6101 6.7627 10.6101 6.41222 10.8647L4.19983 12.4721C3.41612 13.0415 2.36164 12.2754 2.66099 11.3541L3.50604 8.75329C3.63992 8.34127 3.49326 7.8899 3.14277 7.63525L0.930391 6.02787C0.146677 5.45846 0.549452 4.21885 1.51818 4.21885H4.25283C4.68606 4.21885 5.07001 3.93989 5.20389 3.52786L6.04894 0.927052Z" fill="#EEA10C"/>
                   </svg>
@@ -114,7 +114,7 @@ function createMarkupCard(results) {
                 <path d="M7.5 14L14 7.5M14 7.5L7.5 1M14 7.5H1" stroke="#1B1B1B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </button>
-           
+
           </div>
 
           <div class="card-bodi">
@@ -137,6 +137,8 @@ function createMarkupCard(results) {
     .join('');
 
   refs.subcategory.innerHTML = arr;
+  // for exercises_modal use
+  refs.subcategory.addEventListener('click', openModalHandler);
 }
 
 function getSubcategoryExercises() {
@@ -144,7 +146,7 @@ function getSubcategoryExercises() {
   if (pageWidth >= 1440) {
     paramsCard.limit = 9;
   }
-
+  document.querySelector('.loader').style.display = 'block';
   api
     .get(API_EXERCISES_POINT, paramsCard)
     .then(({ page, totalPages, results }) => {
@@ -161,16 +163,23 @@ function getSubcategoryExercises() {
         container.classList.remove('is-hidden');
       }
     })
-    .catch(error => console.log(error)).finally;
+    .catch(error => console.log(error))
+    .finally(() => {
+      document.querySelector('.loader').style.display = 'none';
+    });
   instance.on('afterMove', event => {
     const currentPage = event.page;
     paramsCard.page = currentPage;
+    document.querySelector('.loader').style.display = 'block';
     api
       .get(API_EXERCISES_POINT, paramsCard)
       .then(({ results }) => {
         createMarkupCard(results);
       })
-      .catch(error => console.log(error));
+      .catch(error => console.log(error))
+      .finally(() => {
+        document.querySelector('.loader').style.display = 'none';
+      });
   });
 }
 
