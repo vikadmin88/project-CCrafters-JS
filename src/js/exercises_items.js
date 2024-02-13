@@ -38,11 +38,6 @@ function searchCardForm(e) {
 function searchCard(e) {
   e.preventDefault();
 
-  console.log(e.target.classList.contains('exercises-subcategory-item'));
-  console.log(
-    e.target.parentNode.classList.contains('exercises-subcategory-item')
-  );
-
   if (
     !e.target.classList.contains('exercises-subcategory-item') &&
     !e.target.parentNode.classList.contains('exercises-subcategory-item')
