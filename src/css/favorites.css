@@ -1,3 +1,7 @@
+.favorites-section {
+  padding-top: 8px;
+}
+
 .favorites-list-item {
   width: 295px;
   height: 165px;
@@ -65,7 +69,7 @@
   font-size: 32px;
   font-weight: 400;
   line-height: 1;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.02em;
   margin-bottom: 20px;
 }
 
@@ -205,6 +209,10 @@
   flex-wrap: wrap;
   column-gap: 16px;
   row-gap: 6px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .favorites-card-text-wrapper {
@@ -280,8 +288,8 @@
 /*--------------------------Tablet---------------------*/
 @media (min-width: 768px) {
   .favorites-card {
-    padding: 64px 16px 44px 24px;
-    width: 736px;
+    padding: 64px 16px 64px 48px;
+    width: 100%;
     height: auto;
   }
 
@@ -303,9 +311,8 @@
     font-size: 44px;
     font-weight: 400;
     line-height: 1.09;
-    letter-spacing: 0.02em;
-    margin-left: 24px;
-    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
   }
 
   .favorites-list {
@@ -317,7 +324,9 @@
     align-items: center;
     column-gap: 14px;
     row-gap: 20px;
-    padding: 12px 24px 20px 24px;
+
+    padding-right: 24px;
+
     overflow-y: auto;
   }
 
@@ -397,7 +406,7 @@
   }
 
   .favorites-list {
-    min-height: 479px;
+    height: 479px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
