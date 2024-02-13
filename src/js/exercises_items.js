@@ -51,6 +51,8 @@ function searchCard(e) {
   category = liEl.children[1].textContent.toLowerCase();
   const subcategoryName = liEl.children[0].textContent;
 
+  paramsCard.page = 1;
+
   refs.title.insertAdjacentHTML(
     'beforeend',
     ` / <span class="exercises-title-span"> ${subcategoryName}</span>`
@@ -102,7 +104,7 @@ function createMarkupCard(results) {
                    <use href="./img/icons.svg#icon-star"></use>
                  </svg>
                </div>
-               
+
             </div>
 
                  <button class="card-button" type="submit" data-id = "${_id}">
@@ -111,14 +113,14 @@ function createMarkupCard(results) {
                 <use href="./img/icons.svg#icon-arrow-right"></use>
               </svg>
             </button >
-           
+
           </div>
 
           <div class="card-bodi">
             <svg class="card-bodi-svg" width="24" height="24">
               <use href="./img/icons.svg#icon-running_man"></use>
             </svg>
-            <h3 class="card-name">${name}</h3>
+            <h3 class="card-name">${capitalizeFirstLetter(name)}</h3>
           </div>
 
             <ul class="card-inform-list">
@@ -126,7 +128,7 @@ function createMarkupCard(results) {
               <li class="card-inform-item">Body part: <span class="card-inform-item-span">${bodyPart}</span></li>
               <li class="card-inform-item">Target: <span class="card-inform-item-span">${target}</span></li>
             </ul>
-          
+
         </li>`
     )
     .join('');
@@ -149,6 +151,12 @@ function getSubcategoryExercises() {
       }
 
       instance.reset(totalPages * 8);
+
+      if (totalPages <= 1) {
+        container.classList.add('is-hidden');
+      } else {
+        container.classList.remove('is-hidden');
+      }
     })
     .catch(error => console.log(error)).finally;
   instance.on('afterMove', event => {
@@ -161,4 +169,12 @@ function getSubcategoryExercises() {
       })
       .catch(error => console.log(error));
   });
+}
+
+function capitalizeFirstLetter(name) {
+  if (name.charAt(0).toLowerCase() === name.charAt(0)) {
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  } else {
+    return name;
+  }
 }
