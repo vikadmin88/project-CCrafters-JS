@@ -1,5 +1,5 @@
 
-
+// import { showModalHandler } from './exercise_modal.js';
 import { notify } from './notifier.js';
 import { API_EXERCISES_POINT, api } from './api.js';
 
@@ -77,4 +77,29 @@ function sendRating(event) {
         notify('error', `API error: ${error.message.response.data.message}`);
       }
     });
+  
+   
+
+   
+  document.querySelector('.open-rating-modal-button').addEventListener('click', openRatingModal);
+  document.querySelector('.close-rating-modal-button').addEventListener('click', closeModal);
+
+  var closeButton = document.querySelector('.close');
+  closeButton.addEventListener('click', closeModal); 
+      
+var backdrop = document.querySelector('.backdrop-rating');
+backdrop.addEventListener('click', function(event) {
+    if (event.target === backdrop) {
+        closeModal();
+    }
+});
 }
+ function closeModal() {
+   var modal = document.querySelector('.backdrop-rating');
+   modal.classList.add('visually-hidden');
+    // modal.style.display = 'none';
+}
+export function openRatingModal() {
+    var modal = document.querySelector('.rating-modal'); 
+    modal.style.display = 'block';
+      }
