@@ -1,7 +1,6 @@
 import { API_EXERCISES_POINT, api } from './api.js';
 import { notify } from './notifier.js';
 
-// console.log(e);
 // const refs = {
 let modalCard = document.querySelector('.modal');
 let closeBtn = document.querySelector('.close-modal-btn');
@@ -15,21 +14,25 @@ let exerciseObject = { isFavorite: false };
 // (open modal, get exer)
 export function openModalHandler(e) {
   if (
+    !e.target &&
     !e.target.classList.contains('card-button') &&
     !e.target.closest('.card-button').classList.contains('card-button')
   ) {
     return;
   }
 
-  const id = e.target.closest('.card-button').dataset.id;
-  console.log(id);
+  let id;
+  try {
+    id = e.target.closest('.card-button').dataset.id;
+  } catch {
+    id = '';
+  }
+
   // testing
   // let id = '64f389465ae26083f39b1ab2';
   if (!id) {
     return;
   }
-  // console.log(e);
-  // console.log(document.querySelector('.backdrop-modal'));
   document.querySelector('.backdrop-modal').classList.remove('visually-hidden');
   openModal(id);
 }
@@ -61,7 +64,6 @@ function addRemoveFavoriteHandler(e) {
 }
 // (adds to favorites)
 function addToFavoriteStorage(e) {
-  console.log(e);
   let curFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
   curFavorites.push(exerciseObject);
   localStorage.setItem('favorites', JSON.stringify(curFavorites));
@@ -78,7 +80,6 @@ function removeFromFavoriteStorage(e) {
 }
 
 function getExerciseFromStorage(id) {
-  console.log(id);
   if (id) {
     let itemObj;
     let exerciseId = id;
@@ -95,7 +96,6 @@ function openModal(id) {
 }
 
 function markupAndReload(item) {
-  // modalCard.innerHTML = createMarkupExercisesCard(item);
   document.querySelector('.modal').innerHTML = createMarkupExercisesCard(item);
 
   // refresh all elements after recreate them, and add listeners
@@ -106,19 +106,20 @@ function markupAndReload(item) {
   favBtn.addEventListener('click', addRemoveFavoriteHandler);
 
   ratingBtn = document.querySelector('.give-rating-btn');
-  // refs.ratingBtn.addEventListener('click', rating exported func);
+  // ratingBtn.addEventListener('click', openRatingModal);
 }
 
 function getExerciseApi(id) {
   if (!id) {
     return;
   }
-  // loader.style.display = 'block';
-  console.log(document.querySelector('.loader'));
-  document.querySelector('.loader').style.display = 'block';
-  console.log(id);
+
+  let loader = document.querySelector('.loader');
+  if (loader) {
+    document.querySelector('.loader').style.display = 'block';
+  }
   api
-    .get(API_EXERCISES_POINT + `/${id}`, {})
+    .get(`${API_EXERCISES_POINT}/${id}`, {})
     .then(data => {
       if (exerciseObject.isFavorite) {
         exerciseObject = data;
@@ -132,7 +133,7 @@ function getExerciseApi(id) {
     .catch(error => notify('error', `API error: ${error}`));
 }
 
-// this will call from exercises_items part
+// this will call from exercises_items and favorite part
 // openModalHandler();
 
 function spanToCapitalize(text) {

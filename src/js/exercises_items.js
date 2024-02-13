@@ -136,9 +136,6 @@ function createMarkupCard(results) {
 
   refs.subcategory.innerHTML = arr;
   // for exercises_modal use
-  // let startBtn = document.querySelectorAll('button[data-modal]');
-  // startBtn.forEach(el => el.addEventListener('click', openModalHandler));
-
   refs.subcategory.addEventListener('click', openModalHandler);
 }
 
