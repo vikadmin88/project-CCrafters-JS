@@ -203,7 +203,11 @@
 }
 
 .favorites-card-text-list {
+  /* gap: 4px; */
   padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .favorites-card-text-item {
@@ -212,15 +216,20 @@
   column-gap: 16px;
   row-gap: 6px;
 
-  white-space: nowrap;
+  /* white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
+
+  
+    
+    
+  
 }
 
-.favorites-card-text-wrapper {
+/* .favorites-card-text-wrapper {
   display: flex;
   gap: 4px;
-}
+} */
 
 .favorites-card-text-title {
   color: rgba(27, 27, 27, 0.4);
