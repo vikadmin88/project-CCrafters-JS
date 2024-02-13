@@ -12,7 +12,7 @@
   overflow: hidden;
 }
 
-.backdrop {
+.backdrop-modal {
   overflow: auto;
   position: fixed;
   z-index: 100;
@@ -101,13 +101,11 @@
         color: #eea10c;
       }
 
-
       /*.star-outer {*/
       /*  !*position: relative;*!*/
       /*  font-size: 18px;*/
       /*  display: inline-block;*/
       /*}*/
-
 
       /*.star-outer::before {*/
       /*  content: '\2605 \2605 \2605 \2605 \2605';*/

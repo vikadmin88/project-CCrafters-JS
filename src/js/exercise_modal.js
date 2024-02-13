@@ -1,51 +1,54 @@
-import {API_EXERCISES_POINT, api} from './api.js';
+import { API_EXERCISES_POINT, api } from './api.js';
 import { notify } from './notifier.js';
 
 // console.log(e);
 // const refs = {
-  let modalCard = document.querySelector('.modal');
-  let closeBtn = document.querySelector('.close-modal-btn');
-  let favBtn = document.querySelector('.add-favorite-btn');
-  let ratingBtn = document.querySelector('.give-rating-btn');
-  let modal = document.querySelector('.backdrop');
-  let loader = document.querySelector('.loader');
+let modalCard = document.querySelector('.modal');
+let closeBtn = document.querySelector('.close-modal-btn');
+let favBtn = document.querySelector('.add-favorite-btn');
+let ratingBtn = document.querySelector('.give-rating-btn');
+let modal = document.querySelector('.backdrop-modal');
+let loader = document.querySelector('.loader');
 // };
-  let exerciseObject = {isFavorite: false};
+let exerciseObject = { isFavorite: false };
 
 // (open modal, get exer)
 export function openModalHandler(e) {
-  if (!e) {
+  if (
+    !e.target.classList.contains('card-button') &&
+    !e.target.closest('.card-button').classList.contains('card-button')
+  ) {
     return;
   }
-  const id = e.target.dataset.id
+
+  const id = e.target.closest('.card-button').dataset.id;
   console.log(id);
   // testing
   // let id = '64f389465ae26083f39b1ab2';
   if (!id) {
     return;
   }
-  console.log(e);
-  console.log(document.querySelector('.backdrop2'));
-  document.querySelector('.backdrop2').classList.remove('visually-hidden');
+  // console.log(e);
+  // console.log(document.querySelector('.backdrop-modal'));
+  document.querySelector('.backdrop-modal').classList.remove('visually-hidden');
   openModal(id);
 }
 
 // (hide only modal, backdrop is open)
-export function hideModalHandler() {
-
-}
+export function hideModalHandler() {}
 // (show only modal, get exer from server)
-export function showModalHandler() {
-
-}
+export function showModalHandler() {}
 
 // (closes the modal)
 function closeModalHandler() {
-  document.querySelector('.backdrop').classList.add('visually-hidden');
+  document.querySelector('.backdrop-modal').classList.add('visually-hidden');
 }
 
 function addRemoveFavoriteHandler(e) {
-  if (Object.hasOwn(exerciseObject, 'isFavorite') && exerciseObject.isFavorite) {
+  if (
+    Object.hasOwn(exerciseObject, 'isFavorite') &&
+    exerciseObject.isFavorite
+  ) {
     removeFromFavoriteStorage(e);
     exerciseObject.isFavorite = false;
     notify('success', 'The exercise has been removed from favorites list');
@@ -58,20 +61,20 @@ function addRemoveFavoriteHandler(e) {
 }
 // (adds to favorites)
 function addToFavoriteStorage(e) {
-    console.log(e);
-    let curFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    curFavorites.push(exerciseObject);
-    localStorage.setItem('favorites', JSON.stringify(curFavorites));
+  console.log(e);
+  let curFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  curFavorites.push(exerciseObject);
+  localStorage.setItem('favorites', JSON.stringify(curFavorites));
 }
 
 // (remove from favorites)
 function removeFromFavoriteStorage(e) {
-    const exerciseId = e.target.dataset.id
-    let curFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    let updFavorites = curFavorites.filter(
-      exercise => exercise._id !== exerciseId
-    );
-    localStorage.setItem('favorites', JSON.stringify(updFavorites));
+  const exerciseId = e.target.dataset.id;
+  let curFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  let updFavorites = curFavorites.filter(
+    exercise => exercise._id !== exerciseId
+  );
+  localStorage.setItem('favorites', JSON.stringify(updFavorites));
 }
 
 function getExerciseFromStorage(id) {
@@ -80,9 +83,7 @@ function getExerciseFromStorage(id) {
     let itemObj;
     let exerciseId = id;
     let curFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    itemObj = curFavorites.filter(
-      exercise => exercise._id === exerciseId
-    );
+    itemObj = curFavorites.filter(exercise => exercise._id === exerciseId);
     exerciseObject.isFavorite = !!itemObj.length;
     return itemObj;
   }
@@ -108,7 +109,6 @@ function markupAndReload(item) {
   // refs.ratingBtn.addEventListener('click', rating exported func);
 }
 
-
 function getExerciseApi(id) {
   if (!id) {
     return;
@@ -117,23 +117,23 @@ function getExerciseApi(id) {
   console.log(document.querySelector('.loader'));
   document.querySelector('.loader').style.display = 'block';
   console.log(id);
-  api.get(API_EXERCISES_POINT + `/${id}`, {})
-  .then(data => {
-    if (exerciseObject.isFavorite) {
-      exerciseObject = data;
-      exerciseObject.isFavorite = true;
-    } else {
-      exerciseObject = data;
-      exerciseObject.isFavorite = false;
-    }
-    markupAndReload(data);
-  })
-    .catch(error => notify("error", `API error: ${error}`));
+  api
+    .get(API_EXERCISES_POINT + `/${id}`, {})
+    .then(data => {
+      if (exerciseObject.isFavorite) {
+        exerciseObject = data;
+        exerciseObject.isFavorite = true;
+      } else {
+        exerciseObject = data;
+        exerciseObject.isFavorite = false;
+      }
+      markupAndReload(data);
+    })
+    .catch(error => notify('error', `API error: ${error}`));
 }
 
 // this will call from exercises_items part
-openModalHandler();
-
+// openModalHandler();
 
 function spanToCapitalize(text) {
   return text.charAt(0).toUpperCase() + text.slice(1);
@@ -151,13 +151,14 @@ function createMarkupExercisesCard({
   burnedCalories,
   time,
   popularity,
-  isFavorite
+  isFavorite,
 }) {
   let starsGray = 5;
   let starsOrange = Number(rating.toFixed());
   starsGray -= starsOrange;
-  let stars = '<r class="star-1"/>'.repeat(starsOrange)
-    .concat('<r class="star-0"/>'.repeat(starsGray))
+  let stars = '<r class="star-1"/>'
+    .repeat(starsOrange)
+    .concat('<r class="star-0"/>'.repeat(starsGray));
   return `<div class="modal-description-container">
       <button class="close-modal-btn" title="Close window">
         <svg class="close-modal-icon" width="24" height="24">
