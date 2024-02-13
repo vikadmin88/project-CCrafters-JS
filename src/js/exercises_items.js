@@ -102,7 +102,7 @@ function createMarkupCard(results) {
                    <use href="./img/icons.svg#icon-star"></use>
                  </svg>
                </div>
-               
+
             </div>
 
                  <button class="card-button" type="submit" data-id = "${_id}">
@@ -111,12 +111,12 @@ function createMarkupCard(results) {
                 <use href="./img/icons.svg#icon-arrow-right"></use>
               </svg>
             </button >
-           
+
           </div>
 
           <div class="card-bodi">
             <svg class="card-bodi-svg" width="24" height="24">
-              <use href="./img/icons.svg#icon-running_man"></use>
+              <use href="../img/icons.svg#icon-running_man"></use>
             </svg>
             <h3 class="card-name">${name}</h3>
           </div>
@@ -126,7 +126,7 @@ function createMarkupCard(results) {
               <li class="card-inform-item">Body part: <span class="card-inform-item-span">${bodyPart}</span></li>
               <li class="card-inform-item">Target: <span class="card-inform-item-span">${target}</span></li>
             </ul>
-          
+
         </li>`
     )
     .join('');
