@@ -1,6 +1,7 @@
 import { API_EXERCISES_POINT, api } from './api.js';
 import { refs } from './exercises_category_filter.js';
 import Pagination from 'tui-pagination';
+import { openModalHandler } from './exercise_modal.js';
 
 const paramsCard = {
   bodypart: '',
@@ -102,16 +103,16 @@ function createMarkupCard(results) {
                    <use href="./img/icons.svg#icon-star"></use>
                  </svg>
                </div>
-               
+
             </div>
 
-                 <button class="card-button" type="submit" data-id = "${_id}">
+                 <button class="card-button" type="submit" data-id = "${_id}" data-modal>
               Start
               <svg class="card-search-svg" >
                 <use href="./img/icons.svg#icon-arrow-right"></use>
               </svg>
             </button >
-           
+
           </div>
 
           <div class="card-bodi">
@@ -126,12 +127,15 @@ function createMarkupCard(results) {
               <li class="card-inform-item">Body part: <span class="card-inform-item-span">${bodyPart}</span></li>
               <li class="card-inform-item">Target: <span class="card-inform-item-span">${target}</span></li>
             </ul>
-          
+
         </li>`
     )
     .join('');
 
   refs.subcategory.innerHTML = arr;
+  // for exercises_modal use
+  let startBtn = document.querySelectorAll('button[data-modal]');
+  startBtn.forEach(el => el.addEventListener('click', openModalHandler));
 }
 
 function getSubcategoryExercises() {
