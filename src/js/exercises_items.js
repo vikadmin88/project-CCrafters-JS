@@ -149,6 +149,12 @@ function getSubcategoryExercises() {
       }
 
       instance.reset(totalPages * 8);
+
+      if (totalPages === 1) {
+        container.classList.add('is-hidden');
+      } else {
+        container.classList.remove('is-hidden');
+      }
     })
     .catch(error => console.log(error)).finally;
   instance.on('afterMove', event => {
