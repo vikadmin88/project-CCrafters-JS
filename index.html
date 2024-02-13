@@ -8,7 +8,7 @@
     
     <script type="module" crossorigin src="/project-CCrafters-JS/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/project-CCrafters-JS/assets/preload-helper-7f91084c.js">
-    <link rel="stylesheet" href="/project-CCrafters-JS/assets/index-99ef8df8.css">
+    <link rel="stylesheet" href="/project-CCrafters-JS/assets/index-a90ff0e9.css">
   </head>
   <body>
     <header class="container page-header">
@@ -165,6 +165,7 @@
       <!-- <div class="exercises-subcategory-page-container"></div> -->
 
       <div id="tui-pagination-container" class="tui-pagination"></div>
+      <div class="loader"></div>
     </div>
   </div>
 </section>
@@ -250,7 +251,11 @@
         </div>
     </div>
 </footer>
-    
+    <div class="backdrop-modal visually-hidden">
+  <div class="modal">
+    <div class="loader-modal"></div>
+  </div>
+</div>
     
     <button class="scroll-up-button scroll-up-button-active">
   <svg class="arrow" width="30" height="30">
