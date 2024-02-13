@@ -205,7 +205,8 @@ function renderFavorites() {
     btn.addEventListener('click', deleteExercise);
   }
   if (!favArr.length) {
-    containerForTextOfEmptyList.style.display = 'block';
+    containerForTextOfEmptyList.style.display = 'flex';
+    ulFavList.style.display = 'none';
   }
 }
 
