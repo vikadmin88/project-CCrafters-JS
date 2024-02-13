@@ -37,12 +37,15 @@ function searchCardForm(e) {
 
 function searchCard(e) {
   e.preventDefault();
-  // if (e.target === e.currentTarget) {
-  //   return;
-  // }
+
+  console.log(e.target.classList.contains('exercises-subcategory-item'));
+  console.log(
+    e.target.parentNode.classList.contains('exercises-subcategory-item')
+  );
+
   if (
-    !e.target.classList.contains('exercises-subcategory-item') ||
-    !e.target.closest('.exercises-subcategory-item')
+    !e.target.classList.contains('exercises-subcategory-item') &&
+    !e.target.parentNode.classList.contains('exercises-subcategory-item')
   ) {
     return;
   }
