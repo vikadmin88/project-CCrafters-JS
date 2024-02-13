@@ -9,11 +9,17 @@ const refs = {
   modal: document.querySelector('.backdrop'),
   loader: document.querySelector('.loader')
 };
-let id = '64f389465ae26083f39b1ab2';
 let exerciseObject = {isFavorite: false};
 
 // (open modal, get exer)
-export function openModalHandler() {
+export function openModalHandler(e) {
+  // testing
+  let id = '64f389465ae26083f39b1ab2';
+  // const id = e.target.dataset.id
+  if (!id) {
+    return;
+  }
+  refs.modal.classList.remove('visually-hidden');
   openModal(id);
 }
 
@@ -90,7 +96,7 @@ function markupAndReload(item) {
   refs.favBtn.addEventListener('click', addRemoveFavoriteHandler);
 
   refs.ratingBtn = document.querySelector('.give-rating-btn');
-  // refs.ratingBtn.addEventListener('click', );
+  // refs.ratingBtn.addEventListener('click', rating exported func);
 }
 
 
@@ -113,6 +119,7 @@ function getExerciseApi(id) {
     .catch(error => notify("error", `API error: ${error}`));
 }
 
+// this will call from exercises_items part
 openModalHandler();
 
 
