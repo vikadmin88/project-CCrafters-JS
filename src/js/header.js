@@ -18,3 +18,7 @@ function onload() {
   }
 }
 onload();
+
+document.querySelector('.open-btn-mobile').addEventListener('click', () => {
+  document.querySelector('.backdrop').classList.add('is-open');
+});
