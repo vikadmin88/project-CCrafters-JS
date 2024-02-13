@@ -1,6 +1,4 @@
-.favorites-section{
-  min-height: 1644px;
-}
+
 .favorites-list-item {
     width: 295px;
     height: 165px;
@@ -83,15 +81,14 @@
   } */
 
   .favorites-list {
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
     border-radius: 15px;
-    display: flex;
-    flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    
     
   }
 
@@ -286,9 +283,7 @@
       }
 /*--------------------------Tablet---------------------*/
 @media (min-width: 768px) {
-  .favorites-section{
-    min-height: 928px;
-  }
+ 
     .favorites-card {
       padding: 64px 16px 44px 24px;
       width: 736px;
@@ -319,6 +314,7 @@
     }
 
     .favorites-list {
+      min-height: 720px;
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;
@@ -327,7 +323,6 @@
       column-gap: 14px;
       row-gap: 20px;
       padding: 12px 24px 20px 24px;
-      max-height: 720px;
       overflow-y: scroll;
     }
 
@@ -394,23 +389,22 @@
 }
 /*--------------------Desktop---------------------------*/
 @media (min-width: 1440px) {
-  .favorites-section{
-    min-height: 687px;
-  }
+ 
     .favorites-card {
       width: 1408px;
       display: flex;
       flex-direction: column;
     }
 
-    .favorites-contanier-block {
+    .favorites-container-block {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      max-height: 482px;
+      
     }
 
     .favorites-list {
+      min-height: 479px;
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
