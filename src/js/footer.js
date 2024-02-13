@@ -20,7 +20,6 @@ function sendUserInfo(event) {
   api
     .post(API_SUBSCRIPTION_POINT, { email: email })
     .then(response => {
-      console.log(response);
       notify('success', response.data.message);
       localStorage.setItem(
         'feedback-form-state',
