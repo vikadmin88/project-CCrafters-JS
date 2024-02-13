@@ -131,7 +131,7 @@
 
 .card-rating-container {
   display: flex;
-  gap: 2px;
+  gap: 6px;
 }
 
 .card-rating-svg {
