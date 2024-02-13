@@ -47,6 +47,8 @@
 
 .close-icon {
     stroke: #1b1b1b;
+    margin-top: 8px;
+    margin-right: 8px;
 }
 
 .rating-text {
