@@ -9,7 +9,7 @@ import{a as o,b as c}from"./exercise_modal-31e8a76b.js";import{refs as r}from"./
                      ${p}
                   </p>
                  <svg class="card-rating-svg" width="15" height="15">
-                   <use href="/img/icons.svg#icon-star"></use>
+                   <use href="./img/icons.svg#icon-star"></use>
                  </svg>
                </div>
 
@@ -26,7 +26,7 @@ import{a as o,b as c}from"./exercise_modal-31e8a76b.js";import{refs as r}from"./
 
           <div class="card-bodi">
             <svg class="card-bodi-svg" width="24" height="24">
-              <use href="../img/icons.svg#icon-running_man"></use>
+              <use href="./img/icons.svg#icon-running_man"></use>
             </svg>
             <h3 class="card-name">${u}</h3>
           </div>
@@ -38,4 +38,4 @@ import{a as o,b as c}from"./exercise_modal-31e8a76b.js";import{refs as r}from"./
             </ul>
 
         </li>`).join("");r.subcategory.innerHTML=e}function i(){window.innerWidth>=1440&&(t.limit=9),o.get(c,t).then(({page:e,totalPages:n,results:a})=>{g(a),a.length===0&&(r.subcategory.innerHTML='<li class = "exercises-text"><p>Unfortunately, <span class = "exercises-text-span">no results</span> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p></li>'),d.reset(n*8)}).catch(e=>console.log(e)).finally,d.on("afterMove",e=>{const n=e.page;t.page=n,o.get(c,t).then(({results:a})=>{g(a)}).catch(a=>console.log(a))})}
-//# sourceMappingURL=exercises_items-47975b56.js.map
+//# sourceMappingURL=exercises_items-6ecf1ab9.js.map
