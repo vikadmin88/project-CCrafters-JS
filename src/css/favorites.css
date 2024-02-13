@@ -203,27 +203,28 @@
 }
 
 .favorites-card-text-list {
-  /* gap: 4px; */
   padding: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
 
-.favorites-card-text-item {
+  margin-top: 16px;
+
   display: flex;
   flex-wrap: wrap;
   column-gap: 16px;
   row-gap: 6px;
+}
 
-  /* white-space: nowrap;
+.favorites-card-text-item {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; */
-
-  
-    
-    
-  
+  text-overflow: ellipsis;
 }
 
 /* .favorites-card-text-wrapper {
@@ -248,6 +249,10 @@
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .message-info-block {
@@ -456,6 +461,10 @@
     font-size: 18px;
     line-height: 1.33;
     margin-bottom: 258px;
+  }
+
+  .favorites-card-text-list {
+    flex-wrap: nowrap;
   }
 }
 /*-----------------Delete button Z-index----------------------*/

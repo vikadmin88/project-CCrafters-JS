@@ -249,26 +249,23 @@ const fillFavoriteCard = ({
 
       <h3 class="favorites-list-text">${spanToCapitalize(name)}</h3>
     </div>
-    <div class="favorites-card-text">
-      <ul class="favorites-card-text-list">
-        <li class="favorites-card-text-item">
-          <div class="favorites-card-text-wrapper">
-            <h4 class="favorites-card-text-title">Burned calories:</h4>
-            <p class="favorites-card-text-block">${burnedCalories}/${time} min</p>
-          </div>
-          <div class="favorites-card-text-wrapper">
-            <h4 class="favorites-card-text-title">Body part:</h4>
-            <p class="favorites-card-text-block">${spanToCapitalize(
-              bodyPart
-            )}</p>
-          </div>
-          <div class="favorites-card-text-wrapper">
-            <h4 class="favorites-card-text-title">Target:</h4>
-            <p class="favorites-card-text-block">${spanToCapitalize(target)}</p>
-          </div>
-        </li>
-      </ul>
-    </div>
+
+    <ul class="favorites-card-text-list">
+      <li class="favorites-card-text-item">
+          <h4 class="favorites-card-text-title">Burned calories:</h4>
+          <p class="favorites-card-text-block">${burnedCalories}/${time} min</p>
+      </li>
+
+      <li class="favorites-card-text-item">
+          <h4 class="favorites-card-text-title">Body part:</h4>
+          <p class="favorites-card-text-block">${spanToCapitalize(bodyPart)}</p>
+      </li>
+
+      <li class="favorites-card-text-item">
+          <h4 class="favorites-card-text-title">Target:</h4>
+          <p class="favorites-card-text-block">${spanToCapitalize(target)}</p>
+      </li>
+    </ul>
   </li>`;
 };
 
