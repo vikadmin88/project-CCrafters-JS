@@ -218,6 +218,8 @@
 .card-bodi-svg {
   background-color: #7e847f;
   border-radius: 50%;
+
+  flex-shrink: 0;
 }
 
 .card-name {
@@ -226,8 +228,9 @@
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 20px;
-  line-height: 100%;
+  line-height: 1;
   color: var(--c-primary);
+
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -253,10 +256,6 @@
   font-size: 12px;
   line-height: 1.5em;
   color: var(--c-primary);
-}
-
-.tui-pagination {
-  border-radius: 50px;
 }
 
 /* стилі для тексту */
@@ -289,6 +288,10 @@
   justify-content: center;
 
   gap: 8px;
+
+  border-radius: 50px;
+
+  margin: 20px 0 0;
 }
 
 .tui-pagination .tui-page-btn {
@@ -416,17 +419,23 @@
   }
 
   .card-name {
-    font-size: 20px;
     max-width: 216px;
+    font-size: 24px;
+    line-height: 1.33;
   }
 
   .exercises-text {
     padding: 222px 52px 585px 52px;
+    line-height: 1.33;
     font-size: 18px;
   }
 
   .exercises-text-span {
     font-size: 18px;
+  }
+
+  .tui-pagination {
+    margin: 32px 0 0;
   }
 }
 
