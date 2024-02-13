@@ -6,13 +6,13 @@
     border-radius: 15px;
     transition: opacity 0.5s ease-in-out;
   }
-  
+
   .favorites-list-item:hover,
   .favorites-list-item:focus {
     transform: scale(1.05);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   }
-  
+
   .favorites-contanier-block {
     border-radius: 15px;
     display: flex;
@@ -20,14 +20,18 @@
     align-items: flex-start;
     justify-content: center;
   }
-  
+
+  .empty-text-container {
+
+  }
+
   .message-info-svg {
     width: 85px;
     height: 52px;
     margin-top: 80px;
     margin: 0 auto;
   }
-  
+
   .message-info-text {
     font-family: 'DM Sans';
     width: 247px;
@@ -37,11 +41,11 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 1.28;
-  
+
     margin: 0 auto;
     margin-top: 28px;
   }
-  
+
   .favorites-card {
     margin: auto;
     border-radius: 30px;
@@ -50,7 +54,7 @@
     width: 335px;
     padding: 40px 20px;
   }
-  
+
   .favorites-title {
     font-family: 'DM Sans';
     color: #1b1b1b;
@@ -60,34 +64,35 @@
     letter-spacing: 0.02em;
     margin-bottom: 20px;
   }
-  
+
   .favorites-container-block {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
+    overflow-y: auto;
   }
-  
+
   .favorites-list {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
   }
-  
+
   .favorites-card-header {
     display: flex;
     justify-content: space-between;
     width: 100%;
   }
-  
+
   .favorites-oval {
     display: flex;
     align-items: center;
-    
+
     }
-  
+
   .favorites-oval span {
     color: #f6f6f6;
     font-size: 12px;
@@ -100,19 +105,19 @@
     width: 76px;
     height: 26px;
   }
-  
+
   .favorites-svg {
     width: 76px;
     height: 26px;
     border-radius: 15px;
   }
-  
+
   .favorites-svg-text {
     fill: #f6f6f6;
     font-size: 12px;
     font-weight: 500;
   }
-  
+
   .favorites-icon-svg {
     display: inline-block;
     stroke: #1b1b1b;
@@ -125,7 +130,7 @@
     margin-left: 8px;
     transition: transform 300ms ease-in-out;
   }
-  
+
   .favorites-icon-svg:hover,
   .favorites-icon-svg:focus {
     transform: scale(1.1);
@@ -142,24 +147,24 @@
     background: none;
     transition: transform 0.3s ease-in-out;
   }
-  
+
   .favorites-list-button:hover,
   .favorites-list-button:focus {
     transform: scale(1.05);
   }
-  
+
   .favorites-list-button-icon {
     fill: none;
     color:#1b1b1b;
     margin-left: 8px;
   }
-  
+
   .favorites-list-container {
     display: flex;
     align-items: center;
     margin-top: 25px;
   }
-  
+
   .favorites-list-svg {
     margin-right: 16px;
     background-color: var(--c-secondary);
@@ -167,7 +172,7 @@
     width: 24px;
     height: 24px;
   }
-  
+
   .favorites-list-text {
     font-family: 'DM Sans';
     color: #1b1b1b;
@@ -175,28 +180,31 @@
     font-size: 20px;
     font-weight: 400;
     line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-  
+
   .favorites-card-text {
     margin-top: 18px;
   }
-  
+
   .favorites-card-text-list {
     padding: 0;
   }
-  
+
   .favorites-card-text-item {
     display: flex;
     flex-wrap: wrap;
     column-gap: 16px;
     row-gap: 6px;
   }
-  
+
   .favorites-card-text-wrapper {
     display: flex;
     gap: 4px;
   }
-  
+
   .favorites-card-text-title {
     color: rgba(27, 27, 27, 0.4);
     font-feature-settings: 'clig' off, 'liga' off;
@@ -206,7 +214,7 @@
     margin-right: 4px;
     margin: 0;
   }
-  
+
   .favorites-card-text-block {
     color: #1b1b1b;
     font-feature-settings: 'clig' off, 'liga' off;
@@ -215,14 +223,14 @@
     line-height: 1.5;
     margin: 0;
   }
-  
+
   .message-info-block {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  
+
   .message-info {
     display: flex;
     flex-direction: column;
@@ -269,11 +277,11 @@
       width: 736px;
       height: auto;
     }
-  
+
     .favorites-card-text {
       margin-top: 8px;
     }
-  
+
     .favorites-contanier-block {
       padding: 12px 24px 20px 24px;
       display: flex;
@@ -281,7 +289,7 @@
       justify-content: flex-start;
       overflow-y: scroll;
     }
-  
+
     .favorites-title {
       font-family: 'DM Sans';
       color: #1b1b1b;
@@ -292,7 +300,7 @@
       margin-left: 24px;
       margin-bottom: 20px;
     }
-  
+
     .favorites-list {
       display: flex;
       flex-wrap: wrap;
@@ -371,14 +379,14 @@
       display: flex;
       flex-direction: column;
     }
-  
+
     .favorites-contanier-block {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       max-height: 482px;
     }
-  
+
     .favorites-list {
       display: flex;
       flex-direction: row;
@@ -386,7 +394,7 @@
       column-gap: 20px;
       row-gap: 28px;
     }
-  
+
     .favorites-list-item {
       min-width: 423px;
       width: calc((100% - 40px) / 3);
@@ -395,22 +403,22 @@
     .message-info {
       width: 1408px;
     }
-  
+
     .message-info-block {
       margin-top: 146px;
       margin-bottom: 258px;
     }
-  
+
     .favorites-card-text {
       margin-top: 8px;
     }
-  
+
     .message-info-svg {
       margin-top: 146px;
       width: 115px;
       height: 71px;
     }
-  
+
     .message-info-text {
       width: 554px;
       height: 72px;
@@ -425,7 +433,7 @@
     z-index: 0;
     background: transparent;
   }
-  
+
   .favorites-icon-svg > svg {
     position: relative;
     z-index: -1;
@@ -445,4 +453,4 @@
   }
   .favorites-list-item {
     transition: transform 300ms ease-in-out;
-  }  
+  }
