@@ -1,14 +1,14 @@
 import { API_EXERCISES_POINT, api } from './api.js';
 import { notify } from './notifier.js';
+// import { renderFavorites } from './favorites.js';
 
-// const refs = {
 let modalCard = document.querySelector('.modal');
 let closeBtn = document.querySelector('.close-modal-btn');
 let favBtn = document.querySelector('.add-favorite-btn');
 let ratingBtn = document.querySelector('.give-rating-btn');
 let modal = document.querySelector('.backdrop-modal');
 let loader = document.querySelector('.loader');
-// };
+
 let exerciseObject = { isFavorite: false };
 
 // (open modal, get exer)
@@ -28,18 +28,44 @@ export function openModalHandler(e) {
     id = '';
   }
 
-  // testing
   // let id = '64f389465ae26083f39b1ab2';
   if (!id) {
     return;
   }
+  addLoader();
+  openModal(id);
+}
+
+// (open modal, get favorites)
+export function openModalFavoritesHandler(e) {
+  if (
+    !e.target &&
+    !e.target.classList.contains('favorites-list-button') &&
+    !e.target.closest('.favorites-list-button').classList.contains('favorites-list-button')
+  ) {
+    return;
+  }
+
+  let id;
+  try {
+    id = e.target.closest('.favorites-list-button').dataset.id;
+  } catch {
+    id = '';
+  }
+
+  // let id = '64f389465ae26083f39b1ab2';
+  if (!id) {
+    return;
+  }
+
+  addLoader();
+  openModal(id);
+}
+
+function addLoader() {
   document.querySelector('.backdrop-modal').classList.remove('visually-hidden');
-  // let loader = document.querySelector('.loader');
-  // if (loader) {
   document.querySelector('.modal').innerHTML = '<div class="loader-modal"></div>';
   document.querySelector('.loader-modal').style.display = 'block';
-  // }
-  openModal(id);
 }
 
 // (hide only modal, backdrop is open)
@@ -59,13 +85,14 @@ function addRemoveFavoriteHandler(e) {
   ) {
     removeFromFavoriteStorage(e);
     exerciseObject.isFavorite = false;
-    notify('success', 'The exercise has been removed from favorites list');
+    notify('success', 'The exercise has been removed from your favorites list');
   } else {
     addToFavoriteStorage(e);
     exerciseObject.isFavorite = true;
-    notify('success', 'The exercise has been added to favorites list');
+    notify('success', 'The exercise has been added to your favorites list');
   }
   markupAndReload(exerciseObject);
+  // renderFavorites();
 }
 // (adds to favorites)
 function addToFavoriteStorage(e) {
