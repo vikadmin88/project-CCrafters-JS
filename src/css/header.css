@@ -51,8 +51,13 @@
   .header-icon {
     display: flex;
   }
-
-
+/*========новое======*/
+  .ul-icon-list{
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+/*================*/
   .logo-link {
     font-size: 28px;
     font-style: normal;
@@ -84,12 +89,14 @@
   }
 }
 
+/*====================================================================*/
+/* 
 .nav-navigation {
   width: 211px;
   height: 52px;
   flex-shrink: 0;
   border-radius: 60px;
-  background: var(--c-secondary);
+  background: var(--c-secondary);           старое
 }
 .ul-navigation-list {
   display: flex;
@@ -112,7 +119,75 @@
   display: flex;
   justify-content: center;
   gap: 12px;
+}  */
+
+/*====================================================================*/
+/*============================= новое =======================================*/
+
+.nav-navigation {
+  display: block;
+  width: 212px;
 }
+
+.ul-navigation-list {
+  display: flex;
+  border-radius: 60px;
+  padding: 8px 16px;
+  background: #7e847f;
+}
+
+.ul-list-item {
+  width: 50%;
+  height: 36px;
+}
+
+.navigation-link {
+  color: #f6f6f6;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  cursor: pointer;
+
+  border-radius: 30px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.navigation-link:hover,
+.navigation-link:focus {
+  background-color: #5f6560;
+  color: #f6f6f6;
+}
+/*====================================================================*/
+
+/* .icon-active {
+  display: flex;
+  padding: 8px;                    старое
+  align-items: center;
+  gap: 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(126, 132, 127, 0.2);
+} */
+
+/* .current-page-link {
+  border-radius: 30px;
+  background: #fff;
+  color: var(--c-primary);
+  padding: 6px 26px;
+  transition: background 0.5s ease, color 0.5s ease;
+} */
+
+/* .current-page-link:hover {
+  background: var(--c-main);
+  color: black;
+} */
+/*====================================================================*/
+
+/*========================== новое ==========================================*/
 
 .icon-active {
   display: flex;
@@ -124,17 +199,17 @@
 }
 
 .current-page-link {
-  border-radius: 30px;
-  background: #fff;
-  color: var(--c-primary);
-  padding: 6px 26px;
-  transition: background 0.5s ease, color 0.5s ease;
+  background-color: #fff;
+  color: #1b1b1b;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.current-page-link:hover {
-  background: var(--c-main);
-  color: black;
+.current-page-link:hover,
+.current-page-link:focus {
+  background-color: #fff;
+  color: #7e847f;
 }
+/*====================================================================*/
 
 .svg-icon {
   fill: var(--c-secondary);
