@@ -2,6 +2,9 @@
 import { notify } from './notifier.js';
 import { API_EXERCISES_POINT, api } from './api.js';
 
+let callerContext;
+let exerciseId;
+
 const refs = {
   icons: document.querySelectorAll('.rating-star-icon'),
   form: document.querySelector('.rating-form'),
@@ -63,10 +66,10 @@ function sendRating(event) {
   console.log(ratingParams);
   console.log(JSON.stringify(ratingParams));
 
-  const id = '64f389465ae26083f39b182b';
+  // const exerciseId = '64f389465ae26083f39b182b';
 
   api
-    .patch(`${API_EXERCISES_POINT}/${id}/rating`, JSON.stringify(ratingParams))
+    .patch(`${API_EXERCISES_POINT}/${exerciseId}/rating`, JSON.stringify(ratingParams))
     .then(response => {
       console.log(response);
       notify('success', 'Rating has been updated!');
@@ -97,6 +100,8 @@ function sendRating(event) {
     }
   });
 }
+
+
 function closeModal(e) {
   if (
     !e.target.classList.contains('backdrop-rating') &&
@@ -106,10 +111,15 @@ function closeModal(e) {
   ) {
     return;
   }
-
+  if(callerContext) {
+    callerContext.classList.remove('visually-hidden');
+  }
   refs.backdrop.classList.add('visually-hidden');
 }
-export function openRatingModal() {
-  // var modal = document.querySelector('.rating-modal');
-  // modal.style.display = 'block';
+
+export function openRatingModal(callContext, event) {
+  console.log(event.target.dataset.id);
+  callerContext = callContext;
+  exerciseId = event.target.dataset.id;
+  refs.backdrop.classList.remove('visually-hidden');
 }

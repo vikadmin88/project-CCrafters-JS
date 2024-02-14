@@ -1,5 +1,6 @@
 import { API_EXERCISES_POINT, api } from './api.js';
 import { notify } from './notifier.js';
+import { openRatingModal } from './rating_modal.js';
 
 let modalCard = document.querySelector('.modal');
 let closeBtn = document.querySelector('.close-modal-btn');
@@ -67,14 +68,22 @@ function addLoader() {
   document.querySelector('.loader-modal').style.display = 'block';
 }
 
-// (hide only modal, backdrop is open)
-export function hideModalHandler() {}
-// (show only modal, get exer from server)
-export function showModalHandler() {}
 
-// (closes the modal)
-function closeModalHandler() {
-  document.querySelector('.backdrop-modal').classList.add('visually-hidden');
+document.addEventListener('keydown', closeModalHandler);
+modal.addEventListener('click', closeModalHandler);
+// closes the modal
+function closeModalHandler(e) {
+  if (
+    !e.target.classList.contains('backdrop-modal') &&
+    !e.target.classList.contains('give-rating-btn') &&
+    !e.target.closest('.close-modal-btn') &&
+    e.code !== 'Escape' &&
+    modal.classList.contains('visually-hidden')
+    ) {
+      return;
+    }
+    console.log(e);
+    modal.classList.add('visually-hidden');
 }
 
 function addRemoveFavoriteHandler(e) {
@@ -136,7 +145,12 @@ function markupAndReload(item) {
   favBtn.addEventListener('click', addRemoveFavoriteHandler);
 
   ratingBtn = document.querySelector('.give-rating-btn');
-  // ratingBtn.addEventListener('click', openRatingModal);
+  ratingBtn.addEventListener('click', ratingHandler);
+}
+
+function ratingHandler(e) {
+  document.querySelector('.backdrop-modal').classList.add('visually-hidden');
+  openRatingModal(document.querySelector('.backdrop-modal'), e);
 }
 
 function getExerciseApi(id) {

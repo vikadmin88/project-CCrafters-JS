@@ -1,5 +1,7 @@
 import { notify } from './notifier.js';
 import { renderFavorites } from './favorites.js';
+import { openRatingModal } from './rating_modal.js';
+
 
 let modalCard = document.querySelector('.modal');
 let closeBtn = document.querySelector('.close-modal-btn');
@@ -42,9 +44,21 @@ function addLoader() {
   document.querySelector('.loader-favorite').style.display = 'block';
 }
 
+document.addEventListener('keydown', closeModalHandler);
+modal.addEventListener('click', closeModalHandler);
 // (closes the modal)
-function closeModalHandler() {
-  document.querySelector('.backdrop-favorite').classList.add('visually-hidden');
+function closeModalHandler(e) {
+  console.log(e);
+  if (
+    !e.target.classList.contains('backdrop-favorites') &&
+    !e.target.classList.contains('close-modal-btn') &&
+    !e.target.closest('.close-modal-btn') &&
+    e.code !== 'Escape' &&
+    !modal.classList.contains('visually-hidden')
+    ) {
+      return;
+    }
+    modal.classList.add('visually-hidden');
   renderFavorites();
 }
 
@@ -114,9 +128,13 @@ function markupAndReload(item) {
   favBtn.addEventListener('click', addRemoveFavoriteHandler);
 
   ratingBtn = document.querySelector('.give-rating-btn');
-  // ratingBtn.addEventListener('click', openRatingModal);
+  ratingBtn.addEventListener('click', ratingHandler);
 }
 
+function ratingHandler(e) {
+  document.querySelector('.backdrop-favorite').classList.add('visually-hidden');
+  openRatingModal(document.querySelector('.backdrop-favorite'), e);
+}
 // this will call from exercises_items and favorite part
 // openModalHandler();
 
