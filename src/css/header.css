@@ -51,13 +51,13 @@
   .header-icon {
     display: flex;
   }
-/*========новое======*/
-  .ul-icon-list{
+  /*========новое======*/
+  .ul-icon-list {
     display: flex;
     justify-content: space-between;
     gap: 12px;
   }
-/*================*/
+  /*================*/
   .logo-link {
     font-size: 28px;
     font-style: normal;
@@ -154,13 +154,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 .navigation-link:hover,
 .navigation-link:focus {
   background-color: #5f6560;
   color: #f6f6f6;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 /*====================================================================*/
 
@@ -187,8 +187,6 @@
 } */
 /*====================================================================*/
 
-/*========================== новое ==========================================*/
-
 .icon-active {
   display: flex;
   padding: 8px;
@@ -197,17 +195,18 @@
   border-radius: 10px;
   border: 1px solid rgba(126, 132, 127, 0.2);
 }
-
+/*========================== новое ==========================================*/
 .current-page-link {
   background-color: #fff;
   color: #1b1b1b;
-  transition: background-color 0.5s ease, color 0.5s ease;
+  border: 2px solid #7e847f;
 }
 
 .current-page-link:hover,
 .current-page-link:focus {
   background-color: #fff;
   color: #7e847f;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 /*====================================================================*/
 
