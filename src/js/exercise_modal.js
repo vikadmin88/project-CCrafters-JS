@@ -1,5 +1,6 @@
 import { API_EXERCISES_POINT, api } from './api.js';
 import { notify } from './notifier.js';
+import { renderFavorites } from './favorites.js';
 
 // const refs = {
 let modalCard = document.querySelector('.modal');
@@ -28,66 +29,46 @@ export function openModalHandler(e) {
     id = '';
   }
 
-  // testing
   // let id = '64f389465ae26083f39b1ab2';
   if (!id) {
     return;
   }
-  document.querySelector('.backdrop-modal').classList.remove('visually-hidden');
-  // let loader = document.querySelector('.loader');
-  // if (loader) {
-  document.querySelector('.modal').innerHTML = '<div class="loader-modal"></div>';
-  document.querySelector('.loader-modal').style.display = 'block';
-  // }
+  addLoader();
   openModal(id);
 }
 
-{/* <div class="favorites-card-header">
-<div class="favorites-oval">
-  <span>WORKOUT</span>
-  <button class="favorites-icon-svg trash-button" data-id="${_id}" data-btn="trash">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <path d="M10.6667 4V3.46667C10.6667 2.71993 10.6667 2.34656 10.5213 2.06135C10.3935 1.81046 10.1895 1.60649 9.93865 1.47866C9.65344 1.33333 9.28007 1.33333 8.53333 1.33333H7.46667C6.71993 1.33333 6.34656 1.33333 6.06135 1.47866C5.81046 1.60649 5.60649 1.81046 5.47866 2.06135C5.33333 2.34656 5.33333 2.71993 5.33333 3.46667V4M6.66667 7.66667V11M9.33333 7.66667V11M2 4H14M12.6667 4V11.4667C12.6667 12.5868 12.6667 13.1468 12.4487 13.5746C12.2569 13.951 11.951 14.2569 11.5746 14.4487C11.1468 14.6667 10.5868 14.6667 9.46667 14.6667H6.53333C5.41323 14.6667 4.85318 14.6667 4.42535 14.4487C4.04903 14.2569 3.74307 13.951 3.55132 13.5746C3.33333 13.1468 3.33333 12.5868 3.33333 11.4667V4" stroke="#1B1B1B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </button>
-</div>
-<button class="favorites-list-button" data-id="${_id}" type="button">
-  Start
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" class="favorites-list-button-icon">
-    <path d="M7.5 14L14 7.5M14 7.5L7.5 1M14 7.5H1" stroke="#1B1B1B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-</button>
-</div> */}
-// (open modal, get exer)
+// (open modal, get favorites)
 export function openModalFavoritesHandler(e) {
   if (
     !e.target &&
-    !e.target.classList.contains('card-button') &&
-    !e.target.closest('.card-button').classList.contains('card-button')
+    !e.target.classList.contains('favorites-list-button') &&
+    !e.target.closest('.favorites-list-button').classList.contains('favorites-list-button')
   ) {
     return;
   }
 
   let id;
   try {
-    id = e.target.closest('.card-button').dataset.id;
+    id = e.target.closest('.favorites-list-button').dataset.id;
   } catch {
     id = '';
   }
 
-  // testing
   // let id = '64f389465ae26083f39b1ab2';
   if (!id) {
     return;
   }
-  document.querySelector('.backdrop-modal').classList.remove('visually-hidden');
-  // let loader = document.querySelector('.loader');
-  // if (loader) {
-  document.querySelector('.modal').innerHTML = '<div class="loader-modal"></div>';
-  document.querySelector('.loader-modal').style.display = 'block';
-  // }
+
+  addLoader();
   openModal(id);
 }
+
+function addLoader() {
+  document.querySelector('.backdrop-modal').classList.remove('visually-hidden');
+  document.querySelector('.modal').innerHTML = '<div class="loader-modal"></div>';
+  document.querySelector('.loader-modal').style.display = 'block';
+}
+
 // (hide only modal, backdrop is open)
 export function hideModalHandler() {}
 // (show only modal, get exer from server)
@@ -112,6 +93,7 @@ function addRemoveFavoriteHandler(e) {
     notify('success', 'The exercise has been added to favorites list');
   }
   markupAndReload(exerciseObject);
+  renderFavorites();
 }
 // (adds to favorites)
 function addToFavoriteStorage(e) {
