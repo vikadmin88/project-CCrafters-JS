@@ -1,15 +1,15 @@
-import { openModalFavoritesHandler } from './exercise_modal.js';
+// import { openModalFavoritesHandler } from './exercise_modal.js';
+import { openModalFavoritesHandler } from './favorite_modal.js';
 
-const ulFavList = document.querySelector('.favorites-list');
-const containerForTextOfEmptyList = document.querySelector(
+export const ulFavList = document.querySelector('.favorites-list');
+export const containerForTextOfEmptyList = document.querySelector(
   '.empty-text-container'
 );
 let btns = document.querySelectorAll('button[data-btn="trash"]');
 //----------------Test data-to-local-storage---------------------------///
 
 
-function renderFavorites() {
-  console.log("vik");
+export function renderFavorites() {
   let favArr = JSON.parse(localStorage.getItem('favorites')) || [];
 
   containerForTextOfEmptyList.style.display = 'none';
@@ -93,7 +93,7 @@ renderFavorites();
 ulFavList.addEventListener('click', openModalFavoritesHandler);
 
 // get removing button
-function deleteExercise(e) {
+export function deleteExercise(e) {
   const trashBtn = e.target;
 
   if (trashBtn) {
