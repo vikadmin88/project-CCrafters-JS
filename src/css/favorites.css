@@ -1,5 +1,5 @@
 .favorites-section {
-  padding-top: 8px;
+  padding:20px 0;
 }
 
 .favorites-list-item {
@@ -61,7 +61,7 @@
   border-radius: 30px;
   background: #e8e8e8;
   flex-shrink: 0;
-  width: 335px;
+   width: 100%; 
   padding: 40px 20px;
 }
 
@@ -303,9 +303,12 @@
 }
 /*--------------------------Tablet---------------------*/
 @media (min-width: 768px) {
+  .favorites-section{
+    padding: 16px 0px;
+  }
   .favorites-card {
     padding: 64px 16px 64px 48px;
-    width: 100%;
+    
     height: auto;
   }
 
@@ -411,7 +414,7 @@
 /*--------------------Desktop---------------------------*/
 @media (min-width: 1440px) {
   .favorites-card {
-    width: 1408px;
+    
     display: flex;
     flex-direction: column;
   }
