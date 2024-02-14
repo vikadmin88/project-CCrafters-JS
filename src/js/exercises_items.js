@@ -3,6 +3,7 @@ import { refs } from './exercises_category_filter.js';
 import Pagination from 'tui-pagination';
 import { openModalHandler } from './exercise_modal.js';
 
+
 const paramsCard = {
   bodypart: '',
   muscles: '',
