@@ -8,7 +8,7 @@
     
     <script type="module" crossorigin src="/project-CCrafters-JS/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/project-CCrafters-JS/assets/preload-helper-7f91084c.js">
-    <link rel="stylesheet" href="/project-CCrafters-JS/assets/favorites-b7e11860.css">
+    <link rel="stylesheet" href="/project-CCrafters-JS/assets/favorites-b1f3c65c.css">
   </head>
   <body>
     <header class="container page-header">
@@ -122,7 +122,68 @@
         </div>
     </div>
 </section>
-      
+      <section class="favorites-section">
+    <div class="container">
+        <div class="favorites-card">
+            <h2 class="favorites-title">Favorites</h2>
+            <div class="favorites-container-block">
+                <div class="empty-text-container">
+                    <img class="message-info-svg" src="/project-CCrafters-JS/assets/dumbbell-8379c6e4.png" alt="dumbbell">
+                    <p class="message-info-text">
+                        It appears that you haven't added any exercises to your favorites yet.
+                        To get started, you can add exercises that you like to your favorites
+                        for easier access in the future.
+                    </p>
+                </div>
+
+                <ul class="favorites-list">
+                    <li class="favorites-list-item" tabindex="0">
+                        <div class="favorites-card-header">
+                            <div class="favorites-oval">
+                                <span>WORKOUT</span>
+                                <button class='favorites-icon-svg' data-id='icon-trash' data-btn='trash'>
+                                    <svg width="16" height="16" fill="none">
+                                        <use href="/project-CCrafters-JS/assets/icons-84da4e8c.svg#icon-trash"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button class="favorites-list-button" data-id="icon-arrow-right" type="button"> Start
+                                <svg class="favorites-list-button-icon" width="14" height="14" stroke="#1B1B1B">
+                                    <use href="/project-CCrafters-JS/assets/icons-84da4e8c.svg#icon-arrow-right"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="favorites-list-container">
+                            <svg class="favorites-list-svg" width="24" height="24">
+                                <use href="/project-CCrafters-JS/assets/icons-84da4e8c.svg#icon-running_man"></use>
+                            </svg>
+                            <h3 class="favorites-list-text"></h3>
+                        </div>
+                        <div class="favorites-card-text">
+                            <ul class="favorites-card-text-list">
+                                <li class="favorites-card-text-item">
+                                    <h4 class="favorites-card-text-title">Burned calories:</h4>
+                                    <p class="favorites-card-text-block"></p>
+                                </li>
+
+                                <li сlass="favorites-card-text-item">
+                                    <h4 class="favorites-card-text-title">Body part:</h4>
+                                    <p class="favorites-card-text-block"></p>
+                                </li>
+
+                                <li class="favorites-card-text-item">
+                                    <h4 class="favorites-card-text-title">Target:</h4>
+                                    <p class="favorites-card-text-block"></p>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
     </main>
     <button class="scroll-up-button scroll-up-button-active">
   <svg class="arrow" width="30" height="30">
