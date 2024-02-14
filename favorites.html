@@ -8,7 +8,7 @@
     
     <script type="module" crossorigin src="/project-CCrafters-JS/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/project-CCrafters-JS/assets/preload-helper-7f91084c.js">
-    <link rel="stylesheet" href="/project-CCrafters-JS/assets/favorites-b1f3c65c.css">
+    <link rel="stylesheet" href="/project-CCrafters-JS/assets/favorites-aeed4fdc.css">
   </head>
   <body>
     <header class="container page-header">
@@ -136,55 +136,17 @@
                     </p>
                 </div>
 
-                <ul class="favorites-list">
-                    <li class="favorites-list-item" tabindex="0">
-                        <div class="favorites-card-header">
-                            <div class="favorites-oval">
-                                <span>WORKOUT</span>
-                                <button class='favorites-icon-svg' data-id='icon-trash' data-btn='trash'>
-                                    <svg width="16" height="16" fill="none">
-                                        <use href="/project-CCrafters-JS/assets/icons-84da4e8c.svg#icon-trash"></use>
-                                    </svg>
-                                </button>
-                            </div>
-                            <button class="favorites-list-button" data-id="icon-arrow-right" type="button"> Start
-                                <svg class="favorites-list-button-icon" width="14" height="14" stroke="#1B1B1B">
-                                    <use href="/project-CCrafters-JS/assets/icons-84da4e8c.svg#icon-arrow-right"></use>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="favorites-list-container">
-                            <svg class="favorites-list-svg" width="24" height="24">
-                                <use href="/project-CCrafters-JS/assets/icons-84da4e8c.svg#icon-running_man"></use>
-                            </svg>
-                            <h3 class="favorites-list-text"></h3>
-                        </div>
-                        <div class="favorites-card-text">
-                            <ul class="favorites-card-text-list">
-                                <li class="favorites-card-text-item">
-                                    <h4 class="favorites-card-text-title">Burned calories:</h4>
-                                    <p class="favorites-card-text-block"></p>
-                                </li>
-
-                                <li сlass="favorites-card-text-item">
-                                    <h4 class="favorites-card-text-title">Body part:</h4>
-                                    <p class="favorites-card-text-block"></p>
-                                </li>
-
-                                <li class="favorites-card-text-item">
-                                    <h4 class="favorites-card-text-title">Target:</h4>
-                                    <p class="favorites-card-text-block"></p>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </li>
-                </ul>
+                <ul class="favorites-list"></ul>
             </div>
         </div>
     </div>
 </section>
     </main>
+    <div class="backdrop-modal visually-hidden">
+  <div class="modal">
+    <div class="loader-modal"></div>
+  </div>
+</div>
     <button class="scroll-up-button scroll-up-button-active">
   <svg class="arrow" width="30" height="30">
     <use href="/project-CCrafters-JS/assets/icons-84da4e8c.svg#icon-arrow-top"></use>

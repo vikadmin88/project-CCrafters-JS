@@ -1,4 +1,4 @@
-const l=document.querySelector(".favorites-list"),n=document.querySelector(".empty-text-container");let c=document.querySelectorAll('button[data-btn="trash"]');function d(){let t=JSON.parse(localStorage.getItem("favorites"))||[];console.log(t),n.style.display="none",l.innerHTML=t.map(v).join(""),c=document.querySelectorAll('button[data-btn="trash"]');for(let e of c)e.addEventListener("click",C);t.length||(n.style.display="flex",l.style.display="none")}function o(t){return t.charAt(0).toUpperCase()+t.slice(1)}const v=({_id:t,name:e,burnedCalories:s,bodyPart:r,target:a,time:i})=>`<li class="favorites-list-item" tabindex="0">
+import{openModalFavoritesHandler as v}from"./exercise_modal-7c8a2389.js";import"./notifier-44391d19.js";import"./vendor-4c9dc65a.js";const o=document.querySelector(".favorites-list"),n=document.querySelector(".empty-text-container");let c=document.querySelectorAll('button[data-btn="trash"]');function d(){console.log("vik");let t=JSON.parse(localStorage.getItem("favorites"))||[];n.style.display="none",o.innerHTML=t.map(C).join(""),c=document.querySelectorAll('button[data-btn="trash"]');for(let e of c)e.addEventListener("click",f);t.length||(n.style.display="flex",o.style.display="none")}function r(t){return t.charAt(0).toUpperCase()+t.slice(1)}const C=({_id:t,name:e,burnedCalories:s,bodyPart:l,target:i,time:a})=>`<li class="favorites-list-item" tabindex="0">
     <div class="favorites-card-header">
       <div class="favorites-oval">
         <span>WORKOUT</span>
@@ -22,24 +22,24 @@ const l=document.querySelector(".favorites-list"),n=document.querySelector(".emp
         <path d="M15.8446 7.30102C16.7562 7.30102 17.4951 6.56206 17.4951 5.65051C17.4951 4.73896 16.7562 4 15.8446 4C14.9331 4 14.1941 4.73896 14.1941 5.65051C14.1941 6.56206 14.9331 7.30102 15.8446 7.30102Z" fill="#F6F6F6"/>
       </svg>
 
-      <h3 class="favorites-list-text">${o(e)}</h3>
+      <h3 class="favorites-list-text">${r(e)}</h3>
     </div>
 
     <ul class="favorites-card-text-list">
       <li class="favorites-card-text-item">
           <h4 class="favorites-card-text-title">Burned calories:</h4>
-          <p class="favorites-card-text-block">${s}/${i} min</p>
+          <p class="favorites-card-text-block">${s}/${a} min</p>
       </li>
 
       <li class="favorites-card-text-item">
           <h4 class="favorites-card-text-title">Body part:</h4>
-          <p class="favorites-card-text-block">${o(r)}</p>
+          <p class="favorites-card-text-block">${r(l)}</p>
       </li>
 
       <li class="favorites-card-text-item">
           <h4 class="favorites-card-text-title">Target:</h4>
-          <p class="favorites-card-text-block">${o(a)}</p>
+          <p class="favorites-card-text-block">${r(i)}</p>
       </li>
     </ul>
-  </li>`;d();function C(t){const e=t.target;if(e){let s=e.dataset.id;console.log(s);let a=(JSON.parse(localStorage.getItem("favorites"))||[]).filter(i=>i._id!==s);localStorage.setItem("favorites",JSON.stringify(a)),favDataArr=a,d()}}
-//# sourceMappingURL=favorites-74dc1b2d.js.map
+  </li>`;d();o.addEventListener("click",v);function f(t){const e=t.target;if(e){let s=e.dataset.id,i=(JSON.parse(localStorage.getItem("favorites"))||[]).filter(a=>a._id!==s);localStorage.setItem("favorites",JSON.stringify(i)),d()}}
+//# sourceMappingURL=favorites-019d6167.js.map
