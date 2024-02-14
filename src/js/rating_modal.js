@@ -1,4 +1,3 @@
-
 // import { showModalHandler } from './exercise_modal.js';
 import { notify } from './notifier.js';
 import { API_EXERCISES_POINT, api } from './api.js';
@@ -7,6 +6,7 @@ const refs = {
   icons: document.querySelectorAll('.rating-star-icon'),
   form: document.querySelector('.rating-form'),
   stars: document.querySelector('.rating-star-list'),
+  backdrop: document.querySelector('.backdrop-rating'),
 };
 
 refs.icons.forEach((icon, index) => {
@@ -25,6 +25,8 @@ refs.icons.forEach((icon, index) => {
 
 refs.form.addEventListener('submit', sendRating);
 refs.stars.addEventListener('click', changeRating);
+refs.backdrop.addEventListener('click', closeModal);
+document.addEventListener('keydown', closeModal);
 
 function changeRating(event) {
   if (event.target.nodeName !== 'INPUT') {
@@ -77,29 +79,37 @@ function sendRating(event) {
         notify('error', `API error: ${error.message.response.data.message}`);
       }
     });
-  
-   
 
-   
-  document.querySelector('.open-rating-modal-button').addEventListener('click', openRatingModal);
-  document.querySelector('.close-rating-modal-button').addEventListener('click', closeModal);
+  document
+    .querySelector('.open-rating-modal-button')
+    .addEventListener('click', openRatingModal);
+  document
+    .querySelector('.close-rating-modal-button')
+    .addEventListener('click', closeModal);
 
   var closeButton = document.querySelector('.close');
-  closeButton.addEventListener('click', closeModal); 
-      
-var backdrop = document.querySelector('.backdrop-rating');
-backdrop.addEventListener('click', function(event) {
+  closeButton.addEventListener('click', closeModal);
+
+  var backdrop = document.querySelector('.backdrop-rating');
+  backdrop.addEventListener('click', function (event) {
     if (event.target === backdrop) {
-        closeModal();
+      closeModal();
     }
-});
+  });
 }
- function closeModal() {
-   var modal = document.querySelector('.backdrop-rating');
-   modal.classList.add('visually-hidden');
-    // modal.style.display = 'none';
+function closeModal(e) {
+  if (
+    !e.target.classList.contains('backdrop-rating') &&
+    !e.target.classList.contains('close') &&
+    !e.target.closest('.close') &&
+    e.code !== 'Escape'
+  ) {
+    return;
+  }
+
+  refs.backdrop.classList.add('visually-hidden');
 }
 export function openRatingModal() {
-    var modal = document.querySelector('.rating-modal'); 
-    modal.style.display = 'block';
-      }
+  // var modal = document.querySelector('.rating-modal');
+  // modal.style.display = 'block';
+}
