@@ -9,8 +9,8 @@ scrollUpButton.addEventListener('click', () => {
 
 window.addEventListener('scroll', () => {
   if (window.scrollY < 230) {
-    scrollUpButton.classList.add('active');
+    scrollUpButton.classList.add('scroll-up-button-active');
   } else {
-    scrollUpButton.classList.remove('active');
+    scrollUpButton.classList.remove('scroll-up-button-active');
   }
 });
