@@ -20,11 +20,28 @@
   background-color: transparent;
   border: none;
   outline: none;
-  width: 62px;
-  height: 29px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  width: 32px;
+  height: 16px;
+}
+
+.open-btn-mobile:hover,
+.open-btn-mobile:focus {
+  transform: scale(1.2);
+}
+
+
+.open-mobile-menu-icon path {
+  stroke: #7e847f; 
+}
+
+.open-btn-mobile:hover .open-mobile-menu-icon path,
+.open-btn-mobile:focus .open-mobile-menu-icon path {
+  stroke: #5f6560; 
 }
 
 .open-mobile-menu-icon {
