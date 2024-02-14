@@ -11,7 +11,7 @@ let loader = document.querySelector('.loader');
 
 let exerciseObject = { isFavorite: false };
 
-// (open modal, get exer)
+// open modal, get exer
 export function openModalHandler(e) {
   if (
     !e.target &&
@@ -28,40 +28,13 @@ export function openModalHandler(e) {
     id = '';
   }
 
-  // let id = '64f389465ae26083f39b1ab2';
   if (!id) {
     return;
   }
   addLoader();
   openModal(id);
-}
-
-// (open modal, get favorites)
-export function openModalFavoritesHandler(e) {
-  if (
-    !e.target &&
-    !e.target.classList.contains('favorites-list-button') &&
-    !e.target
-      .closest('.favorites-list-button')
-      .classList.contains('favorites-list-button')
-  ) {
-    return;
-  }
-
-  let id;
-  try {
-    id = e.target.closest('.favorites-list-button').dataset.id;
-  } catch {
-    id = '';
-  }
-
-  // let id = '64f389465ae26083f39b1ab2';
-  if (!id) {
-    return;
-  }
-
-  addLoader();
-  openModal(id);
+  document.addEventListener('keydown', closeModalHandler);
+  document.querySelector('.backdrop-modal').addEventListener('click', closeModalHandler);
 }
 
 function addLoader() {
@@ -71,8 +44,7 @@ function addLoader() {
   document.querySelector('.loader-modal').style.display = 'block';
 }
 
-document.addEventListener('keydown', closeModalHandler);
-modal.addEventListener('click', closeModalHandler);
+
 // closes the modal
 export function closeModalHandler(e) {
   if (
@@ -80,12 +52,13 @@ export function closeModalHandler(e) {
     !e.target.classList.contains('give-rating-btn') &&
     !e.target.closest('.close-modal-btn') &&
     e.code !== 'Escape' &&
-    modal.classList.contains('visually-hidden')
+    !modal.classList.contains('visually-hidden')
   ) {
     return;
   }
-  console.log(e);
   modal.classList.add('visually-hidden');
+  document.removeEventListener('keydown', closeModalHandler);
+  modal.removeEventListener('click', closeModalHandler);
 }
 
 function addRemoveFavoriteHandler(e) {
@@ -103,14 +76,14 @@ function addRemoveFavoriteHandler(e) {
   }
   markupAndReload(exerciseObject);
 }
-// (adds to favorites)
+// adds to favorites
 function addToFavoriteStorage(e) {
   let curFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
   curFavorites.push(exerciseObject);
   localStorage.setItem('favorites', JSON.stringify(curFavorites));
 }
 
-// (remove from favorites)
+// remove from favorites
 function removeFromFavoriteStorage(e) {
   const exerciseId = e.target.dataset.id;
   let curFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -179,9 +152,6 @@ function getExerciseApi(id) {
       } catch {}
     });
 }
-
-// this will call from exercises_items and favorite part
-// openModalHandler();
 
 function spanToCapitalize(text) {
   return text.charAt(0).toUpperCase() + text.slice(1);

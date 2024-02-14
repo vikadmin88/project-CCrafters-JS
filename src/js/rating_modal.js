@@ -1,4 +1,3 @@
-// import { showModalHandler } from './exercise_modal.js';
 import { notify } from './notifier.js';
 import { API_EXERCISES_POINT, api } from './api.js';
 import { closeModalHandler } from './exercise_modal.js';
@@ -64,45 +63,21 @@ function sendRating(event) {
     review,
   };
 
-  console.log(ratingParams);
-  console.log(JSON.stringify(ratingParams));
-
-  // const exerciseId = '64f389465ae26083f39b182b';
-
   api
     .patch(
       `${API_EXERCISES_POINT}/${exerciseId}/rating`,
       JSON.stringify(ratingParams)
     )
     .then(response => {
-      console.log(response);
       notify('success', 'Rating has been updated!');
     })
     .catch(error => {
-      console.log(error);
       if (error.message.response.status === 409) {
         notify('warning', `Warning: ${error.message.response.data.message}`);
       } else {
         notify('error', `API error: ${error.message.response.data.message}`);
       }
     });
-
-  document
-    .querySelector('.open-rating-modal-button')
-    .addEventListener('click', openRatingModal);
-  document
-    .querySelector('.close-rating-modal-button')
-    .addEventListener('click', closeModal);
-
-  var closeButton = document.querySelector('.close');
-  closeButton.addEventListener('click', closeModal);
-
-  var backdrop = document.querySelector('.backdrop-rating');
-  backdrop.addEventListener('click', function (event) {
-    if (event.target === backdrop) {
-      closeModal();
-    }
-  });
 }
 
 function closeModal(e) {
@@ -125,7 +100,6 @@ function closeModal(e) {
 }
 
 export function openRatingModal(callContext, event) {
-  console.log(event.target.dataset.id);
   callerContext = callContext;
   exerciseId = event.target.dataset.id;
   refs.backdrop.classList.remove('visually-hidden');
