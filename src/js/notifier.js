@@ -2,7 +2,7 @@ import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 iziToast.settings({
   position: "topRight",
-  timeout: 5000,
+  timeout: 3000,
   resetOnHover: true,
   transitionIn: "flipInX",
   transitionOut: "flipOutX"

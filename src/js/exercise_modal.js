@@ -1,5 +1,6 @@
 import { API_EXERCISES_POINT, api } from './api.js';
 import { notify } from './notifier.js';
+import { openRatingModal } from './rating_modal.js';
 
 let modalCard = document.querySelector('.modal');
 let closeBtn = document.querySelector('.close-modal-btn');
@@ -10,7 +11,7 @@ let loader = document.querySelector('.loader');
 
 let exerciseObject = { isFavorite: false };
 
-// (open modal, get exer)
+// open modal, get exer
 export function openModalHandler(e) {
   if (
     !e.target &&
@@ -27,54 +28,37 @@ export function openModalHandler(e) {
     id = '';
   }
 
-  // let id = '64f389465ae26083f39b1ab2';
   if (!id) {
     return;
   }
   addLoader();
   openModal(id);
-}
-
-// (open modal, get favorites)
-export function openModalFavoritesHandler(e) {
-  if (
-    !e.target &&
-    !e.target.classList.contains('favorites-list-button') &&
-    !e.target.closest('.favorites-list-button').classList.contains('favorites-list-button')
-  ) {
-    return;
-  }
-
-  let id;
-  try {
-    id = e.target.closest('.favorites-list-button').dataset.id;
-  } catch {
-    id = '';
-  }
-
-  // let id = '64f389465ae26083f39b1ab2';
-  if (!id) {
-    return;
-  }
-
-  addLoader();
-  openModal(id);
+  document.addEventListener('keydown', closeModalHandler);
+  document.querySelector('.backdrop-modal').addEventListener('click', closeModalHandler);
 }
 
 function addLoader() {
   document.querySelector('.backdrop-modal').classList.remove('visually-hidden');
-  document.querySelector('.modal').innerHTML = '<div class="loader-modal"></div>';
+  document.querySelector('.modal').innerHTML =
+    '<div class="loader-modal"></div>';
   document.querySelector('.loader-modal').style.display = 'block';
 }
 
-// (hide only modal, backdrop is open)
-export function hideModalHandler() {}
-// (show only modal, get exer from server)
-export function showModalHandler() {}
 
-// (closes the modal)
-function closeModalHandler() {
-  document.querySelector('.backdrop-modal').classList.add('visually-hidden');
+// closes the modal
+export function closeModalHandler(e) {
+  if (
+    !e.target.classList.contains('backdrop-modal') &&
+    !e.target.classList.contains('give-rating-btn') &&
+    !e.target.closest('.close-modal-btn') &&
+    e.code !== 'Escape' &&
+    !modal.classList.contains('visually-hidden')
+  ) {
+    return;
+  }
+  modal.classList.add('visually-hidden');
+  document.removeEventListener('keydown', closeModalHandler);
+  modal.removeEventListener('click', closeModalHandler);
 }
 
 function addRemoveFavoriteHandler(e) {
@@ -92,14 +76,14 @@ function addRemoveFavoriteHandler(e) {
   }
   markupAndReload(exerciseObject);
 }
-// (adds to favorites)
+// adds to favorites
 function addToFavoriteStorage(e) {
   let curFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
   curFavorites.push(exerciseObject);
   localStorage.setItem('favorites', JSON.stringify(curFavorites));
 }
 
-// (remove from favorites)
+// remove from favorites
 function removeFromFavoriteStorage(e) {
   const exerciseId = e.target.dataset.id;
   let curFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -136,7 +120,12 @@ function markupAndReload(item) {
   favBtn.addEventListener('click', addRemoveFavoriteHandler);
 
   ratingBtn = document.querySelector('.give-rating-btn');
-  // ratingBtn.addEventListener('click', openRatingModal);
+  ratingBtn.addEventListener('click', ratingHandler);
+}
+
+function ratingHandler(e) {
+  document.querySelector('.backdrop-modal').classList.add('visually-hidden');
+  openRatingModal(document.querySelector('.backdrop-modal'), e);
 }
 
 function getExerciseApi(id) {
@@ -163,9 +152,6 @@ function getExerciseApi(id) {
       } catch {}
     });
 }
-
-// this will call from exercises_items and favorite part
-// openModalHandler();
 
 function spanToCapitalize(text) {
   return text.charAt(0).toUpperCase() + text.slice(1);

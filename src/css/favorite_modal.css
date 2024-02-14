@@ -23,7 +23,7 @@
   background-color: #1b1b1b99;
 }
 
-.modal {
+.modal-favorite {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -190,7 +190,7 @@
 /* **************************** */
 
 @media screen and (min-width: 768px) {
-  .modal {
+  .modal-favorite {
     min-width: 716px;
     padding: 40px;
   }
@@ -211,7 +211,7 @@
     line-height: 32px;
   }
 
-  .modal .modal-buttons-container {
+  .modal-favorite .modal-buttons-container {
     flex-direction: row;
     justify-content: space-between;
     gap: 7px;
@@ -227,7 +227,7 @@
 /* **************************** */
 
 @media screen and (min-width: 1440px) {
-  .modal {
+  .modal-favorite {
     min-width: 732px;
   }
 }
