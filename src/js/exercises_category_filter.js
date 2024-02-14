@@ -120,7 +120,14 @@ function getCategoryExercises() {
           .then(({ results }) => {
             refs.subcategory.innerHTML = results.map(markupCategory).join('');
           })
-          .catch(error => notify('error', `API error: ${error}`));
+          .catch(error => notify('error', `API error: ${error}`))
+          .finally(() => {
+            refs.title.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+              inline: 'nearest',
+            });
+          });
       });
     });
 }

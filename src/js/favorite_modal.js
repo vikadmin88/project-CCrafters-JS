@@ -1,39 +1,15 @@
-import { API_EXERCISES_POINT, api } from './api.js';
 import { notify } from './notifier.js';
+import { renderFavorites } from './favorites.js';
 
 let modalCard = document.querySelector('.modal');
 let closeBtn = document.querySelector('.close-modal-btn');
 let favBtn = document.querySelector('.add-favorite-btn');
 let ratingBtn = document.querySelector('.give-rating-btn');
-let modal = document.querySelector('.backdrop-modal');
-let loader = document.querySelector('.loader');
+let modal = document.querySelector('.backdrop-favorite');
+let loader = document.querySelector('.loader-favorites');
 
 let exerciseObject = { isFavorite: false };
 
-// (open modal, get exer)
-export function openModalHandler(e) {
-  if (
-    !e.target &&
-    !e.target.classList.contains('card-button') &&
-    !e.target.closest('.card-button').classList.contains('card-button')
-  ) {
-    return;
-  }
-
-  let id;
-  try {
-    id = e.target.closest('.card-button').dataset.id;
-  } catch {
-    id = '';
-  }
-
-  // let id = '64f389465ae26083f39b1ab2';
-  if (!id) {
-    return;
-  }
-  addLoader();
-  openModal(id);
-}
 
 // (open modal, get favorites)
 export function openModalFavoritesHandler(e) {
@@ -56,25 +32,20 @@ export function openModalFavoritesHandler(e) {
   if (!id) {
     return;
   }
-
   addLoader();
   openModal(id);
 }
 
 function addLoader() {
-  document.querySelector('.backdrop-modal').classList.remove('visually-hidden');
-  document.querySelector('.modal').innerHTML = '<div class="loader-modal"></div>';
-  document.querySelector('.loader-modal').style.display = 'block';
+  document.querySelector('.backdrop-favorite').classList.remove('visually-hidden');
+  document.querySelector('.modal').innerHTML = '<div class="loader-favorite"></div>';
+  document.querySelector('.loader-favorite').style.display = 'block';
 }
-
-// (hide only modal, backdrop is open)
-export function hideModalHandler() {}
-// (show only modal, get exer from server)
-export function showModalHandler() {}
 
 // (closes the modal)
 function closeModalHandler() {
-  document.querySelector('.backdrop-modal').classList.add('visually-hidden');
+  document.querySelector('.backdrop-favorite').classList.add('visually-hidden');
+  renderFavorites();
 }
 
 function addRemoveFavoriteHandler(e) {
@@ -110,19 +81,26 @@ function removeFromFavoriteStorage(e) {
 }
 
 function getExerciseFromStorage(id) {
+
   if (id) {
-    let itemObj;
+    let itemArrObj;
     let exerciseId = id;
     let curFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    itemObj = curFavorites.filter(exercise => exercise._id === exerciseId);
-    exerciseObject.isFavorite = !!itemObj.length;
-    return itemObj;
+    itemArrObj = curFavorites.filter(exercise => exercise._id === exerciseId);
+    if (itemArrObj.length) {
+      exerciseObject = itemArrObj[0];
+      exerciseObject.isFavorite = true;
+      return exerciseObject;
+    }
+    return false;
   }
 }
 
 function openModal(id) {
-  getExerciseFromStorage(id);
-  getExerciseApi(id);
+  const item = getExerciseFromStorage(id);
+  if (item) {
+    markupAndReload(item);
+  }
 }
 
 function markupAndReload(item) {
@@ -137,31 +115,6 @@ function markupAndReload(item) {
 
   ratingBtn = document.querySelector('.give-rating-btn');
   // ratingBtn.addEventListener('click', openRatingModal);
-}
-
-function getExerciseApi(id) {
-  if (!id) {
-    return;
-  }
-
-  api
-    .get(`${API_EXERCISES_POINT}/${id}`, {})
-    .then(data => {
-      if (exerciseObject.isFavorite) {
-        exerciseObject = data;
-        exerciseObject.isFavorite = true;
-      } else {
-        exerciseObject = data;
-        exerciseObject.isFavorite = false;
-      }
-      markupAndReload(data);
-    })
-    .catch(error => notify('error', `API error: ${error}`))
-    .finally(() => {
-      try {
-        document.querySelector('.loader-modal').style.display = 'none';
-      } catch {}
-    });
 }
 
 // this will call from exercises_items and favorite part
