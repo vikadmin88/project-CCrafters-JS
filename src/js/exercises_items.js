@@ -148,7 +148,6 @@ function getSubcategoryExercises() {
   if (pageWidth >= 1440) {
     paramsCard.limit = 9;
   }
-  document.querySelector('.loader').style.display = 'block';
   api
     .get(API_EXERCISES_POINT, paramsCard)
     .then(({ page, totalPages, results }) => {
@@ -165,23 +164,16 @@ function getSubcategoryExercises() {
         container.classList.remove('is-hidden');
       }
     })
-    .catch(error => console.log(error))
-    .finally(() => {
-      document.querySelector('.loader').style.display = 'none';
-    });
+    .catch(error => console.log(error));
   instance.on('afterMove', event => {
     const currentPage = event.page;
     paramsCard.page = currentPage;
-    document.querySelector('.loader').style.display = 'block';
     api
       .get(API_EXERCISES_POINT, paramsCard)
       .then(({ results }) => {
         createMarkupCard(results);
       })
-      .catch(error => console.log(error))
-      .finally(() => {
-        document.querySelector('.loader').style.display = 'none';
-      });
+      .catch(error => console.log(error));
   });
 }
 
