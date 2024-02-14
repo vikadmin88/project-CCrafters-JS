@@ -1,15 +1,14 @@
 import { API_EXERCISES_POINT, api } from './api.js';
 import { notify } from './notifier.js';
-import { renderFavorites } from './favorites.js';
+// import { renderFavorites } from './favorites.js';
 
-// const refs = {
 let modalCard = document.querySelector('.modal');
 let closeBtn = document.querySelector('.close-modal-btn');
 let favBtn = document.querySelector('.add-favorite-btn');
 let ratingBtn = document.querySelector('.give-rating-btn');
 let modal = document.querySelector('.backdrop-modal');
 let loader = document.querySelector('.loader');
-// };
+
 let exerciseObject = { isFavorite: false };
 
 // (open modal, get exer)
@@ -86,14 +85,14 @@ function addRemoveFavoriteHandler(e) {
   ) {
     removeFromFavoriteStorage(e);
     exerciseObject.isFavorite = false;
-    notify('success', 'The exercise has been removed from favorites list');
+    notify('success', 'The exercise has been removed from your favorites list');
   } else {
     addToFavoriteStorage(e);
     exerciseObject.isFavorite = true;
-    notify('success', 'The exercise has been added to favorites list');
+    notify('success', 'The exercise has been added to your favorites list');
   }
   markupAndReload(exerciseObject);
-  renderFavorites();
+  // renderFavorites();
 }
 // (adds to favorites)
 function addToFavoriteStorage(e) {

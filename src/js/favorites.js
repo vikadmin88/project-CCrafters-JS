@@ -8,7 +8,7 @@ let btns = document.querySelectorAll('button[data-btn="trash"]');
 //----------------Test data-to-local-storage---------------------------///
 
 
-export function renderFavorites() {
+function renderFavorites() {
   console.log("vik");
   let favArr = JSON.parse(localStorage.getItem('favorites')) || [];
 
