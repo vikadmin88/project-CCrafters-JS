@@ -93,14 +93,12 @@ function deleteExercise(e) {
 
   if (trashBtn) {
     let exerciseId = trashBtn.dataset.id;
-    console.log(exerciseId);
     let curFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
     let updFavorites = curFavorites.filter(
       exercise => exercise._id !== exerciseId
     );
 
     localStorage.setItem('favorites', JSON.stringify(updFavorites));
-    favDataArr = updFavorites;
     renderFavorites();
   }
 }
