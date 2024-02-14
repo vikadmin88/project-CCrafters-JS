@@ -1,4 +1,4 @@
-import{n as m}from"./notifier-bffe1249.js";document.querySelector(".modal");let g=document.querySelector(".close-modal-btn"),h=document.querySelector(".add-favorite-btn");document.querySelector(".give-rating-btn");document.querySelector(".backdrop-favorite");document.querySelector(".loader-favorites");let s={isFavorite:!1};function b(t){if(!t.target&&!t.target.classList.contains("favorites-list-button")&&!t.target.closest(".favorites-list-button").classList.contains("favorites-list-button"))return;let e;try{e=t.target.closest(".favorites-list-button").dataset.id}catch{e=""}e&&(M(),I(e))}function M(){document.querySelector(".backdrop-favorite").classList.remove("visually-hidden"),document.querySelector(".modal").innerHTML='<div class="loader-favorite"></div>',document.querySelector(".loader-favorite").style.display="block"}function B(){document.querySelector(".backdrop-favorite").classList.add("visually-hidden"),n()}function O(t){Object.hasOwn(s,"isFavorite")&&s.isFavorite?(T(t),s.isFavorite=!1,m("success","The exercise has been removed from your favorites list")):(q(),s.isFavorite=!0,m("success","The exercise has been added to your favorites list")),y(s)}function q(t){let e=JSON.parse(localStorage.getItem("favorites"))||[];e.push(s),localStorage.setItem("favorites",JSON.stringify(e))}function T(t){const e=t.target.dataset.id;let o=(JSON.parse(localStorage.getItem("favorites"))||[]).filter(i=>i._id!==e);localStorage.setItem("favorites",JSON.stringify(o))}function j(t){if(t){let e,a=t;return e=(JSON.parse(localStorage.getItem("favorites"))||[]).filter(i=>i._id===a),e.length?(s=e[0],s.isFavorite=!0,s):!1}}function I(t){const e=j(t);e&&y(e)}function y(t){document.querySelector(".modal").innerHTML=E(t),g=document.querySelector(".close-modal-btn"),g.addEventListener("click",B),h=document.querySelector(".add-favorite-btn"),h.addEventListener("click",O),document.querySelector(".give-rating-btn")}function c(t){return t.charAt(0).toUpperCase()+t.slice(1)}function E({_id:t,bodyPart:e,equipment:a,gifUrl:o,name:i,target:r,description:x,rating:u,burnedCalories:L,time:S,popularity:F,isFavorite:k}){let f=5,p=Number(u.toFixed());f-=p;let $='<r class="star-1"/>'.repeat(p).concat('<r class="star-0"/>'.repeat(f));return`<div class="modal-description-container">
+import{n as B}from"./api-0d4e8fa1.js";import{o as $}from"./rating_modal-78eeb366.js";document.querySelector(".modal-favorite");let u=document.querySelector(".close-modal-btn"),h=document.querySelector(".add-favorite-btn"),C=document.querySelector(".give-rating-btn"),l=document.querySelector(".backdrop-favorite");document.querySelector(".loader-favorites");let b={};function L(t){if(!t.target&&!t.target.classList.contains("favorites-list-button")&&!t.target.closest(".favorites-list-button").classList.contains("favorites-list-button"))return;let e;try{e=t.target.closest(".favorites-list-button").dataset.id}catch{e=""}e&&(q(),T(e),document.addEventListener("keydown",o),l.addEventListener("click",o))}function o(t){console.log(t),!(!t.target.classList.contains("backdrop-favorite")&&!t.target.classList.contains("close-modal-btn")&&!t.target.closest(".close-modal-btn")&&t.code!=="Escape"&&!l.classList.contains("visually-hidden"))&&(l.classList.add("visually-hidden"),document.removeEventListener("keydown",o),l.removeEventListener("click",o))}function q(){document.querySelector(".backdrop-favorite").classList.remove("visually-hidden"),document.querySelector(".modal-favorite").innerHTML='<div class="loader-favorite"></div>',document.querySelector(".loader-favorite").style.display="block"}function E(t){const e=t.target.dataset.id;let a=(JSON.parse(localStorage.getItem("favorites"))||[]).filter(i=>i._id!==e);localStorage.setItem("favorites",JSON.stringify(a)),B("success","The exercise has been removed from your favorites list"),c(),u.click()}function O(t){if(t){let e,s=t;return e=(JSON.parse(localStorage.getItem("favorites"))||[]).filter(i=>i._id===s),e.length?(b=e[0],b):!1}}function T(t){const e=O(t);e&&j(e)}function j(t){document.querySelector(".modal-favorite").innerHTML=_(t),u=document.querySelector(".close-modal-btn"),u.addEventListener("click",o),h=document.querySelector(".add-favorite-btn"),h.addEventListener("click",E),C=document.querySelector(".give-rating-btn"),C.addEventListener("click",H)}function H(t){document.querySelector(".backdrop-favorite").classList.add("visually-hidden"),$(document.querySelector(".backdrop-favorite"),t)}function d(t){return t.charAt(0).toUpperCase()+t.slice(1)}function _({_id:t,bodyPart:e,equipment:s,gifUrl:a,name:i,target:r,description:x,rating:f,burnedCalories:k,time:S,popularity:F,isFavorite:A}){let m=5,g=Number(f.toFixed());m-=g;let M='<r class="star-1"/>'.repeat(g).concat('<r class="star-0"/>'.repeat(m));return`<div class="modal-description-container">
       <button class="close-modal-btn" title="Close window">
         <svg class="close-modal-icon"  width="12" height="12" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12.8332 1.16666L1.1665 12.8333M1.1665 1.16666L12.8332 12.8333" stroke="#1B1B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -19,7 +19,7 @@ import{n as m}from"./notifier-bffe1249.js";document.querySelector(".modal");let 
           />
           <img
             class="modal-gif"
-            src="${o}"
+            src="${a}"
             alt="${i}"
             width="295"
             height="258"
@@ -30,21 +30,21 @@ import{n as m}from"./notifier-bffe1249.js";document.querySelector(".modal");let 
         <h4 class="modal-title">${i}</h4>
         <div class="rating-container">
           <div class="star-block">
-          <p class="modal-exercises-rating">${u.toFixed(1)}</p>
-          ${$}
+          <p class="modal-exercises-rating">${f.toFixed(1)}</p>
+          ${M}
         </div>
         <ul class="description-list">
           <li class="description-item">
             <p>Target</p>
-            <span>${c(r)}</span>
+            <span>${d(r)}</span>
           </li>
           <li class="description-item">
             <p>Body Part</p>
-            <span>${c(e)}</span>
+            <span>${d(e)}</span>
           </li>
           <li class="description-item">
             <p>Equipment</p>
-            <span>${c(a)}</span>
+            <span>${d(s)}</span>
           </li>
           <li class="description-item">
             <p>Popular</p>
@@ -52,13 +52,13 @@ import{n as m}from"./notifier-bffe1249.js";document.querySelector(".modal");let 
           </li>
           <li class="description-item">
             <p>Burned Calories</p>
-            <span>${L}/${S} min</span>
+            <span>${k}/${S} min</span>
           </li>
         </ul>
         <p class="modal-description-text">${x}</p>
         <div class="modal-buttons-container">
           <button data-id="${t}" class="add-favorite-btn">
-            ${k?"Remove from":"Add to favorites"}
+            Remove from
             <svg class="icon-heart" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.3671 3.84166C16.9415 3.41583 16.4361 3.07803 15.8799 2.84757C15.3237 2.6171 14.7275 2.49847 14.1254 2.49847C13.5234 2.49847 12.9272 2.6171 12.371 2.84757C11.8147 3.07803 11.3094 3.41583 10.8838 3.84166L10.0004 4.725L9.11709 3.84166C8.25735 2.98192 7.09128 2.49892 5.87542 2.49892C4.65956 2.49892 3.4935 2.98192 2.63376 3.84166C1.77401 4.70141 1.29102 5.86747 1.29102 7.08333C1.29102 8.29919 1.77401 9.46525 2.63376 10.325L3.51709 11.2083L10.0004 17.6917L16.4838 11.2083L17.3671 10.325C17.7929 9.89937 18.1307 9.39401 18.3612 8.83779C18.5917 8.28158 18.7103 7.6854 18.7103 7.08333C18.7103 6.48126 18.5917 5.88508 18.3612 5.32887C18.1307 4.77265 17.7929 4.26729 17.3671 3.84166Z" stroke="#F6F6F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -68,7 +68,7 @@ import{n as m}from"./notifier-bffe1249.js";document.querySelector(".modal");let 
           </button>
         </div>
       </div>
-    </div>`}const N=Object.freeze(Object.defineProperty({__proto__:null,openModalFavoritesHandler:b},Symbol.toStringTag,{value:"Module"})),l=document.querySelector(".favorites-list"),v=document.querySelector(".empty-text-container");let C=document.querySelectorAll('button[data-btn="trash"]');function n(){let t=JSON.parse(localStorage.getItem("favorites"))||[];v.style.display="none",l.innerHTML=t.map(H).join(""),C=document.querySelectorAll('button[data-btn="trash"]');for(let e of C)e.addEventListener("click",w);t.length||(v.style.display="flex",l.style.display="none")}function d(t){return t.charAt(0).toUpperCase()+t.slice(1)}const H=({_id:t,name:e,burnedCalories:a,bodyPart:o,target:i,time:r})=>`<li class="favorites-list-item" tabindex="0">
+    </div>`}const V=Object.freeze(Object.defineProperty({__proto__:null,closeFavoriteModalHandler:o,openModalFavoritesHandler:L},Symbol.toStringTag,{value:"Module"})),n=document.querySelector(".favorites-list"),p=document.querySelector(".empty-text-container");let y=document.querySelectorAll('button[data-btn="trash"]');function c(){let t=JSON.parse(localStorage.getItem("favorites"))||[];p.style.display="none",n.innerHTML=t.map(I).join(""),y=document.querySelectorAll('button[data-btn="trash"]');for(let e of y)e.addEventListener("click",w);t.length||(p.style.display="flex",n.style.display="none")}function v(t){return t.charAt(0).toUpperCase()+t.slice(1)}const I=({_id:t,name:e,burnedCalories:s,bodyPart:a,target:i,time:r})=>`<li class="favorites-list-item" tabindex="0">
     <div class="favorites-card-header">
       <div class="favorites-oval">
         <span>WORKOUT</span>
@@ -92,24 +92,24 @@ import{n as m}from"./notifier-bffe1249.js";document.querySelector(".modal");let 
         <path d="M15.8446 7.30102C16.7562 7.30102 17.4951 6.56206 17.4951 5.65051C17.4951 4.73896 16.7562 4 15.8446 4C14.9331 4 14.1941 4.73896 14.1941 5.65051C14.1941 6.56206 14.9331 7.30102 15.8446 7.30102Z" fill="#F6F6F6"/>
       </svg>
 
-      <h3 class="favorites-list-text">${d(e)}</h3>
+      <h3 class="favorites-list-text">${v(e)}</h3>
     </div>
 
     <ul class="favorites-card-text-list">
       <li class="favorites-card-text-item">
           <h4 class="favorites-card-text-title">Burned calories:</h4>
-          <p class="favorites-card-text-block">${a}/${r} min</p>
+          <p class="favorites-card-text-block">${s}/${r} min</p>
       </li>
 
       <li class="favorites-card-text-item">
           <h4 class="favorites-card-text-title">Body part:</h4>
-          <p class="favorites-card-text-block">${d(o)}</p>
+          <p class="favorites-card-text-block">${v(a)}</p>
       </li>
 
       <li class="favorites-card-text-item">
           <h4 class="favorites-card-text-title">Target:</h4>
-          <p class="favorites-card-text-block">${d(i)}</p>
+          <p class="favorites-card-text-block">${v(i)}</p>
       </li>
     </ul>
-  </li>`;n();l.addEventListener("click",b);function w(t){const e=t.target;if(e){let a=e.dataset.id,i=(JSON.parse(localStorage.getItem("favorites"))||[]).filter(r=>r._id!==a);localStorage.setItem("favorites",JSON.stringify(i)),n()}}const A=Object.freeze(Object.defineProperty({__proto__:null,containerForTextOfEmptyList:v,deleteExercise:w,renderFavorites:n,ulFavList:l},Symbol.toStringTag,{value:"Module"}));export{A as a,N as f};
-//# sourceMappingURL=favorites-0f9b686e.js.map
+  </li>`;c();n.addEventListener("click",L);function w(t){const e=t.target;if(e){let s=e.dataset.id,i=(JSON.parse(localStorage.getItem("favorites"))||[]).filter(r=>r._id!==s);localStorage.setItem("favorites",JSON.stringify(i)),c()}}const z=Object.freeze(Object.defineProperty({__proto__:null,containerForTextOfEmptyList:p,deleteExercise:w,renderFavorites:c,ulFavList:n},Symbol.toStringTag,{value:"Module"}));export{z as a,V as f};
+//# sourceMappingURL=favorites-22f3c603.js.map
