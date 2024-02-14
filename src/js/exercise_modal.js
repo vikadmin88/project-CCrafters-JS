@@ -41,7 +41,9 @@ export function openModalFavoritesHandler(e) {
   if (
     !e.target &&
     !e.target.classList.contains('favorites-list-button') &&
-    !e.target.closest('.favorites-list-button').classList.contains('favorites-list-button')
+    !e.target
+      .closest('.favorites-list-button')
+      .classList.contains('favorites-list-button')
   ) {
     return;
   }
@@ -64,26 +66,26 @@ export function openModalFavoritesHandler(e) {
 
 function addLoader() {
   document.querySelector('.backdrop-modal').classList.remove('visually-hidden');
-  document.querySelector('.modal').innerHTML = '<div class="loader-modal"></div>';
+  document.querySelector('.modal').innerHTML =
+    '<div class="loader-modal"></div>';
   document.querySelector('.loader-modal').style.display = 'block';
 }
-
 
 document.addEventListener('keydown', closeModalHandler);
 modal.addEventListener('click', closeModalHandler);
 // closes the modal
-function closeModalHandler(e) {
+export function closeModalHandler(e) {
   if (
     !e.target.classList.contains('backdrop-modal') &&
     !e.target.classList.contains('give-rating-btn') &&
     !e.target.closest('.close-modal-btn') &&
     e.code !== 'Escape' &&
     modal.classList.contains('visually-hidden')
-    ) {
-      return;
-    }
-    console.log(e);
-    modal.classList.add('visually-hidden');
+  ) {
+    return;
+  }
+  console.log(e);
+  modal.classList.add('visually-hidden');
 }
 
 function addRemoveFavoriteHandler(e) {

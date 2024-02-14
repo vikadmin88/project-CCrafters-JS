@@ -1,6 +1,7 @@
 // import { showModalHandler } from './exercise_modal.js';
 import { notify } from './notifier.js';
 import { API_EXERCISES_POINT, api } from './api.js';
+import { closeModalHandler } from './exercise_modal.js';
 
 let callerContext;
 let exerciseId;
@@ -69,7 +70,10 @@ function sendRating(event) {
   // const exerciseId = '64f389465ae26083f39b182b';
 
   api
-    .patch(`${API_EXERCISES_POINT}/${exerciseId}/rating`, JSON.stringify(ratingParams))
+    .patch(
+      `${API_EXERCISES_POINT}/${exerciseId}/rating`,
+      JSON.stringify(ratingParams)
+    )
     .then(response => {
       console.log(response);
       notify('success', 'Rating has been updated!');
@@ -101,7 +105,6 @@ function sendRating(event) {
   });
 }
 
-
 function closeModal(e) {
   if (
     !e.target.classList.contains('backdrop-rating') &&
@@ -111,10 +114,14 @@ function closeModal(e) {
   ) {
     return;
   }
-  if(callerContext) {
+
+  if (callerContext) {
     callerContext.classList.remove('visually-hidden');
   }
+
   refs.backdrop.classList.add('visually-hidden');
+
+  document.addEventListener('keydown', closeModalHandler);
 }
 
 export function openRatingModal(callContext, event) {
@@ -122,4 +129,6 @@ export function openRatingModal(callContext, event) {
   callerContext = callContext;
   exerciseId = event.target.dataset.id;
   refs.backdrop.classList.remove('visually-hidden');
+
+  document.removeEventListener('keydown', closeModalHandler);
 }
