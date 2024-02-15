@@ -56,7 +56,7 @@
   border-radius: 30px;
   background: #e8e8e8;
   flex-shrink: 0;
-  min-width: 320px;
+  /* min-width: 320px; */
   padding: 40px 20px;
 }
 
