@@ -1,5 +1,5 @@
 .favorites-section {
-  padding:20px 0;
+  padding:10px 20px 0;
 }
 
 .favorites-list-item {
@@ -26,13 +26,13 @@
   } */
 
 .empty-text-container {
-  border-radius: 15px;
+  padding-bottom: 108px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 
-  width: 100%;
+  
 }
 
 .message-info-svg {
@@ -72,7 +72,7 @@
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.02em;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
 }
 
 /* .favorites-container-block {
@@ -304,10 +304,10 @@
 /*--------------------------Tablet---------------------*/
 @media (min-width: 768px) {
   .favorites-section{
-    padding: 16px 0px;
+    padding: 8px 20px;
   }
   .favorites-card {
-    padding: 64px 16px 64px 48px;
+    padding: 64px 48px;
     
     height: auto;
   }
@@ -331,11 +331,11 @@
     font-weight: 400;
     line-height: 1.09;
     letter-spacing: -0.02em;
-    margin-bottom: 32px;
+    margin-bottom: 208px;
   }
 
   .favorites-list {
-    height: 720px;
+    
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -345,7 +345,7 @@
     column-gap: 14px;
     row-gap: 20px;
 
-    padding-right: 24px;
+   
 
     overflow-y: auto;
   }
@@ -413,6 +413,12 @@
 }
 /*--------------------Desktop---------------------------*/
 @media (min-width: 1440px) {
+  .empty-text-container{
+    width: 100%;
+  }
+  .favorites-title{
+    margin-bottom: 146px;
+  }
   .favorites-card {
     
     display: flex;
@@ -459,8 +465,7 @@
   }
 
   .message-info-text {
-    width: 554px;
-    height: 72px;
+    
     font-size: 18px;
     line-height: 1.33;
     margin-bottom: 258px;
