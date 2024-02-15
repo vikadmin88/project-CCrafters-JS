@@ -70,6 +70,8 @@ function sendRating(event) {
     )
     .then(response => {
       notify('success', 'Rating has been updated!');
+      refs.form.reset();
+      closeModal();
     })
     .catch(error => {
       if (error.message.response.status === 409) {
@@ -84,6 +86,7 @@ function closeModal(e) {
   if (
     !e.target.classList.contains('backdrop-rating') &&
     !e.target.classList.contains('close') &&
+    !e.target.classList.contains('rating-btn') &&
     !e.target.closest('.close') &&
     e.code !== 'Escape'
   ) {
