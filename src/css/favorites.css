@@ -1,10 +1,10 @@
 .favorites-section {
-  padding-top: 8px;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 .favorites-list-item {
   width: 295px;
-  height: 165px;
   background-color: #ffffff;
   padding: 16px;
   border-radius: 15px;
@@ -13,26 +13,12 @@
 
 .favorites-list-item:hover,
 .favorites-list-item:focus {
-  /* transform: scale(1.05); */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* .favorites-container-block {
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-  } */
-
 .empty-text-container {
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-
-  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 128px;
 }
 
 .message-info-svg {
@@ -45,7 +31,6 @@
 .message-info-text {
   font-family: 'DM Sans';
   width: 247px;
-  height: 90px;
   color: #1b1b1b;
   text-align: center;
   font-size: 14px;
@@ -53,7 +38,7 @@
   line-height: 1.28;
 
   margin: 0 auto;
-  margin-top: 28px;
+  padding-top: 28px;
 }
 
 .favorites-card {
@@ -61,7 +46,7 @@
   border-radius: 30px;
   background: #e8e8e8;
   flex-shrink: 0;
-  width: 335px;
+  min-width: 320px;
   padding: 40px 20px;
 }
 
@@ -74,15 +59,6 @@
   letter-spacing: -0.02em;
   margin-bottom: 20px;
 }
-
-/* .favorites-container-block {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: nowrap;
-    overflow-y: auto;
-  } */
 
 .favorites-list {
   display: flex;
@@ -108,13 +84,11 @@
   color: #f6f6f6;
   font-size: 12px;
   font-weight: 500;
-  /* line-height: 0.2em; */
   padding: 5px 8px;
   margin: 0 auto;
   background-color: #7e847f;
   border-radius: 15px;
   width: 76px;
-  /* height: 26px; */
 }
 
 .favorites-svg {
@@ -150,9 +124,9 @@
   display: flex;
   align-items: center;
   color: #1b1b1b;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.28;
+  line-height: 1.5;
   border: none;
   padding: 0;
   background: none;
@@ -227,11 +201,6 @@
   text-overflow: ellipsis;
 }
 
-/* .favorites-card-text-wrapper {
-  display: flex;
-  gap: 4px;
-} */
-
 .favorites-card-text-title {
   color: rgba(27, 27, 27, 0.4);
   font-feature-settings: 'clig' off, 'liga' off;
@@ -303,8 +272,14 @@
 }
 /*--------------------------Tablet---------------------*/
 @media (min-width: 768px) {
+
+  .favorites-section {
+    padding-top: 8px;
+    padding-bottom: 16px;
+  }
+
   .favorites-card {
-    padding: 64px 16px 64px 48px;
+    padding: 64px 48px;
     width: 100%;
     height: auto;
   }
@@ -312,14 +287,6 @@
   .favorites-card-text {
     margin-top: 8px;
   }
-
-  /* .favorites-contanier-block {
-      padding: 12px 24px 20px 24px;
-      display: flex;
-      max-height: 720px;
-      justify-content: flex-start;
-      overflow-y: scroll;
-    } */
 
   .favorites-title {
     font-family: 'DM Sans';
@@ -331,8 +298,13 @@
     margin-bottom: 32px;
   }
 
+  .empty-text-container {
+    padding-top: 176px;
+    padding-bottom: 389px;
+
+  }
+
   .favorites-list {
-    height: 720px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -341,8 +313,6 @@
     align-content: flex-start;
     column-gap: 14px;
     row-gap: 20px;
-
-    padding-right: 24px;
 
     overflow-y: auto;
   }
@@ -374,7 +344,6 @@
   }
 
   .message-info-svg {
-    margin-top: 208px;
     width: 115px;
     height: 71px;
   }
@@ -384,7 +353,6 @@
     width: 554px;
     font-size: 18px;
     line-height: 1.33;
-    margin-bottom: 437px;
   }
 
   .favorites-list-text {
@@ -422,6 +390,13 @@
     align-items: flex-start;
   }
 
+
+  .empty-text-container {
+    margin: 0 auto;
+    padding-top: 116px;
+    padding-bottom: 210px;
+  }
+
   .favorites-list {
     height: 479px;
     display: flex;
@@ -450,7 +425,6 @@
   }
 
   .message-info-svg {
-    margin-top: 146px;
     width: 115px;
     height: 71px;
   }
@@ -460,7 +434,6 @@
     height: 72px;
     font-size: 18px;
     line-height: 1.33;
-    margin-bottom: 258px;
   }
 
   .favorites-card-text-list {
