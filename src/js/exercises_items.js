@@ -32,7 +32,6 @@ function searchCardForm(e) {
   const form = e.target;
   paramsCard.keyword = form.elements.searchstr.value.trim().toLowerCase();
 
-  console.log(paramsCard);
   form.reset();
   getSubcategoryExercises(paramsCard);
 }
@@ -164,7 +163,7 @@ function getSubcategoryExercises() {
         container.classList.remove('is-hidden');
       }
     })
-    .catch(error => console.log(error));
+    .catch(error => notify("error", `API error: ${error}`));
 
 }
 
@@ -176,7 +175,7 @@ instance.on('afterMove', event => {
     .then(({ results }) => {
       createMarkupCard(results);
     })
-    .catch(error => console.log(error));
+    .catch(error => notify("error", `API error: ${error}`));
 });
 
 function capitalizeFirstLetter(name) {

@@ -32,12 +32,11 @@ function updateQuote() {
           document.querySelector('.quote-text').textContent = quote;
           document.querySelector('.quote-author').textContent = author;
         } else {
-          console.log('Update failed due to an error.');
+          notify('error', `Update failed due to an error.`);
         }
       })
       .catch(error => {
-        console.error('An error occurred while retrieving the quote:', error);
-        notify('error', `API error: ${error}`);
+        notify('error', `API error: An error occurred while retrieving the quote: ${error}`);
       });
   }
 }
