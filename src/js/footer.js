@@ -3,8 +3,6 @@ import { API_SUBSCRIPTION_POINT, api } from './api.js';
 
 const feedbackForm = document.querySelector('.footer-form');
 
-checkInputStart();
-
 feedbackForm.addEventListener('submit', sendUserInfo);
 
 function sendUserInfo(event) {
@@ -21,10 +19,6 @@ function sendUserInfo(event) {
     .post(API_SUBSCRIPTION_POINT, { email: email })
     .then(response => {
       notify('success', response.data.message);
-      localStorage.setItem(
-        'feedback-form-state',
-        JSON.stringify({ email: email })
-      );
       feedbackForm.reset();
     })
 
@@ -35,10 +29,4 @@ function sendUserInfo(event) {
         notify('error', 'An error occurred. Please try again later.');
       }
     });
-}
-
-function checkInputStart() {
-  const localInfo =
-    JSON.parse(localStorage.getItem('feedback-form-state')) ?? {};
-  feedbackForm.elements.email.value = localInfo.email || '';
 }
