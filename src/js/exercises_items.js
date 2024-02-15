@@ -165,17 +165,19 @@ function getSubcategoryExercises() {
       }
     })
     .catch(error => console.log(error));
-  instance.on('afterMove', event => {
-    const currentPage = event.page;
-    paramsCard.page = currentPage;
-    api
-      .get(API_EXERCISES_POINT, paramsCard)
-      .then(({ results }) => {
-        createMarkupCard(results);
-      })
-      .catch(error => console.log(error));
-  });
+
 }
+
+instance.on('afterMove', event => {
+  const currentPage = event.page;
+  paramsCard.page = currentPage;
+  api
+    .get(API_EXERCISES_POINT, paramsCard)
+    .then(({ results }) => {
+      createMarkupCard(results);
+    })
+    .catch(error => console.log(error));
+});
 
 function capitalizeFirstLetter(name) {
   if (name.charAt(0).toLowerCase() === name.charAt(0)) {

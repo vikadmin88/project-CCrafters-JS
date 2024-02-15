@@ -15,7 +15,7 @@ const refs = {
 
 const queryParams = {
   filter: 'Muscles',
-  maxPage: 0,
+  // maxPage: 0,
   page: 1,
   limit: 12,
 };
@@ -27,7 +27,7 @@ if (pageWidth < 768) {
 
 const container = document.getElementById('tui-pagination-container');
 const options = {
-  totalItems: queryParams.maxPage,
+  // totalItems: queryParams.maxPage,
   itemsPerPage: queryParams.limit,
   visiblePages: 3,
   centerAlign: true,
@@ -96,7 +96,7 @@ function getCategoryExercises() {
       }
 
       refs.subcategory.innerHTML = results.map(markupCategory).join('');
-      queryParams.maxPage = totalPages;
+      // queryParams.maxPage = totalPages;
 
       if (totalPages === 1) {
         container.classList.add('is-hidden');
@@ -112,22 +112,23 @@ function getCategoryExercises() {
         btn.disabled = false;
       });
 
-      instance.on('afterMove', event => {
-        queryParams.page = event.page;
-
-        api
-          .get(API_FILTER_POINT, queryParams)
-          .then(({ results }) => {
-            refs.subcategory.innerHTML = results.map(markupCategory).join('');
-          })
-          .catch(error => notify('error', `API error: ${error}`))
-          .finally(() => {
-            refs.title.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start',
-              inline: 'nearest',
-            });
-          });
-      });
     });
 }
+
+instance.on('afterMove', event => {
+  queryParams.page = event.page;
+
+  api
+    .get(API_FILTER_POINT, queryParams)
+    .then(({ results }) => {
+      refs.subcategory.innerHTML = results.map(markupCategory).join('');
+    })
+    .catch(error => notify('error', `API error: ${error}`))
+    .finally(() => {
+      refs.title.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest',
+      });
+    });
+});
