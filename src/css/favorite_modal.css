@@ -54,7 +54,7 @@
   .modal-description-container {
     .modal-gif {
       border-radius: 12px;
-      /* margin-bottom: 20px; */
+      margin-bottom: 20px;
       width: 295px;
       height: 258px;
     }
