@@ -41,7 +41,6 @@ export function openModalFavoritesHandler(e) {
 
 // closes the modal
 export function closeFavoriteModalHandler(e) {
-  console.log(e);
   if (
     !e.target.classList.contains('backdrop-favorite') &&
     !e.target.classList.contains('close-modal-btn') &&
