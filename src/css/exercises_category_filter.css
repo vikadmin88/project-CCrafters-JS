@@ -95,7 +95,7 @@
   );
 
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-color: lightgray;
 
   transition: transform 0.2s ease-in-out;
