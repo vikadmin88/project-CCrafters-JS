@@ -1,4 +1,4 @@
-import{n as B}from"./api-0d4e8fa1.js";import{o as $}from"./rating_modal-c65721c4.js";document.querySelector(".modal-favorite");let u=document.querySelector(".close-modal-btn"),h=document.querySelector(".add-favorite-btn"),C=document.querySelector(".give-rating-btn"),l=document.querySelector(".backdrop-favorite");document.querySelector(".loader-favorites");let b={};function L(t){if(!t.target&&!t.target.classList.contains("favorites-list-button")&&!t.target.closest(".favorites-list-button").classList.contains("favorites-list-button"))return;let e;try{e=t.target.closest(".favorites-list-button").dataset.id}catch{e=""}e&&(q(),T(e),document.addEventListener("keydown",o),l.addEventListener("click",o))}function o(t){console.log(t),!(!t.target.classList.contains("backdrop-favorite")&&!t.target.classList.contains("close-modal-btn")&&!t.target.closest(".close-modal-btn")&&t.code!=="Escape"&&!l.classList.contains("visually-hidden"))&&(l.classList.add("visually-hidden"),document.removeEventListener("keydown",o),l.removeEventListener("click",o))}function q(){document.querySelector(".backdrop-favorite").classList.remove("visually-hidden"),document.querySelector(".modal-favorite").innerHTML='<div class="loader-favorite"></div>',document.querySelector(".loader-favorite").style.display="block"}function E(t){const e=t.target.dataset.id;let a=(JSON.parse(localStorage.getItem("favorites"))||[]).filter(i=>i._id!==e);localStorage.setItem("favorites",JSON.stringify(a)),B("success","The exercise has been removed from your favorites list"),c(),u.click()}function O(t){if(t){let e,s=t;return e=(JSON.parse(localStorage.getItem("favorites"))||[]).filter(i=>i._id===s),e.length?(b=e[0],b):!1}}function T(t){const e=O(t);e&&j(e)}function j(t){document.querySelector(".modal-favorite").innerHTML=_(t),u=document.querySelector(".close-modal-btn"),u.addEventListener("click",o),h=document.querySelector(".add-favorite-btn"),h.addEventListener("click",E),C=document.querySelector(".give-rating-btn"),C.addEventListener("click",H)}function H(t){document.querySelector(".backdrop-favorite").classList.add("visually-hidden"),$(document.querySelector(".backdrop-favorite"),t)}function d(t){return t.charAt(0).toUpperCase()+t.slice(1)}function _({_id:t,bodyPart:e,equipment:s,gifUrl:a,name:i,target:r,description:x,rating:f,burnedCalories:k,time:S,popularity:F,isFavorite:A}){let m=5,g=Number(f.toFixed());m-=g;let M='<r class="star-1"/>'.repeat(g).concat('<r class="star-0"/>'.repeat(m));return`<div class="modal-description-container">
+import{n as B}from"./api-0d4e8fa1.js";import{o as $}from"./rating_modal-81a22508.js";document.querySelector(".modal-favorite");let u=document.querySelector(".close-modal-btn"),h=document.querySelector(".add-favorite-btn"),C=document.querySelector(".give-rating-btn"),l=document.querySelector(".backdrop-favorite");document.querySelector(".loader-favorites");let b={};function L(t){if(!t.target&&!t.target.classList.contains("favorites-list-button")&&!t.target.closest(".favorites-list-button").classList.contains("favorites-list-button"))return;let e;try{e=t.target.closest(".favorites-list-button").dataset.id}catch{e=""}e&&(q(),T(e),document.addEventListener("keydown",o),l.addEventListener("click",o))}function o(t){!t.target.classList.contains("backdrop-favorite")&&!t.target.classList.contains("close-modal-btn")&&!t.target.closest(".close-modal-btn")&&t.code!=="Escape"&&!l.classList.contains("visually-hidden")||(l.classList.add("visually-hidden"),document.removeEventListener("keydown",o),l.removeEventListener("click",o))}function q(){document.querySelector(".backdrop-favorite").classList.remove("visually-hidden"),document.querySelector(".modal-favorite").innerHTML='<div class="loader-favorite"></div>',document.querySelector(".loader-favorite").style.display="block"}function E(t){const e=t.target.dataset.id;let s=(JSON.parse(localStorage.getItem("favorites"))||[]).filter(i=>i._id!==e);localStorage.setItem("favorites",JSON.stringify(s)),B("success","The exercise has been removed from your favorites list"),c(),u.click()}function O(t){if(t){let e,a=t;return e=(JSON.parse(localStorage.getItem("favorites"))||[]).filter(i=>i._id===a),e.length?(b=e[0],b):!1}}function T(t){const e=O(t);e&&j(e)}function j(t){document.querySelector(".modal-favorite").innerHTML=_(t),u=document.querySelector(".close-modal-btn"),u.addEventListener("click",o),h=document.querySelector(".add-favorite-btn"),h.addEventListener("click",E),C=document.querySelector(".give-rating-btn"),C.addEventListener("click",H)}function H(t){document.querySelector(".backdrop-favorite").classList.add("visually-hidden"),$(document.querySelector(".backdrop-favorite"),t)}function d(t){return t.charAt(0).toUpperCase()+t.slice(1)}function _({_id:t,bodyPart:e,equipment:a,gifUrl:s,name:i,target:r,description:x,rating:f,burnedCalories:k,time:S,popularity:F,isFavorite:A}){let m=5,g=Number(f.toFixed());m-=g;let M='<r class="star-1"/>'.repeat(g).concat('<r class="star-0"/>'.repeat(m));return`<div class="modal-description-container">
       <button class="close-modal-btn" title="Close window">
         <svg class="close-modal-icon"  width="12" height="12" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12.8332 1.16666L1.1665 12.8333M1.1665 1.16666L12.8332 12.8333" stroke="#1B1B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -19,7 +19,7 @@ import{n as B}from"./api-0d4e8fa1.js";import{o as $}from"./rating_modal-c65721c4
           />
           <img
             class="modal-gif"
-            src="${a}"
+            src="${s}"
             alt="${i}"
             width="295"
             height="258"
@@ -44,7 +44,7 @@ import{n as B}from"./api-0d4e8fa1.js";import{o as $}from"./rating_modal-c65721c4
           </li>
           <li class="description-item">
             <p>Equipment</p>
-            <span>${d(s)}</span>
+            <span>${d(a)}</span>
           </li>
           <li class="description-item">
             <p>Popular</p>
@@ -68,7 +68,7 @@ import{n as B}from"./api-0d4e8fa1.js";import{o as $}from"./rating_modal-c65721c4
           </button>
         </div>
       </div>
-    </div>`}const V=Object.freeze(Object.defineProperty({__proto__:null,closeFavoriteModalHandler:o,openModalFavoritesHandler:L},Symbol.toStringTag,{value:"Module"})),n=document.querySelector(".favorites-list"),p=document.querySelector(".empty-text-container");let y=document.querySelectorAll('button[data-btn="trash"]');function c(){let t=JSON.parse(localStorage.getItem("favorites"))||[];p.style.display="none",n.innerHTML=t.map(I).join(""),y=document.querySelectorAll('button[data-btn="trash"]');for(let e of y)e.addEventListener("click",w);t.length||(p.style.display="flex",n.style.display="none")}function v(t){return t.charAt(0).toUpperCase()+t.slice(1)}const I=({_id:t,name:e,burnedCalories:s,bodyPart:a,target:i,time:r})=>`<li class="favorites-list-item" tabindex="0">
+    </div>`}const V=Object.freeze(Object.defineProperty({__proto__:null,closeFavoriteModalHandler:o,openModalFavoritesHandler:L},Symbol.toStringTag,{value:"Module"})),n=document.querySelector(".favorites-list"),p=document.querySelector(".empty-text-container");let y=document.querySelectorAll('button[data-btn="trash"]');function c(){let t=JSON.parse(localStorage.getItem("favorites"))||[];p.style.display="none",n.innerHTML=t.map(I).join(""),y=document.querySelectorAll('button[data-btn="trash"]');for(let e of y)e.addEventListener("click",w);t.length||(p.style.display="flex",n.style.display="none")}function v(t){return t.charAt(0).toUpperCase()+t.slice(1)}const I=({_id:t,name:e,burnedCalories:a,bodyPart:s,target:i,time:r})=>`<li class="favorites-list-item" tabindex="0">
     <div class="favorites-card-header">
       <div class="favorites-oval">
         <span>WORKOUT</span>
@@ -98,12 +98,12 @@ import{n as B}from"./api-0d4e8fa1.js";import{o as $}from"./rating_modal-c65721c4
     <ul class="favorites-card-text-list">
       <li class="favorites-card-text-item">
           <h4 class="favorites-card-text-title">Burned calories:</h4>
-          <p class="favorites-card-text-block">${s}/${r} min</p>
+          <p class="favorites-card-text-block">${a}/${r} min</p>
       </li>
 
       <li class="favorites-card-text-item">
           <h4 class="favorites-card-text-title">Body part:</h4>
-          <p class="favorites-card-text-block">${v(a)}</p>
+          <p class="favorites-card-text-block">${v(s)}</p>
       </li>
 
       <li class="favorites-card-text-item">
@@ -111,5 +111,5 @@ import{n as B}from"./api-0d4e8fa1.js";import{o as $}from"./rating_modal-c65721c4
           <p class="favorites-card-text-block">${v(i)}</p>
       </li>
     </ul>
-  </li>`;c();n.addEventListener("click",L);function w(t){const e=t.target;if(e){let s=e.dataset.id,i=(JSON.parse(localStorage.getItem("favorites"))||[]).filter(r=>r._id!==s);localStorage.setItem("favorites",JSON.stringify(i)),c()}}const z=Object.freeze(Object.defineProperty({__proto__:null,containerForTextOfEmptyList:p,deleteExercise:w,renderFavorites:c,ulFavList:n},Symbol.toStringTag,{value:"Module"}));export{z as a,V as f};
-//# sourceMappingURL=favorites-400d3a58.js.map
+  </li>`;c();n.addEventListener("click",L);function w(t){const e=t.target;if(e){let a=e.dataset.id,i=(JSON.parse(localStorage.getItem("favorites"))||[]).filter(r=>r._id!==a);localStorage.setItem("favorites",JSON.stringify(i)),c()}}const z=Object.freeze(Object.defineProperty({__proto__:null,containerForTextOfEmptyList:p,deleteExercise:w,renderFavorites:c,ulFavList:n},Symbol.toStringTag,{value:"Module"}));export{z as a,V as f};
+//# sourceMappingURL=favorites-3115b511.js.map
