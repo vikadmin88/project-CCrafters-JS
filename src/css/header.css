@@ -173,7 +173,7 @@
   .icon-active:hover .svg-icon,
   .icon-active:focus .svg-icon {
     fill: #5f6560;
-    transform: scale(1.8);
+    transform: scale(1.2);
   }
 }
 
@@ -281,6 +281,6 @@
   .icon-active:hover .svg-icon,
   .icon-active:focus .svg-icon {
     fill: #5f6560;
-    transform: scale(1.8);
+    transform: scale(1.2);
   }
 }
