@@ -1,16 +1,54 @@
-// import { openModalFavoritesHandler } from './exercise_modal.js';
+import Pagination from 'tui-pagination';
 import { openModalFavoritesHandler } from './favorite_modal.js';
 
+const FAVORITES_KEY = 'favorites';
 export const ulFavList = document.querySelector('.favorites-list');
 export const containerForTextOfEmptyList = document.querySelector(
   '.empty-text-container'
 );
 let btns = document.querySelectorAll('button[data-btn="trash"]');
-//----------------Test data-to-local-storage---------------------------///
 
+const options = {
+  itemsPerPage: 8,
+  visiblePages: 3,
+  centerAlign: true,
+};
+const paginationContainer = document.getElementById('tui-pagination-container');
+// paginationContainer.style.display = 'none';
+const paginatorInstance = new Pagination(paginationContainer, options);
+const paramsCard = {
+  page: 1,
+  limit: 8,
+};
+
+let favoritesArray;
 
 export function renderFavorites() {
-  let favArr = JSON.parse(localStorage.getItem('favorites')) || [];
+  let favArr = JSON.parse(localStorage.getItem(FAVORITES_KEY)) || [];
+  favoritesArray = favArr;
+  const pageWidth = window.innerWidth;
+  paginatorInstance.reset(favArr.length);
+
+  if (pageWidth < 768 && favArr.length > paramsCard.limit) {
+    paginationContainer.style.display = 'flex';
+    favArr = favArr.slice(0, paramsCard.limit);
+  }
+
+  markupFavorites(favArr);
+}
+
+// pagination listener
+paginatorInstance.on('afterMove', event => {
+  paramsCard.page = event.page;
+  let to = paramsCard.limit * paramsCard.page;
+  let from = to - paramsCard.limit;
+  let favArr = favoritesArray.slice(from, to);
+  markupFavorites(favArr);
+});
+
+
+
+function markupFavorites(favArr) {
 
   containerForTextOfEmptyList.style.display = 'none';
   ulFavList.innerHTML = favArr.map(fillFavoriteCard).join('');
@@ -29,6 +67,7 @@ export function renderFavorites() {
 
 //--------------------------Card-fill-function-------------------------------//
 function spanToCapitalize(text) {
+  // console.log(text);
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
@@ -98,12 +137,12 @@ export function deleteExercise(e) {
 
   if (trashBtn) {
     let exerciseId = trashBtn.dataset.id;
-    let curFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    let curFavorites = JSON.parse(localStorage.getItem(FAVORITES_KEY)) || [];
     let updFavorites = curFavorites.filter(
       exercise => exercise._id !== exerciseId
     );
 
-    localStorage.setItem('favorites', JSON.stringify(updFavorites));
+    localStorage.setItem(FAVORITES_KEY, JSON.stringify(updFavorites));
     renderFavorites();
   }
 }
