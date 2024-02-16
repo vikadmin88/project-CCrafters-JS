@@ -3,6 +3,7 @@
 }
 
 .exercises-inner-container {
+  position: relative;
   border-radius: 30px;
   background: var(--cb-container);
 

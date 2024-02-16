@@ -23,6 +23,27 @@
   animation: shadowPulse 1s linear infinite;
 }
 
+.loader-pagination {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: none;
+  margin:15px auto;
+  position: absolute;
+  bottom: 2px;
+  left: 49%;
+  background: #E8E8E8;
+  box-shadow: -24px 0 #E8E8E8, 24px 0 #E8E8E8;
+  box-sizing: border-box;
+  animation: shadowPulse 1s linear infinite;
+}
+
+@media screen and (min-width: 768px) {
+  .loader-pagination {
+    bottom: 20px;
+  }
+}
+
 @keyframes shadowPulse {
   33% {
     background: #E8E8E8;

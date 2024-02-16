@@ -13,6 +13,11 @@ const refs = {
   search: document.querySelector('.exercices-form'),
 };
 
+const loaderPagination = document.querySelector('.loader-pagination');
+// shows only once while page loading, after that will be overwrited
+const loader = document.querySelector('.loader');
+loader.style.display = 'block';
+
 const queryParams = {
   filter: 'Muscles',
   // maxPage: 0,
@@ -117,14 +122,16 @@ function getCategoryExercises() {
 
 instance.on('afterMove', event => {
   queryParams.page = event.page;
-
+  loaderPagination.style.display = 'block';
   api
     .get(API_FILTER_POINT, queryParams)
     .then(({ results }) => {
       refs.subcategory.innerHTML = results.map(markupCategory).join('');
+      loaderPagination.style.display = 'none';
     })
     .catch(error => notify.error(`API error: ${error}`))
     .finally(() => {
+      loaderPagination.style.display = 'none';
       refs.title.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
