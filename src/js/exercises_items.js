@@ -14,6 +14,7 @@ const paramsCard = {
 };
 
 const container = document.getElementById('tui-pagination-container');
+const loaderPagination = document.querySelector('.loader-pagination');
 
 const options = {
   itemsPerPage: 8,
@@ -168,14 +169,17 @@ function getSubcategoryExercises() {
 }
 
 instance.on('afterMove', event => {
+  loaderPagination.style.display = 'block';
   const currentPage = event.page;
   paramsCard.page = currentPage;
   api
     .get(API_EXERCISES_POINT, paramsCard)
     .then(({ results }) => {
       createMarkupCard(results);
+      loaderPagination.style.display = 'none';
     })
-    .catch(error => notify.error(`API error: ${error}`));
+    .catch(error => notify.error(`API error: ${error}`))
+    .finally(() => loaderPagination.style.display = 'none');
 });
 
 function capitalizeFirstLetter(name) {
