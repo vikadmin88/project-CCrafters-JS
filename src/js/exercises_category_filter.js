@@ -106,7 +106,7 @@ function getCategoryExercises() {
 
       instance.reset(totalPages * queryParams.limit);
     })
-    .catch(error => notify('error', `API error: ${error}`))
+    .catch(error => notify.error(`API error: ${error}`))
     .finally(() => {
       [...refs.category.children].forEach(btn => {
         btn.disabled = false;
@@ -123,7 +123,7 @@ instance.on('afterMove', event => {
     .then(({ results }) => {
       refs.subcategory.innerHTML = results.map(markupCategory).join('');
     })
-    .catch(error => notify('error', `API error: ${error}`))
+    .catch(error => notify.error(`API error: ${error}`))
     .finally(() => {
       refs.title.scrollIntoView({
         behavior: 'smooth',

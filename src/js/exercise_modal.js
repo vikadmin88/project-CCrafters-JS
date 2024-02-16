@@ -68,11 +68,11 @@ function addRemoveFavoriteHandler(e) {
   ) {
     removeFromFavoriteStorage(e);
     exerciseObject.isFavorite = false;
-    notify('success', 'The exercise has been removed from your favorites list');
+    notify.success('The exercise has been removed from your favorites list');
   } else {
     addToFavoriteStorage(e);
     exerciseObject.isFavorite = true;
-    notify('success', 'The exercise has been added to your favorites list');
+    notify.success('The exercise has been added to your favorites list');
   }
   markupAndReload(exerciseObject);
 }
@@ -145,7 +145,7 @@ function getExerciseApi(id) {
       }
       markupAndReload(data);
     })
-    .catch(error => notify('error', `API error: ${error}`))
+    .catch(error => notify.error(`API error: ${error}`))
     .finally(() => {
       try {
         document.querySelector('.loader-modal').style.display = 'none';

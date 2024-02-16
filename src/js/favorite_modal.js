@@ -70,7 +70,7 @@ function removeFromFavoriteStorage(e) {
     exercise => exercise._id !== exerciseId
   );
   localStorage.setItem('favorites', JSON.stringify(updFavorites));
-  notify('success', 'The exercise has been removed from your favorites list');
+  notify.success('The exercise has been removed from your favorites list');
   // refresh list
   renderFavorites();
   closeBtn.click();

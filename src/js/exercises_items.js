@@ -163,7 +163,7 @@ function getSubcategoryExercises() {
         container.classList.remove('is-hidden');
       }
     })
-    .catch(error => notify("error", `API error: ${error}`));
+    .catch(error => notify.error(`API error: ${error}`));
 
 }
 
@@ -175,7 +175,7 @@ instance.on('afterMove', event => {
     .then(({ results }) => {
       createMarkupCard(results);
     })
-    .catch(error => notify("error", `API error: ${error}`));
+    .catch(error => notify.error(`API error: ${error}`));
 });
 
 function capitalizeFirstLetter(name) {
