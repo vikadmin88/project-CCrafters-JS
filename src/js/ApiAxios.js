@@ -1,6 +1,6 @@
 import axios, { AxiosError } from "axios";
 
-export class ApiPerformer {
+export class ApiAxios {
   #apiBaseUrl;
 
   constructor(apiUrl) {

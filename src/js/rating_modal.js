@@ -69,15 +69,15 @@ function sendRating(event) {
       JSON.stringify(ratingParams)
     )
     .then(response => {
-      notify('success', 'Rating has been updated!');
+      notify.success('Rating has been updated!');
       refs.form.reset();
       refs.backdrop.click();
     })
     .catch(error => {
       if (error.message.response.status === 409) {
-        notify('warning', `Warning: ${error.message.response.data.message}`);
+        notify.warning(`Warning: ${error.message.response.data.message}`);
       } else {
-        notify('error', `API error: ${error.message.response.data.message}`);
+        notify.error(`API error: ${error.message.response.data.message}`);
       }
     });
 }

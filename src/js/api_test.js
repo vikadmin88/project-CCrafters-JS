@@ -24,14 +24,14 @@ apiReqParams = {
 }
 api.get(API_FILTER_POINT, apiReqParams)
   .then(data => console.log(data))
-  .catch(error => notify("error", `API error: ${error}`));
+  .catch(error => notify.error(`API error: ${error}`));
 
 
 // API_QUOTE_POINT
 apiReqParams = {};
 api.get(API_QUOTE_POINT, apiReqParams)
   .then(data => console.log(data))
-  .catch(error => notify("error", `API error: ${error}`));
+  .catch(error => notify.error(`API error: ${error}`));
 
 // API_EXERCISES_POINT
 apiReqParams = {
@@ -44,12 +44,12 @@ apiReqParams = {
 }
 api.get(API_EXERCISES_POINT, apiReqParams)
   .then(data => console.log(data))
-  .catch(error => notify("error", `API error: ${error}`));
+  .catch(error => notify.error(`API error: ${error}`));
 
 // API_EXERCISES_POINT + id
 api.get(API_EXERCISES_POINT + "/64f389465ae26083f39b17a2", apiReqParams)
   .then(data => console.log(data))
-  .catch(error => notify("error", `API error: ${error}`));
+  .catch(error => notify.error(`API error: ${error}`));
 
 
 // API_EXERCISES_POINT rating
@@ -61,14 +61,14 @@ apiReqParams = {
 api.patch(API_EXERCISES_POINT + "/64f389465ae26083f39b17a2/rating", apiReqParams)
   .then(response => {
     console.log(response);
-    notify("success", "Rating has been updated!");
+    notify.success("Rating has been updated!");
   })
   .catch(error => {
     console.log(error);
     if (error.message.response.status === 409) {
-      notify("warning", `Warning: ${error.message.response.data.message}`);
+      notify.warning(`Warning: ${error.message.response.data.message}`);
     } else {
-      notify("error", `API error: ${error.message.response.data.message}`);
+      notify.error(`API error: ${error.message.response.data.message}`);
     }
   });
 
@@ -78,13 +78,13 @@ apiReqParams = {
 };
 api.post(API_SUBSCRIPTION_POINT, apiReqParams)
   .then(response => {
-    notify("success", response.data.message);
+    notify.success(response.data.message);
   })
   .catch(error => {
     if (error.message.response.status === 409) {
-      notify("warning", `Warning: ${error.message.response.data.message}`);
+      notify.warning(`Warning: ${error.message.response.data.message}`);
     } else {
-      notify("error", `API error: ${error.message.response.data.message}`);
+      notify.error(`API error: ${error.message.response.data.message}`);
     }
   });
 

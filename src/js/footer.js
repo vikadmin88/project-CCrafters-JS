@@ -11,22 +11,22 @@ function sendUserInfo(event) {
   const email = feedbackForm.elements.email.value.trim();
 
   if (!email) {
-    notify('error', 'Please, fill in the field before sending!');
+    notify.error('Please, fill in the field before sending!');
     return;
   }
 
   api
     .post(API_SUBSCRIPTION_POINT, { email: email })
     .then(response => {
-      notify('success', response.data.message);
+      notify.success(response.data.message);
       feedbackForm.reset();
     })
 
     .catch(error => {
       if (error.message && error.message.response.status === 409) {
-        notify('warning', 'You are already subscribed.');
+        notify.warning('You are already subscribed.');
       } else {
-        notify('error', 'An error occurred. Please try again later.');
+        notify.error('An error occurred. Please try again later.');
       }
     });
 }
