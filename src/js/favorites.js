@@ -14,7 +14,6 @@ const options = {
   centerAlign: true,
 };
 const paginationContainer = document.getElementById('tui-pagination-container');
-// paginationContainer.style.display = 'none';
 const paginatorInstance = new Pagination(paginationContainer, options);
 const paramsCard = {
   page: 1,
@@ -62,6 +61,7 @@ function markupFavorites(favArr) {
   if (!favArr.length) {
     containerForTextOfEmptyList.style.display = 'flex';
     ulFavList.style.display = 'none';
+    paginationContainer.style.display = 'none';
   }
 }
 
