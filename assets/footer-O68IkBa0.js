@@ -1,0 +1,2 @@
+import{a as e,o as t,t as n}from"./notifier-BTcOYbl6.js";var r=document.querySelector(`.footer-form`);r.addEventListener(`submit`,i);function i(i){i.preventDefault();let a=r.elements.email.value.trim();if(!a){n.error(`Please, fill in the field before sending!`);return}t.post(e,{email:a}).then(e=>{n.success(e.data.message),r.reset()}).catch(e=>{e.message&&e.message.response.status===409?n.warning(`You are already subscribed.`):n.error(`An error occurred. Please try again later.`)})}
+//# sourceMappingURL=footer-O68IkBa0.js.map

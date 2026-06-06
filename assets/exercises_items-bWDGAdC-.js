@@ -1,4 +1,4 @@
-import{a as d,b as p}from"./api-ff36a7fc.js";import{refs as r}from"./exercises_category_filter-dabafdee.js";import{P as f}from"./vendor-72a3c01e.js";import{a as y}from"./rating_modal-06224254.js";const s={bodypart:"",muscles:"",equipment:"",keyword:"",page:1,limit:8},c=document.getElementById("tui-pagination-container"),o=document.querySelector(".loader-pagination"),v={itemsPerPage:8,visiblePages:3,centerAlign:!0},C=new f(c,v);let l="";r.subcategory.addEventListener("click",b);r.search.addEventListener("submit",w);function w(e){e.preventDefault();const t=e.target;s.keyword=t.elements.searchstr.value.trim().toLowerCase(),t.reset(),n()}function b(e){if(e.preventDefault(),!e.target.classList.contains("exercises-subcategory-item")&&!e.target.parentNode.classList.contains("exercises-subcategory-item"))return;r.search.classList.add("is-visible");const t=e.target.closest(".exercises-subcategory-item");l=t.children[1].textContent.toLowerCase();const a=t.children[0].textContent;s.page=1,r.title.insertAdjacentHTML("beforeend",` / <span class="exercises-title-span"> ${a}</span>`),r.subcategory.classList.add("open-card"),x(l,t)}function x(e,t){s.muscles="",s.bodypart="",s.equipment="",s.keyword="",e==="muscles"?(s.muscles=t.children[0].textContent.toLowerCase(),n()):e==="body parts"?(s.bodypart=t.children[0].textContent.toLowerCase(),n()):e==="equipment"&&(s.equipment=t.children[0].textContent.toLowerCase(),n())}function g(e){const t=e.map(({_id:a,bodyPart:i,name:u,rating:m,burnedCalories:h,target:L})=>`<li class="exercices-card">
+import{r as e}from"./rolldown-runtime-QTnfLwEv.js";import{t}from"./vendor-eN7fkcT1.js";import{n,o as r}from"./notifier-BTcOYbl6.js";import{n as i}from"./exercise_modal-DUlEdiW9.js";import{refs as a}from"./exercises_category_filter-D7TxbM35.js";var o=e(t(),1),s={bodypart:``,muscles:``,equipment:``,keyword:``,page:1,limit:8},c=document.getElementById(`tui-pagination-container`),l=document.querySelector(`.loader-pagination`),u=new o.default(c,{itemsPerPage:8,visiblePages:3,centerAlign:!0}),d=``;a.subcategory.addEventListener(`click`,p),a.search.addEventListener(`submit`,f);function f(e){e.preventDefault();let t=e.target;s.keyword=t.elements.searchstr.value.trim().toLowerCase(),t.reset(),g(s)}function p(e){if(e.preventDefault(),!e.target.classList.contains(`exercises-subcategory-item`)&&!e.target.parentNode.classList.contains(`exercises-subcategory-item`))return;a.search.classList.add(`is-visible`);let t=e.target.closest(`.exercises-subcategory-item`);d=t.children[1].textContent.toLowerCase();let n=t.children[0].textContent;s.page=1,a.title.insertAdjacentHTML(`beforeend`,` / <span class="exercises-title-span"> ${n}</span>`),a.subcategory.classList.add(`open-card`),m(d,t)}function m(e,t){s.muscles=``,s.bodypart=``,s.equipment=``,s.keyword=``,e===`muscles`?(s.muscles=t.children[0].textContent.toLowerCase(),g()):e===`body parts`?(s.bodypart=t.children[0].textContent.toLowerCase(),g()):e===`equipment`&&(s.equipment=t.children[0].textContent.toLowerCase(),g())}function h(e){let t=e.map(({_id:e,bodyPart:t,name:n,rating:r,burnedCalories:i,target:a})=>`<li class="exercices-card">
 
           <div class="card-header">
             <div class="card-header-container">
@@ -6,7 +6,7 @@ import{a as d,b as p}from"./api-ff36a7fc.js";import{refs as r}from"./exercises_c
 
                <div class="card-rating-container">
                   <p class="card-rating">
-                     ${m}
+                     ${r}
                   </p>
 
                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="13" viewBox="0 0 14 13" fill="none" class="card-rating-svg">
@@ -15,7 +15,7 @@ import{a as d,b as p}from"./api-ff36a7fc.js";import{refs as r}from"./exercises_c
                </div>
             </div>
 
-            <button class="card-button" type="submit" data-id="${a}">
+            <button class="card-button" type="submit" data-id="${e}">
               Start
 
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" class="card-search-svg">
@@ -32,13 +32,13 @@ import{a as d,b as p}from"./api-ff36a7fc.js";import{refs as r}from"./exercises_c
               <path d="M15.8448 7.30102C16.7564 7.30102 17.4954 6.56206 17.4954 5.65051C17.4954 4.73896 16.7564 4 15.8448 4C14.9333 4 14.1943 4.73896 14.1943 5.65051C14.1943 6.56206 14.9333 7.30102 15.8448 7.30102Z" fill="#F6F6F6"/>
             </svg>
 
-            <h3 class="card-name">${M(u)}</h3>
+            <h3 class="card-name">${_(n)}</h3>
           </div>
 
           <ul class="card-inform-list">
-            <li class="card-inform-item">Burned calories:  <span class="card-inform-item-span">${h} / 3 min</span></li>
-            <li class="card-inform-item">Body part: <span class="card-inform-item-span">${i}</span></li>
-            <li class="card-inform-item">Target: <span class="card-inform-item-span">${L}</span></li>
+            <li class="card-inform-item">Burned calories:  <span class="card-inform-item-span">${i} / 3 min</span></li>
+            <li class="card-inform-item">Body part: <span class="card-inform-item-span">${t}</span></li>
+            <li class="card-inform-item">Target: <span class="card-inform-item-span">${a}</span></li>
           </ul>
-        </li>`).join("");r.subcategory.innerHTML=t,r.subcategory.addEventListener("click",y)}function n(){window.innerWidth>=1440&&(s.limit=9),d.get(p,s).then(({page:t,totalPages:a,results:i})=>{g(i),i.length===0&&(r.subcategory.innerHTML='<li class = "exercises-text"><p>Unfortunately, <span class = "exercises-text-span">no results</span> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p></li>'),C.reset(a*8),a<=1?c.classList.add("is-hidden"):c.classList.remove("is-hidden")}).catch(t=>notify.error(`API error: ${t}`))}C.on("afterMove",e=>{o.style.display="block";const t=e.page;s.page=t,d.get(p,s).then(({results:a})=>{g(a),o.style.display="none"}).catch(a=>notify.error(`API error: ${a}`)).finally(()=>o.style.display="none")});function M(e){return e.charAt(0).toLowerCase()===e.charAt(0)?e.charAt(0).toUpperCase()+e.slice(1):e}
-//# sourceMappingURL=exercises_items-a808b6c6.js.map
+        </li>`).join(``);a.subcategory.innerHTML=t,a.subcategory.addEventListener(`click`,i)}function g(){window.innerWidth>=1440&&(s.limit=9),r.get(n,s).then(({page:e,totalPages:t,results:n})=>{h(n),n.length===0&&(a.subcategory.innerHTML=`<li class = "exercises-text"><p>Unfortunately, <span class = "exercises-text-span">no results</span> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p></li>`),u.reset(t*8),t<=1?c.classList.add(`is-hidden`):c.classList.remove(`is-hidden`)}).catch(e=>notify.error(`API error: ${e}`))}u.on(`afterMove`,e=>{l.style.display=`block`,s.page=e.page,r.get(n,s).then(({results:e})=>{h(e),l.style.display=`none`}).catch(e=>notify.error(`API error: ${e}`)).finally(()=>l.style.display=`none`)});function _(e){return e.charAt(0).toLowerCase()===e.charAt(0)?e.charAt(0).toUpperCase()+e.slice(1):e}
+//# sourceMappingURL=exercises_items-bWDGAdC-.js.map

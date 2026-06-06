@@ -1,0 +1,2 @@
+var e=document.querySelector(`.backdrop`),t=document.querySelector(`.btn-close-mob`),n=document.querySelector(`.first-link-home`),r=document.querySelector(`.link-favorites`),i=window.location.pathname;i.endsWith(`/`)||i.endsWith(`/index.html`)?n.classList.add(`active`):i.endsWith(`/favorites.html`)&&r.classList.add(`active`),t.addEventListener(`click`,()=>{e.classList.remove(`is-open`)});
+//# sourceMappingURL=mobile_menu-ok4K1Fpb.js.map

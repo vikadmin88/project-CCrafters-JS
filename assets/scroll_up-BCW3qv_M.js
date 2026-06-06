@@ -1,0 +1,2 @@
+var e=document.querySelector(`.scroll-up-button`);e.addEventListener(`click`,()=>{window.scrollTo({top:0,behavior:`smooth`})}),window.addEventListener(`scroll`,()=>{window.scrollY<230?e.classList.add(`scroll-up-button-active`):e.classList.remove(`scroll-up-button-active`)});
+//# sourceMappingURL=scroll_up-BCW3qv_M.js.map
